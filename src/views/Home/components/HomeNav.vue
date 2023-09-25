@@ -109,7 +109,8 @@ export default {
 <div class="home-video">
    
    <div class="home-video-title">建設業界の慣習を覆す</div>
-   <video id="video" src="@/assets/みなとみらい_Twinmotion.mp4" playsinline  muted autoplay  loop style="width: 100%;" >
+   <video id="video" src="@/assets/みなとみらい_Twinmotion.mp4" playsinline  muted  loop style="width: 100%;" >
+    <!-- autoplay 自动播放 -->
    </video>
 </div>
 </template>

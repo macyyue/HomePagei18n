@@ -13,7 +13,7 @@
                 <li class="columnBox-items">
                     <a href="https://us-factory.jp/media/companytank202209/">
                         <div class="columnBox-img1">
-                            <img  src="@/assets/boss-img01.jpg" width="730" height="400" alt="インタビュー記事が掲載されました">
+                            <img  src="@/assets/boss-img01.jpg"  width="730" height="400" alt="インタビュー記事が掲載されました">
                         </div>
                         <div class="columnBox-txtBox">
                             <p>インタビュー記事が掲載されました </p>
@@ -76,7 +76,16 @@
     font-size: 1.5rem;
     margin-bottom: 7rem;
 }
+@media (max-width:1669px){
+.columnBox {
+     
+     margin:0 300px ;
+}
+.contentMain{
+      margin: 0 auto;
 
+    }
+}
 .contentMain {
     padding: 0 10.25%;
     overflow: hidden;
@@ -86,6 +95,7 @@
 .columnBox {
     display: flex;
     flex-wrap: wrap;
+
 }
 
 ul {
@@ -111,7 +121,6 @@ ul {
 }
 
 .bgImg {
-    
     height: 550px;
     background-image: url(@/assets/image/img12.jpg);
     background-size: 100% 100%;

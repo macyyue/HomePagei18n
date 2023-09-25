@@ -1,4 +1,22 @@
-﻿<template>
+﻿<!-- <script>
+  import axios from 'axios';
+
+    export default {
+    created() {
+        // 在组件创建时发出GET请求
+        axios.get('https://localhost:7005/API/UserLogin/Test')
+        .then(response => {
+            // 请求成功处理响应数据
+            console.log(response.data);
+        })
+        .catch(error => {
+            // 请求失败处理错误
+            console.error(error);
+        });
+    }
+    }
+</script> -->
+<template>
 <div id="menu__contents__wrap">
     <div id="contents__wrap">
     <div id="menu__area">

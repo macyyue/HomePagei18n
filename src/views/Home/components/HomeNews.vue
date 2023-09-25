@@ -32,7 +32,13 @@
     padding: 0;
 }
 
+@media screen and (min-width: 641px) and (max-width: 1000px){
 .news_list_con {
+    width: 100%;
+}
+}
+.news_list_con {
+    display: block;
     height: 399px;
     background-color: #fff;
     margin: 36px 0 26px;
@@ -43,9 +49,8 @@
 }
 
 .news_list_con h3 {
-    height: 50px;
+    height: 60px;
     border-bottom: 1px solid #ddd;
-    text-align: center;
     text-align: center;
 }
 
@@ -54,7 +59,7 @@
     line-height: 1.4;
     font-family: "Montserrat", YuGothic, "Noto Sans Japanese", "游ゴシック", Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     font-weight: 600;
-    margin-top: 7rem;
+    margin: 0 auto;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
@@ -67,6 +72,7 @@
 }
 
 .news_list_con li {
+    position: relative;
     height: 37px;
     line-height: 37px;
 }

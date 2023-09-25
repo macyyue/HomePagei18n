@@ -51,9 +51,6 @@ export default {
         return ""; // 返回备用图片或处理错误
       }
     },
-
-
-
     nextImage() {
       this.currentImageIndex += 1;
       if (this.currentImageIndex >= this.goodsData.length - 4) {
@@ -134,10 +131,8 @@ export default {
     overflow: hidden;
 }
 @media (max-width: 700px){
-  .goods {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .goods-wrapper {
+    padding: 4px 0 40px;
 }
 }
 .goods-wrapper {
@@ -152,7 +147,6 @@ export default {
     display: flex;
     width: 100%;
 }
-
 .image-item {
     position: relative;
     flex: 1;
