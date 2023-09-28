@@ -49,25 +49,23 @@ export default {
       
      }
     }
-   
-    
-
 </script>
 
 <template>
 
  <div class="navi" :class="{'navi-hidden': isNavHidden}"> 
     <div class="logo"> 
-            <router-link to="/"><h1>
+            <h1>
                 <img src="@/assets/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
             <a href=""> U's Factory</a>
-        </h1></router-link>
+        </h1>
        </div>
 
 <div class="ask-language">
         <div class="overlay1">
             <router-link to="/Question">お問い合わせ</router-link>
         </div>
+
         <div class="overlay2">
          
             <a href="#" id="language" @click="toggleDropdown">LANGUAGE</a>
@@ -78,11 +76,13 @@ export default {
         <ul class="language-list">
           <li v-for="(language, index) in languages" :key="index" @click="selectLanguage(language)">
             {{ language }}
-            <img src="@/assets/nextImg1.png" alt="">
           </li>
         </ul>
          </div>
         </div>
+        <div class="overlay3"> 
+            <router-link to="/Login">ログイン</router-link>
+        </div >
       
     <div class="header-wrapper">
     <nav>
@@ -94,22 +94,23 @@ export default {
         <a href="#">商品紹介</a>
         <div class="navDropdown-menu" v-show="isNavOpen">
             <ul class="navDropdown-meg">
-            <li><a href="https://us-factory.jp/robot/">INFO360 <img src="@/assets/nextImg1.png" alt=""></a></li>
-            <li><a href="https://us-factory.jp/bi/">BI for ArchiCAD <img src="@/assets/nextImg1.png" alt=""></a></li>
+            <li> 
+                <router-link to="/Info360" class="override-link-style">INFO360</router-link>
+            </li>
+            <li><a href="">BI for ArchiCAD</a></li>
             </ul>
         </div>
         </div>
         <div class="menu-item"><a href="https://us-factory.jp/media/">実績掲載</a></div>
+        <div class="menu-item"><router-link to="/News">ニュース</router-link></div>
         <div class="menu-item"><router-link to="/Recruit">採用情報</router-link></div>
 
     </nav>
     </div>
   </div>
 </div>
-
-
 </template>
-<style>
+<style scoped>
 .navi {
     z-index: 3;
     top: 0;
@@ -118,13 +119,11 @@ export default {
     height: 100%;
     background-color: #454545;
     transition: all 450ms cubic-bezier(.23,1,.32,1) 0s;
-    justify-content: flex-end;
-
 }
-/* .navi-hidden {
+.navi-hidden {
   transform: translateY(-100%);
   opacity: 0;
-} */
+}
 
 @media (max-width: 700px) {
     .navi {
@@ -207,7 +206,21 @@ export default {
     right: 0%;
     transform: translate(-550%, 10%);
 }
+.overlay3 {
+    display: inline-flex;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transform: translate(-510%, 77%);
+}
 
+.overlay3 a {
+    display: block;
+    color: #dcdcdc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -311,7 +324,7 @@ nav .menu-item a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-26%, -249%);
+    transform: translate(-67%, -249%);
     width: 150px;
     min-width: 5rem;
     padding: .5rem 0;
@@ -334,21 +347,11 @@ nav .menu-item a {
     background-color: #fff;
     color: black;
 }
-
 .navDropdown-meg li a {
     padding: 0 20px;
     cursor: pointer;
     color: black;
 }
-
-.navDropdown-meg img {
-    position: absolute;
-    transform: translateY(8px);
-    right: 8px;
-    width: 13px;
-    height: 13px;
-}
-
 .navDropdown-meg li:hover {
     display: inline-block;
     width: 170px;
@@ -358,14 +361,4 @@ nav .menu-item a {
     white-space: nowrap;
     background-color: rgba(90, 86, 86, 0.1);
 }
-
-.home-video {
-    z-index: 2;
-    position: relative;
-    height: 600px;
-    background-color: transparent;
-    object-fit: cover;
-}
-
-
 </style>

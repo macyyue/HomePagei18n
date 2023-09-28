@@ -59,6 +59,7 @@ export default {
             </select>
           </div>
         </div>
+        
         <div class="news" data-news-pc="row">
           <article class="news__article">
             <a href="/news/2023/230804_9604.html" class="news__type">
@@ -88,7 +89,12 @@ export default {
                   <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">必見！！「超初めてのArchicad操作法」を無料公開</h3>
+
+                  <h3 class="news__title">
+                    <router-link :to="{ name: 'News20230611', params: { id: 20230611 } }" class="override-link-style">
+                    必見！！「超初めてのArchicad操作法」を無料公開
+                  </router-link>
+                  </h3>
                 </div>
               </div>
             </a>

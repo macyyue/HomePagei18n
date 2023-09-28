@@ -217,7 +217,7 @@ export default {
 
 
 </template>
-<style>
+<style scoped>
 body *, body :after, body :before {
   box-sizing: border-box;
 

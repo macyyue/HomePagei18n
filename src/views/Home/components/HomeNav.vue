@@ -94,12 +94,15 @@ export default {
         <a href="#">商品紹介</a>
         <div class="navDropdown-menu" v-show="isNavOpen">
             <ul class="navDropdown-meg">
-            <li><a href="https://us-factory.jp/robot/">INFO360</a></li>
-            <li><a href="https://us-factory.jp/bi/">BI for ArchiCAD</a></li>
+            <li> 
+                <router-link to="/Info360" class="override-link-style">INFO360</router-link>
+            </li>
+            <li><a href="">BI for ArchiCAD</a></li>
             </ul>
         </div>
         </div>
         <div class="menu-item"><a href="https://us-factory.jp/media/">実績掲載</a></div>
+        <div class="menu-item"><router-link to="/News">ニュース</router-link></div>
         <div class="menu-item"><router-link to="/Recruit">採用情報</router-link></div>
 
     </nav>
@@ -114,7 +117,7 @@ export default {
    </video>
 </div>
 </template>
-<style>
+<style scoped>
 .navi {
     z-index: 3;
     top: 0;
@@ -167,7 +170,7 @@ export default {
     position: absolute;
     top: 0%;
     right: 0%;
-    transform: translate(-300%, 77%);
+    transform: translate(-200%, 77%);
 }
 
 .overlay1 a {
@@ -328,7 +331,7 @@ nav .menu-item a {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-26%, -249%);
+    transform: translate(-67%, -249%);
     width: 150px;
     min-width: 5rem;
     padding: .5rem 0;
@@ -351,21 +354,11 @@ nav .menu-item a {
     background-color: #fff;
     color: black;
 }
-
 .navDropdown-meg li a {
     padding: 0 20px;
     cursor: pointer;
     color: black;
 }
-
-.navDropdown-meg img {
-    position: absolute;
-    transform: translateY(8px);
-    right: 8px;
-    width: 13px;
-    height: 13px;
-}
-
 .navDropdown-meg li:hover {
     display: inline-block;
     width: 170px;

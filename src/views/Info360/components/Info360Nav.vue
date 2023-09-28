@@ -65,7 +65,6 @@ export default {
         <div class="overlay1">
             <router-link to="/Question">お問い合わせ</router-link>
         </div>
-
         <div class="overlay2">
          
             <a href="#" id="language" @click="toggleDropdown">LANGUAGE</a>
@@ -80,9 +79,6 @@ export default {
         </ul>
          </div>
         </div>
-        <div class="overlay3"> 
-            <router-link to="/Login">ログイン</router-link>
-        </div >
       
     <div class="header-wrapper">
     <nav>
@@ -94,10 +90,8 @@ export default {
         <a href="#">商品紹介</a>
         <div class="navDropdown-menu" v-show="isNavOpen">
             <ul class="navDropdown-meg">
-            <li> 
-                <router-link to="/Info360" class="override-link-style">INFO360</router-link>
-            </li>
-            <li><a href="">BI for ArchiCAD</a></li>
+            <li><router-link to="/Info360">INFO360</router-link></li>
+            <li><a href="https://us-factory.jp/bi/">BI for ArchiCAD</a></li>
             </ul>
         </div>
         </div>
@@ -206,21 +200,7 @@ export default {
     right: 0%;
     transform: translate(-550%, 10%);
 }
-.overlay3 {
-    display: inline-flex;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    transform: translate(-510%, 77%);
-}
 
-.overlay3 a {
-    display: block;
-    color: #dcdcdc;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-}
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -347,11 +327,21 @@ nav .menu-item a {
     background-color: #fff;
     color: black;
 }
+
 .navDropdown-meg li a {
     padding: 0 20px;
     cursor: pointer;
     color: black;
 }
+
+.navDropdown-meg img {
+    position: absolute;
+    transform: translateY(8px);
+    right: 8px;
+    width: 13px;
+    height: 13px;
+}
+
 .navDropdown-meg li:hover {
     display: inline-block;
     width: 170px;
@@ -361,4 +351,6 @@ nav .menu-item a {
     white-space: nowrap;
     background-color: rgba(90, 86, 86, 0.1);
 }
+
+
 </style>

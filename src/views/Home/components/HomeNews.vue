@@ -5,16 +5,28 @@
     
  <div class="news_list_con">
         <h3 > <span>NEWS</span> </h3>
-      
         <ul>
-            <li><a href="">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</a><span>2023.02.14</span></li>
-            <li><a href=""> 内装業者のための積算・発注業務革命とは</a><span>2022.12.28</span></li>
-            <li><a href=""> 躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました</a><span>2022.09.16</span></li>
-            <li><a href=""> 3次元計測モデリングサービス『Info360®』が好調</a><span>2022.08.23</span></li>
-            <li><a href=""> BI Structureが各社に必要とされる理由とは</a><span >2022.07.25</span></li>
+            <li>
+                <a href="">【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】</a>
+                <span id="News01">2023.08.18</span>
+            </li>
+            <li><a href="">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</a>
+                <span>2023.02.14</span>
+            </li>
+            <li><a href=""> 内装業者のための積算・発注業務革命とは</a>
+                <span>2022.12.28</span>
+            </li>
+            <li><a href=""> 躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました</a>
+                <span>2022.09.16</span>
+            </li>
+            <li><a href=""> 3次元計測モデリングサービス『Info360®』が好調</a>
+                <span>2022.08.23</span>
+            </li>
+            <li><a href=""> BI Structureが各社に必要とされる理由とは</a>
+                <span >2022.07.25</span>
+            </li>
             
         </ul>
-       
         <div class="news-past">
             <router-link to="/News">
             <a href=""> 一覧へ&nbsp;&nbsp;</a> 
@@ -22,7 +34,6 @@
         </div>
     </div>
     
-
 
 
 </template>
@@ -35,6 +46,7 @@
 @media screen and (min-width: 641px) and (max-width: 1000px){
 .news_list_con {
     width: 100%;
+    padding: 13.3333% 8.6667%;
 }
 }
 .news_list_con {
@@ -46,6 +58,8 @@
     font-size: 18px;
     line-height: 18px;
     font-weight: 400;
+    white-space: nowrap;
+
 }
 
 .news_list_con h3 {
@@ -53,6 +67,7 @@
     border-bottom: 1px solid #ddd;
     text-align: center;
 }
+
 
 .news_list_con h3 span {
     height: 50px;
@@ -91,7 +106,7 @@
 .news_list_con li a:hover {
     color: #121117;
     box-shadow: 0 2px 10px #636363;
-    width: 690px;
+    width: 750px;
 }
 
 .news_list_con li span {
@@ -99,7 +114,9 @@
     float: right;
     transform: translateX(-50%);
 }
-
+.news_list_con li #News01{
+ padding: 0 -1px;
+}
 .news-past {
     text-align: center;
     margin-top: 20px;
@@ -130,6 +147,10 @@
 
 .news-past a:hover {
     background-color: rgba(90, 86, 86, 0.1);
+}
+.override-link-style{
+    text-decoration: none; 
+  color: #333; 
 }
 </style>
 

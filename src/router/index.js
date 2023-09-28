@@ -4,19 +4,20 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home/index.vue'
 import Company from '@/views/Company/index.vue'
 import Access from '@/views/Access/index.vue'
+import Info360 from '@/views/Info360/index.vue'
 import Question from '@/views/Question/index.vue'
 import Recruit from '@/views/Recruit/index.vue'
 import Message from '@/views/Message/index.vue'
 import Careers from '@/views/Careers/index.vue'
-import Faq from '@/views/Faq/index.vue'
-import AboutUs from '@/views/AboutUs/index.vue'
 import Usfactory from '@/views/Usfactory/index.vue'
 import LoginForm from '@/views/LoginForm/index.vue'
 import BasicInfo from '@/views/BasicInfo/index.vue'
 import ConfirmationPage from '@/views/ConfirmationPage/index.vue'
 import News from '@/views/News/index.vue'
 import Login from '@/views/Login/index.vue'
+import News20230611 from '@/views/News20230611/index.vue'
 import News20230818 from '@/views/News20230818/index.vue'
+
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
 
@@ -40,6 +41,12 @@ const router = createRouter({
             component: Access
         },
         {
+            path: '/News',
+            name: 'News',
+            component: News,
+
+        },
+        {
             path: '/Question',
             component: Question
         },
@@ -48,7 +55,10 @@ const router = createRouter({
             path: '/Recruit',
             component: Recruit
         },
-
+        {
+            path: '/Info360',
+            component: Info360
+        },
         {
             path: '/Message',
             component: Message
@@ -58,18 +68,6 @@ const router = createRouter({
         {
             path: '/Careers',
             component: Careers
-        },
-
-
-        {
-            path: '/Faq',
-            component: Faq
-        },
-
-
-        {
-            path: '/AboutUs',
-            component: AboutUs
         },
         {
             path: '/Usfactory',
@@ -90,18 +88,20 @@ const router = createRouter({
             name: 'ConfirmationPage',
             component: ConfirmationPage
         },
-        {
-            path: '/News',
-            name: 'News',
-            component: News,
 
-        },
         {
             path: '/news/:id',
             name: 'News20230818',
             component: News20230818,
             props: true,
         },
+        {
+            path: '/news/:id',
+            name: 'News20230611',
+            component: News20230611,
+            props: true,
+        },
+
         {
             path: '/Login',
             name: 'Login',
