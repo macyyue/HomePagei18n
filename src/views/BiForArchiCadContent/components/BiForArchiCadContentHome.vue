@@ -238,10 +238,11 @@ ul, ol {
     width: 100%;
     min-width: 0;
 }
-.link-button > a {
+ .link-button > a {
     display: inline-block;
     position: relative;
-    padding: 13px 20px 12px;
+    padding: 13px 30px 12px;
+    padding-left: -18px;
     border: 1px solid #ddd;
     background-color: #fff;
     color: #333;
@@ -252,35 +253,41 @@ ul, ol {
 .link-button .link_label {
     display: inline-block;
     line-height: 1.5;
-}
-.link-button > a > span {
-    position: relative;
-    padding-left: 18px;
-    display: inline-block;
-}
-.link-button > a:hover {
-    color: #00a27c;
-    background-color: #eff8f6;
-    border-color: #d6efe9;
-}
-.link-button.i-close > a:hover > span::before{
-    background: #00a27c;
-}
-.link-button.i-close > a > span::before {
-    transform: rotate(45deg);
-}
-.link-button.i-close > a > span::after {
-    transform: rotate(-45deg);
-}
-.link-button.i-close > a > span::before, .link-button.i-close > a > span::after {
+} 
+.link-button.i-close > a::before,
+.link-button.i-close > a::after {
+    content: '';
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 10px;
     width: 12px;
     height: 2px;
     margin-top: -1px;
     background: #888;
-    content: "";
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.link-button.i-close > a::after {
+    transform: rotate(-45deg);
+}
+
+.link-button.i-close > a::before {
+    margin-top: -1px;
+    margin-left: 3px;
+    display: block;
+}
+
+.link-button.i-close > a::after {
+    margin-top: -1px;
+    margin-left: 3px;
+    display: block;
+}
+
+.link-button > a:hover {
+    color: #00a27c;
+    background-color: #eff8f6;
+    border-color: #d6efe9;
 }
 </style>
     
