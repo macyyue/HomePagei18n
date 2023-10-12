@@ -36,13 +36,13 @@ export default {
                </router-link>
             </li>
             <li>
-              <router-link to="/Info360" >
+              <router-link to="/Info360" class="override-link-style">
               <span class="main-breadcrumb__type--nolink">INFO360</span>
             </router-link>
             </li>
-            <li class="last-item">
+            <!-- <li class="last-item">
               <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
-            </li>
+            </li> -->
           </ol>
           <!--/Main__guide-->
         </div>
@@ -56,11 +56,7 @@ export default {
                 <br>現実空間の情報を共有する仕組みが求められています。
               </span>
             </div>
-            <!-- <div id="titleImg">
-              <div class="titleImg__inner">
-                <img src="@/assets/image/info360/title.jpg" alt="">
-              </div>
-            </div> -->
+
         </div>
   <div class="heading2">
       <div class="heading2__inner">
@@ -68,106 +64,30 @@ export default {
         </div>
       </div>
        
-      <!-- <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
-        <div class="column__item item__text">
-        <p class="text" style="padding-top: 30px;">
-          話題の技術や取組みをピックアップして紹介します。<br><br>
-          本商品は（株）岩根研究所と（株）U’sFactoryの共同開発商品であり、リアルとバーチャルをつなぐ革新的なプラットフォームを提供しています。<br><br>
-          また、岩根研究所独自のCV（カメラベクター）技術を使い、全周囲動画映像からカメラ位置を高精度に求め、
-          座標値を持ち合わせる三次元化映像を作成と3DACADを作成します。
-         </p>
-
-         <figcaption class="image__caption">
-          <a href="https://us-factory.jp/wp-content/uploads/2015/06/3D_A4-2018%E6%9C%80%E7%B5%82.pdf" 
-          rel="noopener" target="_blank" class="button__type">
-            <span class="button__label">高精度３Ｄ計測サービス２０１８パンフはこちら
-            </span>
-          </a>
-        </figcaption>
-        </div>
-
-      
-        <div class="column__item item__image01">
-        <div class="image-wrap--center">
-        <figure class="image">
-        <div class="item-movie">
-        <iframe width="584" height="390" 
-        src="https://www.youtube.com/embed/peDermJTMkU" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen="">
-      </iframe>
-        </div>
-        </figure>
-        </div>
-        </div>
-        </div> -->
-
-
-    <!-- 「Ｉｎｆｏ３６０」サービス -->
-    <!-- <div class="heading2">
-      <div class="heading2__inner">
-        <h2 class="heading2__title">「Ｉｎｆｏ３６０」サービス</h2>
-        </div>
-      </div>
-      <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
-        <div class="column__item item__text">
-        <p class="text" style="padding-top: 30px;">
-          話題の技術や取組みをピックアップして紹介します。<br><br>
-          現地での作業が早く簡単に、一人で操作可能なシステム<br><br>
-          ※Info360（現地調査版）は2018年4月中旬よりサービスを開始しました。
-
-         </p>
-         <figcaption class="image__caption02">
-          <a href="https://us-factory.jp/wp-content/uploads/2015/06/3D_A4-2018%E6%9C%80%E7%B5%82.pdf" 
-          rel="noopener" target="_blank" class="button__type">
-            <span class="button__label">INFO360サービス２０１８パンフはこちら
-            </span>
-          </a>
-        </figcaption>
-        </div>
-
-        <div class="column__item item__image01">
-        <div class="image-wrap--center">
-        <figure class="image">
-        <div class="item-movie">
-        <iframe width="584" height="390" 
-        src="https://www.youtube.com/embed/XO0t0NIvcKA" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen="">
-      </iframe>
-        </div>
-        </figure>
-        </div>
-        </div>
-        </div> -->
-
-        <!-- 話題の技術や取組みをピックアップして紹介します。四つ写真 -->
+        <!-- 商品の四つ動画 -->
         <ul class="sol_environment__list type01">
               <li>
-                <a href="">
+               <router-link to="/ModelingService">
                   <div class="ph">
-                    <iframe width="584" height="390" 
+                  <iframe width="584" height="390" 
                         src="https://www.youtube.com/embed/peDermJTMkU" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen="">
                       </iframe>
+                  
                   </div>
                   <div class="body">
                     <div class="title">高精度3D計測サービス</div>
                     <div class="txt">
                       本商品は（株）岩根研究所と（株）U’sFactoryの共同開発商品であり、リアルとバーチャルをつなぐ革新的なプラットフォームを提供しています。
-
                     </div>
                   </div>
-                </a>
+                </router-link>
               </li>
               <li>
+                <router-link to="/Info360Service">
                 <a href="">
                 <div class="ph">
                   <iframe width="584" height="390" 
@@ -177,6 +97,7 @@ export default {
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                       allowfullscreen="">
                     </iframe>
+                 
                 </div>
                   <div class="body">
                     <div class="title">Ｉｎｆｏ３６０サービス</div>
@@ -187,8 +108,10 @@ export default {
                     </div>
                   </div>
                 </a>
+              </router-link>
               </li>
               <li>
+                <router-link to="/RobotEyeWalker4DExample">
                 <a href="" target="_blank">
                   <div class="ph">
                       <iframe width="584" height="390" 
@@ -200,14 +123,16 @@ export default {
                       </iframe>
                   </div>
                   <div class="body">
-                    <div class="title">SMART LIFE HACKATHON</div>
+                    <div class="title">Robot Eye Walker4Dの活用</div>
                     <div class="txt">
                       主催 : 大塚商会・竹中工務店・東大グリーンICTプロジェクト(GUTP)・Tスポット・SDM 協賛:株式会社U’Sfactory
                     </div>
                   </div>
                 </a>
+              </router-link>
               </li>
               <li>
+                <router-link to="/RobotEyeWalker4D">
                 <a href="" target="_blank">
                   <div class="ph">
                     <iframe width="584" height="390" 
@@ -227,6 +152,7 @@ export default {
                     </div>
                   </div>
                 </a>
+              </router-link>
               </li>
             </ul>
         <!-- 関連情報 -->
@@ -236,23 +162,7 @@ export default {
          </div>
         </div>
 
-        <p class="MessageTitle">高精度3D計測サービスに関する情報はこちらからご覧いただけます。</p>
 
-        <div class="AboutText">
-          <a href="https://www.youtube.com/embed/_YZeWCFbLnk" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 急傾斜地敷地計測サービス</span>
-        </a>
-      </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/embed/BSIhGZ31zEE" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 世界初C1 ルート左右廻り3Dモデル</span>
-        </a>
-      </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/embed/suZ_nUo7PQQ" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 高精度3D計測サービス（ハイブリッド）</span>
-        </a>
-      </div>
       
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
@@ -294,13 +204,16 @@ body *, body :after, body :before {
   list-style-type: none;
 
 }
+.Main__guide li:last-child{
+  margin-top: 1.5px;
+}
 .Main__guide .main-breadcrumb>li:after {
   margin: 0 10px;
   color: #666;
   content: "＞";
 }
-.Main__guide .main-breadcrumb>li.last-item:after {
-  content: ""; 
+.Main__guide .main-breadcrumb>li:last-child:after {
+  content: none; 
 }
 .Main__guide .main-breadcrumb>li>span {
   color: #333;
@@ -506,9 +419,7 @@ a.button__type {
     line-height: 1.4em;
     text-decoration: none;
 }
-.MessageTitle {
-    margin: 2em 0;
-}
+
 .sol_environment__list.type01 {
     display: flex;
     flex-wrap: wrap;
@@ -547,5 +458,9 @@ a {
     flex-grow: 1;
     padding: 22px 24px;
     background-color: #f5f5f5;
+}
+.override-link-style{
+    color: #333;
+    text-decoration: none;
 }
 </style>

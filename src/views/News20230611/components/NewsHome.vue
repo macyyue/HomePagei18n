@@ -259,7 +259,20 @@ a.button__type:hover{
   font-weight: 700!important;
   
 }
-
+.util-link--blank:after{
+  position: relative;
+  width: 14px;
+  height: 14px;
+  top: -2px;
+  margin: 0 .5em;
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+}
+.util-link--blank:after {
+    background: url(@/assets/image/NewsHome20230818/linkArrowBlack.svg) no-repeat 0 0;
+    color: rgb(51, 51, 51);
+}
 .Main__content>:last-child {
     margin-bottom: 0!important;
 }

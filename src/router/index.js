@@ -5,6 +5,12 @@ import Home from '@/views/Home/index.vue'
 import Company from '@/views/Company/index.vue'
 import Access from '@/views/Access/index.vue'
 import Info360 from '@/views/Info360/index.vue'
+import ModelingService from '@/views/ModelingService/index.vue'
+import Info360Service from '@/views/Info360Service/index.vue'
+import RobotEyeWalker4D from '@/views/RobotEyeWalker4D/index.vue'
+import RobotEyeWalker4DExample from '@/views/RobotEyeWalker4DExample/index.vue'
+import BiForArchiCad from '@/views/BiForArchiCad/index.vue'
+import BiForArchiCadContent from '@/views/BiForArchiCadContent/index.vue'
 import Question from '@/views/Question/index.vue'
 import Recruit from '@/views/Recruit/index.vue'
 import Message from '@/views/Message/index.vue'
@@ -17,7 +23,6 @@ import News from '@/views/News/index.vue'
 import Login from '@/views/Login/index.vue'
 import News20230611 from '@/views/News20230611/index.vue'
 import News20230818 from '@/views/News20230818/index.vue'
-
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
 
@@ -58,6 +63,32 @@ const router = createRouter({
         {
             path: '/Info360',
             component: Info360
+        },
+        {
+            path: '/ModelingService',
+            component: ModelingService
+        },
+        {
+            path: '/Info360Service',
+            component: Info360Service
+        },
+        {
+            path: '/RobotEyeWalker4D',
+            component: RobotEyeWalker4D
+        },
+        {
+            path: '/RobotEyeWalker4DExample',
+            component: RobotEyeWalker4DExample
+        },
+        {
+            path: '/BiForArchiCad',
+            component: BiForArchiCad,
+            name: 'BiForArchiCad'
+        },
+        {
+            path: '/BiForArchiCadContent',
+            component: BiForArchiCadContent,
+            name: 'BiForArchiCadContent'
         },
         {
             path: '/Message',
@@ -117,15 +148,14 @@ const router = createRouter({
             name: 'PwForgot',
             component: PwForgot
         },
-
-
-
     ],
     scrollBehavior() {
         return {
             top: 0
         }
-    }
+    },
+
+
 
 
 })

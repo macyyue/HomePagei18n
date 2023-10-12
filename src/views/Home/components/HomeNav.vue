@@ -6,8 +6,6 @@ export default {
             languages: ['日本語', 'English', '简体中文'],
             selectedLanguage: '',
             isDropdownOpen: false,
-            isNavOpen:false,
-            isNavHidden: false
            }
         },
         mounted() {
@@ -28,32 +26,13 @@ export default {
           this.selectedLanguage = language;
           this.isDropdownOpen = false;
           },
-          navDropdown(){
-            this.isNavOpen = !this.isNavOpen;
-          },
-          handleScroll() {
-      const currentScrollPosition = window.scrollY;
-
-      // 检查滚动方向
-      if (currentScrollPosition > this.lastScrollPosition) {
-        // 向下滚动，隐藏导航栏
-        this.isNavHidden = true;
-       } else {
-        // 向上滚动，显示导航栏
-        this.isNavHidden = false;
-       }
-
-      this.lastScrollPosition = currentScrollPosition;
-      },
-  
-      
      }
     }
 </script>
 
 <template>
 
- <div class="navi" :class="{'navi-hidden': isNavHidden}"> 
+ <div class="navi"> 
     <div class="logo"> 
             <h1>
                 <img src="@/assets/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
@@ -85,27 +64,30 @@ export default {
         </div >
       
     <div class="header-wrapper">
-    <nav>
-        <div class="menu-item">
-            <router-link to="/Company">会社概要</router-link></div>
-        <div class="menu-item">
-            <router-link to="/Access">アクセス</router-link></div> 
-        <div class="menu-item dropdown" @mouseenter="isNavOpen = true" @mouseleave="isNavOpen = false">
-        <a href="#">商品紹介</a>
-        <div class="navDropdown-menu" v-show="isNavOpen">
-            <ul class="navDropdown-meg">
-            <li> 
+    
+    <ul class="navList">
+        <li class="menuItem"><router-link to="/Company">会社概要</router-link></li>
+    </ul>
+    <ul class="navList">
+        <li class="menuItem"><router-link to="/Access">アクセス</router-link></li>
+    </ul>
+    <ul class="navList">
+        <li class="menuItem"><a href="#">商品紹介</a>
+            <ul class="dropList">
                 <router-link to="/Info360" class="override-link-style">INFO360</router-link>
-            </li>
-            <li><a href="">BI for ArchiCAD</a></li>
+                <router-link to="/BiForArchiCad" class="override-link-style">BI for ArchiCAD</router-link>
             </ul>
-        </div>
-        </div>
-        <div class="menu-item"><a href="https://us-factory.jp/media/">実績掲載</a></div>
-        <div class="menu-item"><router-link to="/News">ニュース</router-link></div>
-        <div class="menu-item"><router-link to="/Recruit">採用情報</router-link></div>
-
-    </nav>
+        </li>
+    </ul>
+    <ul class="navList">
+        <li class="menuItem"><router-link to="">実績掲載</router-link></li>
+    </ul>
+    <ul class="navList">
+        <li class="menuItem"><router-link to="/News">ニュース</router-link></li>
+    </ul>
+    <ul class="navList">
+        <li class="menuItem"><router-link to="/Recruit">採用情報</router-link></li>
+    </ul>
     </div>
   </div>
 </div>
@@ -119,19 +101,14 @@ export default {
 </template>
 <style scoped>
 .navi {
-    z-index: 3;
     top: 0;
     max-width: 100%;
     width: 100%;
-    height: 100%;
+    height: 20%;
     background-color: #454545;
     transition: all 450ms cubic-bezier(.23,1,.32,1) 0s;
-}
-.navi-hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-}
 
+}
 @media (max-width: 700px) {
     .navi {
         display: flex;
@@ -164,7 +141,49 @@ export default {
 .clearfix::after {
     clear: both;
 }
-
+.header-wrapper{
+    height: 50px;
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+.menuItem{
+    float: left;
+    width: 100px;
+    line-height: 40px;
+    margin-right: 20px; 
+    text-align: center; 
+    position: relative;
+}
+.navList a {
+    color: #fff;
+    display: block;
+    text-decoration: none; 
+}
+.navList a:hover{
+    background: #666;
+    border-radius:3px;
+}
+.dropList {
+    position: absolute;
+    background: #454545;
+    box-shadow: 0 1px 2px #666;
+    display: none;
+    border-radius: 3px;
+    overflow: hidden;
+    z-index: 1000;
+    white-space: nowrap;
+    text-align: left;
+    width: 10rem;
+    height: 7rem;
+}
+.menuItem:hover .dropList {
+    display: block;
+}
+.override-link-style{
+    margin: 15px 3px;
+}
 .overlay1 {
     display: inline-flex;
     position: absolute;
@@ -179,6 +198,7 @@ export default {
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
+
 }
 
 .overlay2 {
@@ -228,7 +248,7 @@ export default {
     font-size: 15px;
     font-weight: bold;
 }
-.dropdown-menu {
+ .dropdown-menu {
     position: absolute;
     top: 100%;
     left: -7px;
@@ -242,7 +262,7 @@ export default {
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
-}
+} 
 
 .language-list {
     list-style-type: none;
@@ -322,12 +342,11 @@ nav .menu-item a {
     white-space: nowrap;
 }
 
-.dropdown {
+/* .dropdown {
     position: relative;
-    z-index: 3;
-}
+} */
 
-.navDropdown-menu {
+/* .navDropdown-menu {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -342,9 +361,9 @@ nav .menu-item a {
     background-color: transparent;
     background-clip: padding-box;
     z-index: 4;
-}
+} */
 
-.navDropdown-meg {
+/* .navDropdown-meg {
     position: relative;
     list-style-type: none;
     padding: 0;
@@ -367,10 +386,9 @@ nav .menu-item a {
     text-decoration: none;
     white-space: nowrap;
     background-color: rgba(90, 86, 86, 0.1);
-}
+} */
 
 .home-video {
-   z-index: 2;
    position: relative;
    height: 600px;
    background-color: transparent;
