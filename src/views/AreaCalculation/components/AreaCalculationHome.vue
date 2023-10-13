@@ -47,14 +47,14 @@ export default{
             </div>
             <div class="column-media" data-layout-sp="col-reverse">
                 <div class="column_detail" data-wraparound="true">
-                    <p>積算の従来業務である数量確認表を、全自動で出力。明確な積算根拠を基に、集計結果と3D表示を連動させることで、積算確認作業の効率化と信頼性を実現しました。</p>
+                    <p>「ArchiCAD」から概算コスト算出の技術を提供しており、該当特許許諾許可証を持つTOMOデータサービス（株）と発明者である（株）U’sFactoryがシステムを共同で開発しました</p> <br>
+                    <p>「ArchiCAD」にアドインする仕上・集計システムから、市販見積書作成ソフト「TDS Exa」に変換が可能な手法を構築しています</p>
                     <dl class="list-description">
-                        <dt>3Dモデルの特性</dt>
+                        <dt>モデルの特性</dt>
                         <dd>
                             <ul class="list-bullet">
-                                <li>設計・作図業務に寄り添うとともに、ARCHICADのデータをそのまま利用できます</li>
-                                <li>誰でも簡単に見積書を短時間で作成するシステム（アドオンツール）です</li>
-
+                                <li>壁・柱内側の欠き込み形状にて床・天丼を自動生成</li>
+                                <li>外部と内部の積算を同時に実施</li>
                             </ul>
                         </dd>
                     </dl>
@@ -64,16 +64,30 @@ export default{
                 <div class="column_item gp-al-center">
                     <div class="image-set">
                         <figure class="image_inner">
-                            <figcaption class="image_caption gp-al-center">アプリケーションによる技術の全体イメージ</figcaption>
-                            <img src="@/assets/image/BiForArchiCAD/biImg03.png" alt="">
+                            <figcaption class="image_caption gp-al-center">図⑴面積計算方法の概要</figcaption>
+                            <div class="image-two" >
+                            <img src="@/assets/image/BiForArchiCAD/biImg05-1.png" alt="" style="width:450px;max-width:100%;">
+                            <img src="@/assets/image/BiForArchiCAD/biImg05-2.png" alt="" style="width:450px;max-width:100%;">
+                        </div>
                         </figure>
                     </div>
                 </div>
                 <div class="column_item gp-al-center">
                     <div class="image-set">
                         <figure class="image_inner">
-                            <figcaption class="image_caption gp-al-center">各種プロパデイの一括設定</figcaption>
-                            <img src="@/assets/image/BiForArchiCAD/biImg04.png" alt="">
+                            <figcaption class="image_caption gp-al-center">図⑵積算・集計項目</figcaption>
+                            <div class="image-two">
+                            <img src="@/assets/image/BiForArchiCAD/biImg06-1.png" alt="" style="width:460px;max-width:100%;">
+                            <img src="@/assets/image/BiForArchiCAD/biImg06-2.png" alt="" style="width:460px;max-width:100%;">
+                        </div>
+                        </figure>
+                    </div>
+                </div>
+                <div class="column_item gp-al-center">
+                    <div class="image-set">
+                        <figure class="image_inner">
+                            <figcaption class="image_caption gp-al-center">図⑶自動積算・集計項目</figcaption>
+                            <img src="@/assets/image/BiForArchiCAD/biImg07.png" alt="">
                         </figure>
                     </div>
                 </div>
@@ -87,15 +101,16 @@ export default{
     </div>
     <ul class="list-bullet">
         <li class="list-case">
-          <a href="https://www.youtube.com/watch?v=eVzFSLdUh7I&t=1s&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-           内装業者のための積算・発注業務革命
+        <a href="https://www.youtube.com/watch?v=Xwvp0RvS4nc&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
+          「BIMで儲ける仕組みづくりを徹底解説」建設未来フォーラム発表
         </a>
       </li>
-        <li class="list-case">
-        <a href="https://www.youtube.com/watch?v=wmqvkJztpnY&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          Revitデータを最適にARCHICADデータへ変換する方法
+      <li class="list-case">
+        <a href="https://www.youtube.com/watch?v=wMkdIrgQ-FQ&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
+          「BIMの自動化・最適化」で利益と品質向上につなげる仕組み作りとは
         </a>
       </li>
+
     </ul>
 </section>  
         <div class="close-button-wrap">
@@ -201,7 +216,9 @@ img {
 }
 .image-set .image_caption {
     margin: 19px 0 .2em;
+   
     font-weight: bold;
+    
 }
 .close-button-wrap {
     margin-top: 35px;
@@ -219,7 +236,7 @@ img {
     margin-top: 20px;
 }
 /* .gp-al-center {
-    text-align: center!important;
+    margin: 30px 0 20px;
 } */
 ul, ol {
     list-style: none;
@@ -288,6 +305,9 @@ ul, ol {
     color: #00a27c;
     background-color: #eff8f6;
     border-color: #d6efe9;
+}
+.image-two{
+    display:flex ;
 }
 .list-case a{
     color: #333;

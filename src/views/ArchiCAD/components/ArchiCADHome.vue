@@ -47,14 +47,12 @@ export default{
             </div>
             <div class="column-media" data-layout-sp="col-reverse">
                 <div class="column_detail" data-wraparound="true">
-                    <p>積算の従来業務である数量確認表を、全自動で出力。明確な積算根拠を基に、集計結果と3D表示を連動させることで、積算確認作業の効率化と信頼性を実現しました。</p>
+                    <p>従来、手間のかかる作業をサポートするツールである</p>
                     <dl class="list-description">
-                        <dt>3Dモデルの特性</dt>
+                        <dt>モデルの特性</dt>
                         <dd>
                             <ul class="list-bullet">
-                                <li>設計・作図業務に寄り添うとともに、ARCHICADのデータをそのまま利用できます</li>
-                                <li>誰でも簡単に見積書を短時間で作成するシステム（アドオンツール）です</li>
-
+                                <li>複数の平行壁と「窓」及び「扉」の内側となる単純開口を自動作成し、額縁の寸法を自動調整する機能</li>
                             </ul>
                         </dd>
                     </dl>
@@ -64,16 +62,20 @@ export default{
                 <div class="column_item gp-al-center">
                     <div class="image-set">
                         <figure class="image_inner">
-                            <figcaption class="image_caption gp-al-center">アプリケーションによる技術の全体イメージ</figcaption>
-                            <img src="@/assets/image/BiForArchiCAD/biImg03.png" alt="">
+                            <figcaption class="image_caption gp-al-center">図⑴多重壁単純開口の作成</figcaption>
+                            <div class="image-two" >
+                            <img src="@/assets/image/BiForArchiCAD/biImg08-1.png" alt="">
+                        </div>
                         </figure>
                     </div>
                 </div>
                 <div class="column_item gp-al-center">
                     <div class="image-set">
                         <figure class="image_inner">
-                            <figcaption class="image_caption gp-al-center">各種プロパデイの一括設定</figcaption>
-                            <img src="@/assets/image/BiForArchiCAD/biImg04.png" alt="">
+                            <figcaption class="image_caption gp-al-center">図⑵トレースBIM積算の流れ</figcaption>
+                            <div class="image-two">
+                            <img src="@/assets/image/BiForArchiCAD/スライド8.png" alt="">
+                        </div>
                         </figure>
                     </div>
                 </div>
@@ -87,15 +89,16 @@ export default{
     </div>
     <ul class="list-bullet">
         <li class="list-case">
-          <a href="https://www.youtube.com/watch?v=eVzFSLdUh7I&t=1s&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-           内装業者のための積算・発注業務革命
-        </a>
-      </li>
+            <a href="http://www.tomodata.co.jp/" target="_blank">BI For Archi ver21 販売サポート</a>
+        </li >
         <li class="list-case">
-        <a href="https://www.youtube.com/watch?v=wmqvkJztpnY&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          Revitデータを最適にARCHICADデータへ変換する方法
+            <a href="https://www.scinc.co.jp/" target="_blank">SIRCAD 販売サポート</a>
+        </li>
+        <li class="list-case">
+        <a href="https://www.youtube.com/watch?v=I-8RBCxoTkw&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
+          自動化ツールの衝撃「BI For ARCHICAD」が選ばれる理由
         </a>
-      </li>
+       </li>
     </ul>
 </section>  
         <div class="close-button-wrap">
@@ -201,7 +204,9 @@ img {
 }
 .image-set .image_caption {
     margin: 19px 0 .2em;
+   
     font-weight: bold;
+    
 }
 .close-button-wrap {
     margin-top: 35px;
@@ -219,7 +224,7 @@ img {
     margin-top: 20px;
 }
 /* .gp-al-center {
-    text-align: center!important;
+    margin: 30px 0 20px;
 } */
 ul, ol {
     list-style: none;
@@ -289,6 +294,10 @@ ul, ol {
     background-color: #eff8f6;
     border-color: #d6efe9;
 }
+.image-two{
+    display:flex ;
+}
+
 .list-case a{
     color: #333;
     /* text-decoration: none; */

@@ -11,6 +11,8 @@ import RobotEyeWalker4D from '@/views/RobotEyeWalker4D/index.vue'
 import RobotEyeWalker4DExample from '@/views/RobotEyeWalker4DExample/index.vue'
 import BiForArchiCad from '@/views/BiForArchiCad/index.vue'
 import BiForArchiCadContent from '@/views/BiForArchiCadContent/index.vue'
+import AreaCalculation from '@/views/AreaCalculation/index.vue'
+import ArchiCAD from '@/views/ArchiCAD/index.vue'
 import Question from '@/views/Question/index.vue'
 import Recruit from '@/views/Recruit/index.vue'
 import Message from '@/views/Message/index.vue'
@@ -89,6 +91,16 @@ const router = createRouter({
             path: '/BiForArchiCadContent',
             component: BiForArchiCadContent,
             name: 'BiForArchiCadContent'
+        },
+        {
+            path: '/AreaCalculation',
+            component: AreaCalculation,
+            name: 'AreaCalculation'
+        },
+        {
+            path: '/ArchiCAD',
+            component: ArchiCAD,
+            name: 'ArchiCAD'
         },
         {
             path: '/Message',

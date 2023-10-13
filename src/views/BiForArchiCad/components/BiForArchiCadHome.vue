@@ -100,7 +100,7 @@ mounted:function(){
                   </div>
                   <div class="solution-category-list__detail">
                     <p class="solution-category-list__title">
-                      <router-link to="/">
+                      <router-link to="/AreaCalculation">
                       面積計算方法の概要
                     </router-link>
                     </p>
@@ -114,7 +114,7 @@ mounted:function(){
                   </div>
                   <div class="solution-category-list__detail">
                     <p class="solution-category-list__title">
-                      <router-link to="/">
+                      <router-link to="/ArchiCAD">
                       ArchiCAD サポートツール
                     </router-link>
                     </p>
@@ -129,42 +129,18 @@ mounted:function(){
          </div>
         </div>
         <p class="MessageTitle">BI For ArchiCADに関する情報はこちらからご覧いただけます。</p>
-
-        <div class="AboutText">
-          <a href="https://www.youtube.com/watch?v=eVzFSLdUh7I&t=1s&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 内装業者のための積算・発注業務革命</span>
-        </a>
-      </div>
       <div class="AboutText">
         <a href="https://www.youtube.com/watch?v=_D6q6--Xtug&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
           <span class="util-bold"> BI Structureから鉄筋発生方法</span>
         </a>
       </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/watch?v=Xwvp0RvS4nc&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">「BIMで儲ける仕組みづくりを徹底解説」建設未来フォーラム発表</span>
-        </a>
-      </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/watch?v=wMkdIrgQ-FQ&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">「BIMの自動化・最適化」で利益と品質向上につなげる仕組み作りとは</span>
-        </a>
-      </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/watch?v=wmqvkJztpnY&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">Revitデータを最適にARCHICADデータへ変換する方法</span>
-        </a>
-      </div>
+
       <div class="AboutText">
         <a href="https://www.youtube.com/watch?v=5MqjWHk78cE&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
           <span class="util-bold">超簡単！！「ALC/ECP/LGSボード最適化手法」</span>
         </a>
       </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/watch?v=I-8RBCxoTkw&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">自動化ツールの衝撃「BI For ARCHICAD」が選ばれる理由</span>
-        </a>
-      </div>
+
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/Info360">
