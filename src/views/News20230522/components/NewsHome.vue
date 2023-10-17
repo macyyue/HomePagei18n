@@ -1,15 +1,24 @@
 ﻿<script>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
+  components: {
+    Lightbox,
+  },
+  methods: {
+    openImage(src) {
+      this.$refs.lightbox.openLightbox(src);
+    },
+  },
   setup() {
     const newsTitle = ref(''); 
     const route = useRoute();
     const newsData = [
       {
-        id: '20230818',
-        title: '【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】',
+        id: '20230522',
+        title: 'Info360(web PointCloud Viewer)がリリースされました(千葉幕張メッセ CSPI-EXPOに展示します)',
       },
     ];
     onMounted(() => {
@@ -19,7 +28,6 @@ export default {
         newsTitle.value = selectedNews.title;
       }
     });
-
     return {
       newsTitle,
     };
@@ -27,6 +35,7 @@ export default {
 };
 </script>
 <template>
+  
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">
           <ol class="main-breadcrumb" >
@@ -51,11 +60,10 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】</h1>
+        <h1 class="heading1-v2__title">Info360(web PointCloud Viewer)がリリースされました(千葉幕張メッセ CSPI-EXPOに展示します)</h1>
        </div>
       </div>
-      <p class="text--right">2023年8月18日</p>
-
+      <p class="text--right">2023年5月22日</p>
       <p class="text">
             革新的Web情報共有システム「Info360Ⓡ」に新機能追加 <br><br>
             「Info360Ⓡ」のベータ版を昨年10月から、ゼネコン様、設計事務所様、専門工事会社様などの多くの方々にTESTをいただき意見交換を重ねることで、修正および機能追加をしてきました。
@@ -69,8 +77,9 @@ export default {
             <div class="image-wrap--center">
             <figure class="image">
             <div class="image__frame">
-              <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-Concept.png" rel="lightbox[1486]">
-              <img src="@/assets/image/NewsHome20230818/Info360.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド1-1.png')">
+              <img src="@/assets/image/News20230522/スライド1-1.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
             </a>
             </div>
             <figcaption class="image__caption">Web情報共有システム</figcaption>
@@ -81,18 +90,19 @@ export default {
             <div class="image-wrap--center">
             <figure class="image">
             <div class="image__frame">
-              <a href="https://us-factory.jp/wp-content/uploads/2023/08/高さー360度.png" rel="lightbox[1486]">
-              <img src="@/assets/image/NewsHome20230818/360映像.png" alt="オフィス内の様子" style="width: 750px; max-width: 100%;">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド2-1.png')">
+              <img src="@/assets/image/News20230522/スライド2-1.png" alt="" style="width: 300px; max-width: 100%;">
             </a>
             </div>
             <figcaption class="image__caption" >
-              <a href="https://tools.us-factory.jp/pcv/guest/cont/64c3186983762" rel="noopener" target="_blank" class="button__type" >
-               <span class="button__label">Info360 Sample Page はこちら</span> 
+              <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" rel="noopener" target="_blank" class="button__type" >
+               <span class="button__label">Info360パンフレットはこちら</span> 
               </a>
             </figcaption>
           </figure>
             </div>
             </div>
+
             <div class="image-wrap--center"></div>
       </div>
        <!-- 機能追加のご紹介 -->
@@ -162,7 +172,9 @@ export default {
             <div class="image-wrap">
             <figure class="image">
               <div class="image__frame">
+                <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png" rel="lightbox[1486]">
                 <img src="@/assets/image/NewsHome20230818/jimusyo-1.png" alt="" style="width: 320px; max-width: 100%;">
+              </a>
               </div>
               </figure>
             </div>
@@ -171,7 +183,9 @@ export default {
           <div class="image-wrap">
           <figure class="image">
           <div class="image__frame">
+            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png" rel="lightbox[1486]">
             <img src="@/assets/image/NewsHome20230818/jimusyo-2.png" alt="" style="width: 320px; max-width: 100%;">
+          </a>
           </div>
           </figure>
           </div>
@@ -180,9 +194,9 @@ export default {
           <div class="image-wrap">
           <figure class="image">
           <div class="image__frame">
-
+            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png" rel="lightbox[1486]">
             <img src="@/assets/image/NewsHome20230818/jimusyo-3.png" alt="" style="width: 320px; max-width: 100%;">
-
+          </a>
           </div>
           </figure>
           </div>

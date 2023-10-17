@@ -1,5 +1,4 @@
-﻿
-<script>
+﻿<script>
 export default{
     methods: {
 //跳转方法 
@@ -15,10 +14,8 @@ export default{
             this.$router.push({ path: page }); 
          } 
      }, 
- },
-
+  },
 }
-
 </script>
 
 <template>  

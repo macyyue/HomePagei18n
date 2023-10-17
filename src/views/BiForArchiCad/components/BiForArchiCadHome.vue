@@ -1,22 +1,26 @@
 ﻿<script>
 export default{
   methods: {
-    goAnchor(selector) {
-		let anchor = this.$el.querySelector(selector)
-		document.documentElement.scrollTop = anchor.offsetTop 
-	}
-},
-mounted:function(){
-	this.$nextTick(()=> {
-        this.goAnchor(window.location.hash)
-	})
-},
-
-
+    goAnchor(hash) {
+      if (hash) {
+        // 使用 document.querySelector(hash) 来查找具有指定哈希值的元素
+        const anchor = document.querySelector(hash);
+        if (anchor) {
+          // 平滑滚动到该元素
+          anchor.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }
+  },
+  mounted() {
+    // this.$nextTick() 方法确保在 Vue 实例已经渲染完毕后执行回调函数
+    this.$nextTick(() => {
+      // 检查当前 URL 中的哈希值，并尝试滚动到匹配的元素
+      this.goAnchor(window.location.hash);
+    });
+  },
 };
 </script>
-
-
 <template>
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">

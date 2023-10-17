@@ -13,6 +13,11 @@ import BiForArchiCad from '@/views/BiForArchiCad/index.vue'
 import BiForArchiCadContent from '@/views/BiForArchiCadContent/index.vue'
 import AreaCalculation from '@/views/AreaCalculation/index.vue'
 import ArchiCAD from '@/views/ArchiCAD/index.vue'
+import ResultsMedia from '@/views/ResultsMedia/index.vue'
+import Media20220901 from '@/views/Media20220901/index.vue'
+import Media20180904 from '@/views/Media20180904/index.vue'
+import Media20161014 from '@/views/Media20161014/index.vue'
+import Media20160205 from '@/views/Media20160205/index.vue'
 import Question from '@/views/Question/index.vue'
 import Recruit from '@/views/Recruit/index.vue'
 import Message from '@/views/Message/index.vue'
@@ -25,6 +30,7 @@ import News from '@/views/News/index.vue'
 import Login from '@/views/Login/index.vue'
 import News20230611 from '@/views/News20230611/index.vue'
 import News20230818 from '@/views/News20230818/index.vue'
+import News20230522 from '@/views/News20230522/index.vue'
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
 
@@ -103,11 +109,34 @@ const router = createRouter({
             name: 'ArchiCAD'
         },
         {
+            path: '/ResultsMedia',
+            component: ResultsMedia,
+            name: 'ResultsMedia'
+        },
+        {
+            path: '/results/:id',
+            component: Media20220901,
+            name: 'Media20220901'
+        },
+        {
+            path: '/results/:id',
+            component: Media20180904,
+            name: 'Media20180904'
+        },
+        {
+            path: '/results/:id',
+            component: Media20161014,
+            name: 'Media20161014'
+        },
+        {
+            path: '/results/:id',
+            component: Media20160205,
+            name: 'Media20160205'
+        },
+        {
             path: '/Message',
             component: Message
         },
-
-
         {
             path: '/Careers',
             component: Careers
@@ -142,6 +171,12 @@ const router = createRouter({
             path: '/news/:id',
             name: 'News20230611',
             component: News20230611,
+            props: true,
+        },
+        {
+            path: '/news/:id',
+            name: 'News20230522',
+            component: News20230522,
             props: true,
         },
 

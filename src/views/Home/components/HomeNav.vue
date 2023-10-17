@@ -80,7 +80,7 @@ export default {
         </li>
     </ul>
     <ul class="navList">
-        <li class="menuItem"><router-link to="">実績掲載</router-link></li>
+        <li class="menuItem"><router-link to="/ResultsMedia">実績掲載</router-link></li>
     </ul>
     <ul class="navList">
         <li class="menuItem"><router-link to="/News">ニュース</router-link></li>
