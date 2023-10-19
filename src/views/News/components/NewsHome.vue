@@ -1,15 +1,13 @@
 ﻿<script>
+
 export default {
   data() {
     return {
       newsList: [
-        // 你的新闻列表数据
         {
-          id: 1,
-          title: '新闻标题 1',
-          // 其他新闻信息
+          id: '1',
+          title: '',
         },
-        // 添加更多新闻
       ],
     };
   },
@@ -71,7 +69,7 @@ export default {
                
                 <div class="news__caption">
                   <h3 class="news__title" > 
-                    <router-link :to="{ name: 'News20230818', params: { id: 20230818 } }" class="override-link-style">
+                    <router-link :to="{ name: 'News20230818', params: { id: '20230818' } }" class="override-link-style">
                       【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】
                     </router-link>
                   </h3>
@@ -91,7 +89,7 @@ export default {
                 <div class="news__caption">
 
                   <h3 class="news__title">
-                    <router-link :to="{ name: 'News20230611', params: { id: 20230611 } }" class="override-link-style">
+                    <router-link :to="{ name: 'News20230611', params: { id: '20230611' } }" class="override-link-style">
                     必見！！「超初めてのArchicad操作法」を無料公開
                   </router-link>
                   </h3>
@@ -107,7 +105,7 @@ export default {
                   <div class="news__category"><i class="util-badge--cat1612">イベント</i></div>
                 </div>
                 <div class="news__caption">
-                <router-link :to="{ name: 'News20230522', params: { id: 20230522 } }" class="override-link-style">
+                <router-link :to="{ name: 'News20230522', params: { id: '20230522' } }" class="override-link-style">
                   <h3 class="news__title">Info360（web PointCloud Viewer）がリリースされました（千葉幕張メッセ CSPI-EXPOに展示します）</h3>
                 </router-link>
 

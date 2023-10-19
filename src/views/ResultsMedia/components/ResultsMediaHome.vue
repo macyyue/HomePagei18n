@@ -59,7 +59,7 @@ export default {
         
         <div class="news" data-news-pc="row">
           <article class="news__article">
-            <a href="/news/2023/230804_9604.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-08-04">2022年09月01日</time>
@@ -79,7 +79,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230802_9610.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-08-02">2018年09月04日</time>
@@ -97,7 +97,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230726_9607.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-07-26">2016年10月14日</time>
@@ -115,7 +115,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="https://kurashi-machi.taisei-techsolu.jp/news/2023/0720_1135.html" target="_blank" rel="noopener" class="news__type--blank">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-07-20">2016年02月05日</time>
@@ -132,7 +132,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230719_9586.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-07-19">2015年07月08日</time>
@@ -145,7 +145,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230712_9590.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-07-12">2015年04月01日</time>
@@ -158,7 +158,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230711_9591.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-07-11">2014年04月08日</time>
@@ -171,7 +171,7 @@ export default {
             </a>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230620_9574.html" class="news__type">
+            <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
                   <time class="news__date" datetime="2023-06-20">2014年02月12日</time>

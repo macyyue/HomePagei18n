@@ -1,8 +1,9 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 export default {
+  props: ['id'],
   setup() {
     const newsTitle = ref(''); 
     const route = useRoute();
@@ -12,20 +13,28 @@ export default {
         title: '必見！！「超初めてのArchicad操作法」を無料公開',
       },
     ];
-    onMounted(() => {
+
+    const updateNewsTitle = () => {
       const newsId = route.params.id;
       const selectedNews = newsData.find((news) => news.id === newsId);
       if (selectedNews) {
         newsTitle.value = selectedNews.title;
       }
-    });
+    };
 
+    onMounted(updateNewsTitle);
+
+    watch(() => route.params.id, () => {
+      updateNewsTitle();
+    });
+    
     return {
       newsTitle,
     };
   },
 };
 </script>
+
 <template>
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">

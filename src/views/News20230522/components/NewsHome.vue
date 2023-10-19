@@ -64,28 +64,34 @@ export default {
        </div>
       </div>
       <p class="text--right">2023年5月22日</p>
+      <div class="heading2">
+          <div class="heading2__inner">
+          <h2 class="heading2__title">開発コンセプトのご紹介</h2>
+         </div>
+        </div>
       <p class="text">
-            革新的Web情報共有システム「Info360Ⓡ」に新機能追加 <br><br>
-            「Info360Ⓡ」のベータ版を昨年10月から、ゼネコン様、設計事務所様、専門工事会社様などの多くの方々にTESTをいただき意見交換を重ねることで、修正および機能追加をしてきました。
-            様々なご要望等の意見を集約することで、コンセプトが明確となり、実践的に活用できるものになってきました。
+        開発コンセプトは「①早い」「②正確」「③現地で共有」を目指しました。 <br><br>
+        現在、点群計測をしたけれども、活用方法に悩んでいる会社様が多いのではないでしょうか。点群データはデータサイズが大きく、取り扱いが大変なだけでなく、そのデータを相手に渡しても見てくれない問題が多く発生しています。
+        これでは、せっかく良い機材で点群計測しても、宝の持ち腐れになってしまいます。一番の問題は、専用のビューワーを各パソコンにインストールしないとみれないことです。
+        そこで、インストール不要のWeb共有ツールを提供する運びとなりました。
+
         </p>
-      <p class="text">
-        点群をクラウドにアップロードするだけで即座にモデリングするとともに、３６０度画像、３次元設計データ、ＰＤＦ、写真データなどを一元的に管理する。共有したいデータを登録し、ＵＲＬを関係者に送信することで、専用アプリをインストールすることなく手軽に現場で閲覧できることが特徴です。
-      </p>
       <div class="column generator-column" data-col-pc="2" data-col-sp="1" style="text-align: center;">
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
+                <!-- 図⑴ -->
             <div class="image__frame">
               <Lightbox ref="lightbox" />
               <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド1-1.png')">
               <img src="@/assets/image/News20230522/スライド1-1.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
             </a>
             </div>
-            <figcaption class="image__caption">Web情報共有システム</figcaption>
+            <!-- <figcaption class="image__caption">Web情報共有システム</figcaption> -->
           </figure>
             </div>
             </div>
+            <!-- 図⑵ -->
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
@@ -94,113 +100,186 @@ export default {
               <img src="@/assets/image/News20230522/スライド2-1.png" alt="" style="width: 300px; max-width: 100%;">
             </a>
             </div>
-            <figcaption class="image__caption" >
+            <!-- <figcaption class="image__caption" >
               <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" rel="noopener" target="_blank" class="button__type" >
                <span class="button__label">Info360パンフレットはこちら</span> 
               </a>
-            </figcaption>
+            </figcaption> -->
           </figure>
             </div>
             </div>
-
+            <!-- 図⑶ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド3-1.png')">
+              <img src="@/assets/image/News20230522/スライド3-1.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑷ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド4-1.png')">
+              <img src="@/assets/image/News20230522/スライド4-1.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
             <div class="image-wrap--center"></div>
       </div>
-       <!-- 機能追加のご紹介 -->
+
+       <!--複数のプロジェクトのご紹介 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">機能追加のご紹介</h2>
+          <h2 class="heading2__title">複数のプロジェクトのご紹介</h2>
          </div>
         </div>
         <p class="text">
-                中でも、今回新たに機能追加した部分は、改修工事や増築工事が多い中で、古い図面（手書き図）をPDFにしたものを「Info360Ⓡ」の3D空間上に出現させ、現況と比較できることを実現しました。<br><br>
-                今回、新たに「Building Plan PDF Converter」というWebアプリを開発したことにより、古い図面を3D空間上に切り出す手順として、①PDFを読み込み ②各フロアの範囲を切り出し ③原点及びスケール調整とフロア高さ設定することで、登録されたPDFを「Info36oⓇ」上で表現し、3Dモデル化することなく、短時間でイメージを共有することを可能とした。<br><br>
-                登録されたPDFを「Info36oⓇ」上で表現し、3Dモデル化することなく、短時間でイメージを共有することを可能とした。
+          管理者は複数のプロジェクトを持つことができ、その中にコンテンツを登録するという、設計事務所、ゼネコンでの活用を見込んでいます。
+          また、改修工事においては、360度画像を簡単に登録できるため、点群では確認できない部分も、追加で補完することができます。
+          実際に左右どちらの画面を触っても同じように回転移動するので、とてもイメージしやすくなります。
           </p>
-       <div class="column generator-column" data-col-pc="3" data-col-sp="4">
-          <div class="column__item item__image01">
-            <div class="image-wrap">
+          <!-- 図⑴ -->
+          <div class="column__item">
+            <div class="image-wrap--center">
             <figure class="image">
-              <div class="image__frame">
-                <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png" rel="lightbox[1486]">
-                <img src="@/assets/image/NewsHome20230818/Info360-PDF01.png" alt="" style="width: 320px; max-width: 100%;">
-              </a>
-              <figcaption class="image__caption">Building Plan PDF Converter</figcaption>
-              </div>
-              </figure>
-            </div>
-          </div>
-          <div class="column__item item__image02">
-          <div class="image-wrap">
-          <figure class="image">
-          <div class="image__frame">
-            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png" rel="lightbox[1486]">
-            <img src="@/assets/image/NewsHome20230818/Info360-PDF02.png" alt="" style="width: 320px; max-width: 100%;">
-          </a>
-          <figcaption class="image__caption" >
-            <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" rel="noopener" target="_blank" class="button__type" >
-            <span class="button__label">Info360パンフはこちら</span> 
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド15.png')">
+              <img src="@/assets/image/News20230522/スライド15.png" alt="" style="width: 300px; max-width: 100%;">
             </a>
-            </figcaption>
-          </div>
-          </figure>
-          </div>
             </div>
-          <div class="column__item item__image03">
-          <div class="image-wrap">
-          <figure class="image">
-          <div class="image__frame">
-            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png" rel="lightbox[1486]">
-            <img src="@/assets/image/NewsHome20230818/Info360-PDF03.png" alt="" style="width: 450px; max-width: 100%;">
-          </a>
-          </div>
           </figure>
-          </div>
-          </div>
-        </div>
-        <!-- U’sFactory祝10周年 -->
+            </div>
+            </div>
+        <!-- 活用できる機能のご紹介 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">U’sFactory祝10周年</h2>
+          <h2 class="heading2__title">活用できる機能のご紹介</h2>
          </div>
         </div>
         <p class="text">
-          おかげ様で、U’sFactoryは2013年8月20日に創業し、10周年を迎えました。社員数は2023年8月現在で、11人パートタイマー10人アルバイト2~4名の総勢26人体制となっています。<br><br>
-          また、昨年末には事務所を移転し、作業環境の向上を図る上で、社員自らが内装設計・施工を実施し創意工夫と自由な職場づくりを体験しました。
+          点群計測されているため、「メジャー計測機能」「IFCデータ比較」「Clip表示」「オルソ画像出力」といった現場ですぐに活用できる機能が満載です。
+
           </p>
        <div class="column generator-column" data-col-pc="3" data-col-sp="4">
-          <div class="column__item item__image01">
-            <div class="image-wrap">
+            <!-- 図⑴ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
             <figure class="image">
-              <div class="image__frame">
-                <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png" rel="lightbox[1486]">
-                <img src="@/assets/image/NewsHome20230818/jimusyo-1.png" alt="" style="width: 320px; max-width: 100%;">
-              </a>
-              </div>
-              </figure>
+            <div class="image__frame">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド5-1.png')">
+              <img src="@/assets/image/News20230522/スライド5-1.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
+            </a>
             </div>
-          </div>
-          <div class="column__item item__image02">
-          <div class="image-wrap">
-          <figure class="image">
-          <div class="image__frame">
-            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png" rel="lightbox[1486]">
-            <img src="@/assets/image/NewsHome20230818/jimusyo-2.png" alt="" style="width: 320px; max-width: 100%;">
-          </a>
-          </div>
+            <!-- <figcaption class="image__caption">Web情報共有システム</figcaption> -->
           </figure>
-          </div>
             </div>
-          <div class="column__item item__image03">
-          <div class="image-wrap">
-          <figure class="image">
-          <div class="image__frame">
-            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png" rel="lightbox[1486]">
-            <img src="@/assets/image/NewsHome20230818/jimusyo-3.png" alt="" style="width: 320px; max-width: 100%;">
-          </a>
-          </div>
+            </div>
+            <!-- 図⑵ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド8-1.png')">
+              <img src="@/assets/image/News20230522/スライド8-1.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
           </figure>
-          </div>
-          </div>
+            </div>
+            </div>
+            <!-- 図⑶ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド9-1.png')">
+              <img src="@/assets/image/News20230522/スライド9-1.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑷ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド10-1.png')">
+              <img src="@/assets/image/News20230522/スライド10-1.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+           <!-- 図⑸ -->
+             <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド11.png')">
+              <img src="@/assets/image/News20230522/スライド11.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑹ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド12.png')">
+              <img src="@/assets/image/News20230522/スライド12.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑺-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド13.png')">
+              <img src="@/assets/image/News20230522/スライド13.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑻ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド14.png')">
+              <img src="@/assets/image/News20230522/スライド14.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑼ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/05/スライド16.png')">
+              <img src="@/assets/image/News20230522/スライド16.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            
         </div>
         <!-- 展示関連情報 -->
         <div class="heading2">
@@ -209,8 +288,13 @@ export default {
          </div>
         </div>
         <h3 class="AboutText">
-          <a href="https://www.japan-build.jp/osaka/ja-jp/about/previous.html" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 第7回 JAPAN BUILD OSAKA－建築の先端技術展（建築DX展HP）</span>
+          <a href="https://www.youtube.com/watch?v=YQeaFC0zXXs&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link-Youtube--blank">
+          <span class="util-bold"> info360 PointCloud viewer</span>
+        </a>
+      </h3>
+      <h3 class="AboutText">
+          <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" target="_blank" rel="noopener" class="util-link--blank">
+          <span class="util-bold"> Info360パンフレットはこちら</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
@@ -289,7 +373,7 @@ body *, body :after, body :before {
     font-weight: 500;
 }
 .text--right {
-    margin: 10em 0 0;
+    margin: 6em 0 0;
     text-align: right;
 }
 .text, .text--center, .text--right {
@@ -352,6 +436,7 @@ body *, body :after, body :before {
 }
 .image__frame, .image a.image__frame, .image a.image__frame--modal {
     display: inline-block;
+    cursor:pointer;
 }
 [data-col-pc]:not([data-col-pc=auto])>* {
     margin-top: 1.25em;
@@ -390,9 +475,9 @@ a.button__type:hover{
   color: #333;
 }
 .AboutText{
-    display: inline-block;
+    display: block;
     position: relative;
-    vertical-align: middle;
+    margin-bottom: 1em;
     content: ""; 
 }
 .AboutText a{
@@ -401,6 +486,20 @@ a.button__type:hover{
 .util-bold{
   font-weight: 700!important;
   
+}
+.util-link-Youtube--blank:after{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  top: -2px;
+  margin: 0 .5em;
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+}
+.util-link-Youtube--blank:after {
+    background: url(@/assets/image/Info360/NewsYoutebe.svg) no-repeat 0 0;
+    color: rgb(51, 51, 51);
 }
 .util-link--blank:after{
   position: relative;

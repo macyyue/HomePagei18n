@@ -33,6 +33,7 @@ import News20230818 from '@/views/News20230818/index.vue'
 import News20230522 from '@/views/News20230522/index.vue'
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
+// import { compile } from 'vue'
 
 const router = createRouter({
     history: createWebHistory(
@@ -53,12 +54,7 @@ const router = createRouter({
             path: '/Access',
             component: Access
         },
-        {
-            path: '/News',
-            name: 'News',
-            component: News,
 
-        },
         {
             path: '/Question',
             component: Question
@@ -160,26 +156,35 @@ const router = createRouter({
             name: 'ConfirmationPage',
             component: ConfirmationPage
         },
-
         {
-            path: '/news/:id',
+            path: '/News',
+            name: 'News',
+            component: News,
+        },
+        {
+            path: '/News/:id',
             name: 'News20230818',
             component: News20230818,
             props: true,
         },
         {
-            path: '/news/:id',
+            path: '/News/:id',
             name: 'News20230611',
             component: News20230611,
             props: true,
         },
         {
-            path: '/news/:id',
+            path: '/News/:id',
             name: 'News20230522',
             component: News20230522,
             props: true,
         },
-
+        // {
+        //     path: '/news/:id',
+        //     name: 'NewsDetail',
+        //     component: NewsDetail,
+        //     props: true,
+        // },
         {
             path: '/Login',
             name: 'Login',

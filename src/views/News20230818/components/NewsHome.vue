@@ -1,8 +1,18 @@
 ﻿<script>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
+  
+  components: {
+    Lightbox,
+  },
+  methods: {
+    openImage(src) {
+      this.$refs.lightbox.openLightbox(src);
+    },
+  },
   setup() {
     const newsTitle = ref(''); 
     const route = useRoute();
@@ -19,6 +29,7 @@ export default {
         newsTitle.value = selectedNews.title;
       }
     });
+
 
     return {
       newsTitle,
@@ -65,11 +76,13 @@ export default {
         点群をクラウドにアップロードするだけで即座にモデリングするとともに、３６０度画像、３次元設計データ、ＰＤＦ、写真データなどを一元的に管理する。共有したいデータを登録し、ＵＲＬを関係者に送信することで、専用アプリをインストールすることなく手軽に現場で閲覧できることが特徴です。
       </p>
       <div class="column generator-column" data-col-pc="2" data-col-sp="1" style="text-align: center;">
-            <div class="column__item">
+          <div class="column__item">
             <div class="image-wrap--center">
-            <figure class="image">
+              <figure class="image">
+                <!-- 図⑴ -->
             <div class="image__frame">
-              <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-Concept.png" rel="lightbox[1486]">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2023/08/Info360-Concept-768x758.png')">
               <img src="@/assets/image/NewsHome20230818/Info360.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
             </a>
             </div>
@@ -77,11 +90,12 @@ export default {
           </figure>
             </div>
             </div>
+            <!-- 図⑵ -->
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
             <div class="image__frame">
-              <a href="https://us-factory.jp/wp-content/uploads/2023/08/高さー360度.png" rel="lightbox[1486]">
+              <a @click="openImage (' https://us-factory.jp/wp-content/uploads/2023/08/高さー360度-1024x508.png')">
               <img src="@/assets/image/NewsHome20230818/360映像.png" alt="オフィス内の様子" style="width: 750px; max-width: 100%;">
             </a>
             </div>
@@ -110,8 +124,9 @@ export default {
           <div class="column__item item__image01">
             <div class="image-wrap">
             <figure class="image">
+              <!-- 図⑶ -->
               <div class="image__frame">
-                <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png" rel="lightbox[1486]">
+                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png')">
                 <img src="@/assets/image/NewsHome20230818/Info360-PDF01.png" alt="" style="width: 320px; max-width: 100%;">
               </a>
               <figcaption class="image__caption">Building Plan PDF Converter</figcaption>
@@ -122,8 +137,9 @@ export default {
           <div class="column__item item__image02">
           <div class="image-wrap">
           <figure class="image">
+            <!-- 図⑷ -->
           <div class="image__frame">
-            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png" rel="lightbox[1486]">
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png')" >
             <img src="@/assets/image/NewsHome20230818/Info360-PDF02.png" alt="" style="width: 320px; max-width: 100%;">
           </a>
           <figcaption class="image__caption" >
@@ -138,8 +154,9 @@ export default {
           <div class="column__item item__image03">
           <div class="image-wrap">
           <figure class="image">
+            <!-- 図⑸ -->
           <div class="image__frame">
-            <a href="https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png" rel="lightbox[1486]">
+            <a  @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png')" >
             <img src="@/assets/image/NewsHome20230818/Info360-PDF03.png" alt="" style="width: 450px; max-width: 100%;">
           </a>
           </div>
@@ -161,8 +178,11 @@ export default {
           <div class="column__item item__image01">
             <div class="image-wrap">
             <figure class="image">
+              <!-- 図⑹ -->
               <div class="image__frame">
+                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-1.png')">
                 <img src="@/assets/image/NewsHome20230818/jimusyo-1.png" alt="" style="width: 320px; max-width: 100%;">
+              </a>
               </div>
               </figure>
             </div>
@@ -170,8 +190,11 @@ export default {
           <div class="column__item item__image02">
           <div class="image-wrap">
           <figure class="image">
+            <!-- 図⑺ -->
           <div class="image__frame">
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-2.png')">
             <img src="@/assets/image/NewsHome20230818/jimusyo-2.png" alt="" style="width: 320px; max-width: 100%;">
+            </a>
           </div>
           </figure>
           </div>
@@ -179,10 +202,11 @@ export default {
           <div class="column__item item__image03">
           <div class="image-wrap">
           <figure class="image">
+            <!-- 図⑻ -->
           <div class="image__frame">
-
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-3.png')">
             <img src="@/assets/image/NewsHome20230818/jimusyo-3.png" alt="" style="width: 320px; max-width: 100%;">
-
+          </a>
           </div>
           </figure>
           </div>
@@ -338,6 +362,7 @@ body *, body :after, body :before {
 }
 .image__frame, .image a.image__frame, .image a.image__frame--modal {
     display: inline-block;
+    cursor:pointer;
 }
 [data-col-pc]:not([data-col-pc=auto])>* {
     margin-top: 1.25em;
@@ -430,5 +455,13 @@ a.button__type:hover{
     display: inline-block;
     text-decoration: none;
 }
-
+.lightbox-image {
+  max-width: 250px; 
+  max-height: 50%; 
+}
+.small-click-area{
+  position: relative;
+  display: inline-block;
+  padding: 50px;
+}
 </style>

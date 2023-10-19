@@ -50,14 +50,13 @@
   }
   
   .close-button {
+    position: fixed;
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 25px;
-    position: absolute;
-    top: 80px;
-    right: 268px;
+    font-size: 23px;
     color: blue;
+    margin: -27px -17px;
   }
   </style>
   
