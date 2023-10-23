@@ -1,15 +1,24 @@
 ﻿<script>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
+  components: {
+    Lightbox,
+  },
+  methods: {
+    openImage(src) {
+      this.$refs.lightbox.openLightbox(src);
+    },
+  },
   setup() {
     const newsTitle = ref(''); 
     const route = useRoute();
     const newsData = [
       {
-        id: '20180904',
-        title: 'GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました',
+        id: '20221228',
+        title: '内装業者のための積算・発注業務革命とは',
       },
     ];
     onMounted(() => {
@@ -19,7 +28,6 @@ export default {
         newsTitle.value = selectedNews.title;
       }
     });
-
     return {
       newsTitle,
     };
@@ -27,6 +35,7 @@ export default {
 };
 </script>
 <template>
+  
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">
           <ol class="main-breadcrumb" >
@@ -36,7 +45,7 @@ export default {
                </router-link>
             </li>
             <li>
-              <router-link to="/ResultsMedia" class="override-link-style">
+              <router-link to="/News" class="override-link-style">
               <span class="main-breadcrumb__type--nolink">更新一覧</span>
             </router-link>
             </li>
@@ -51,50 +60,74 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました</h1>
+        <h1 class="heading1-v2__title">内装業者のための積算・発注業務革命とは</h1>
        </div>
       </div>
-      <p class="text--right">2018年9月4日</p>
-
+      <p class="text--right">2022年12月28日</p>
+      <div class="heading2">
+          <div class="heading2__inner">
+          <h2 class="heading2__title">開発コンセプトのご紹介</h2>
+         </div>
+        </div>
       <p class="text">
-        2018年9月4日（東京）、9月7日（大阪）で開催されたGRAPHISOFT JAPAN BIM CONFERENCE 2018には、両会場合わせて約700名のお客様にご来場いただきました。
-        </p>
-<div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
-        <div class="column__item item__text">
-        <p class="text" style="padding-top: 30px;">
-          ARCHICAD 22プレゼンテーションも豊富なデモを実際にご覧いただきさらに進化したARCHICADの新機能をじっくりとご覧いただきました。</p>
-        <p class="text">
-          会場展示エリアでは30社に出展いただき、こちらも多くのお客様で大盛況となりました。
-        </p>
-        </div>
-
-        <!--左テキスト ここまで--> <!--右YouTube ここから-->
-        <div class="column__item item__image01">
-        <div class="image-wrap--center">
-        <figure class="image">
-        <div class="item-movie">
-          <img src="@/assets/image/Media20180904/BIMConference2018.jpg" alt=""  width="534" height="390" >
-        </div>
-        </figure>
-        </div>
-        </div>
-        </div>
-
+      内装工事におけるLGS/ボード工事はすべてのプロジェクトにおいて必須作業です。
+      しかしながら、事前に調整をしっかりとしないと現場が大変なことになります。<br><br>
+      &nbsp;&nbsp;&nbsp;◆仕上施工図（開口補強位置/設備スリーブ/下地補強鉄板/ボードの種類/厚み）
+      ⇒墨出し ⇒LGSスタッド ⇒下地補強・設備配管 ⇒ボード貼り<br><br>
+      これらはすべて、積算・発注作業が煩雑で、内装業者の多くは手作業で行っていることが実情です。
+      この大変な作業を一気通貫に行える仕組みを構築しました。
+      それが「内装業者のための積算・発注業務革命」です。</p>
+      <div class="column generator-column" data-col-pc="2" data-col-sp="1" style="text-align: center;">
+        <div class="column__item">
+          <Lightbox ref="lightbox" />
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/12/スライド1.png')">
+              <img src="@/assets/image/News20221228/スライド1.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+            <!-- <figcaption class="image__caption" >
+              <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" rel="noopener" target="_blank" class="button__type" >
+               <span class="button__label">Info360パンフレットはこちら</span> 
+              </a>
+            </figcaption> -->
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑵ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/12/スライド2.png')">
+              <img src="@/assets/image/News20221228/スライド2.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+            <!-- <figcaption class="image__caption" >
+              <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" rel="noopener" target="_blank" class="button__type" >
+               <span class="button__label">Info360パンフレットはこちら</span> 
+              </a>
+            </figcaption> -->
+          </figure>
+            </div>
+            </div>
+            <div class="image-wrap--center"></div>
+      </div>
         <!-- 展示関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">展示関連情報</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>イベントの詳細内容はこちら ▼</p>
-          <a href="https://graphisoft.com/jp/event-report/201809_ac22_launch" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> GRAPHISOFT JAPAN BIM CONFERENCE 2018</span>
+          <a href="https://www.youtube.com/watch?v=eVzFSLdUh7I&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link-Youtube--blank">
+          <span class="util-bold">内装業者のための積算・発注業務革命</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
-            <router-link to="/ResultsMedia">
+            <router-link to="/News">
             <a href="" class="button-v2__type">
               <span class="button-v2__label">一覧へ戻る</span>
             </a>
@@ -226,14 +259,12 @@ body *, body :after, body :before {
     vertical-align: top;
     border-style: none;
 }
-.image-media02{
-  margin-top: 10px;
-}
 .image {
     margin: 0;
 }
 .image__frame, .image a.image__frame, .image a.image__frame--modal {
     display: inline-block;
+    cursor:pointer;
 }
 [data-col-pc]:not([data-col-pc=auto])>* {
     margin-top: 1.25em;
@@ -263,11 +294,9 @@ a.button__type{
     color: #fff;
     line-height: 1.4em;
     text-decoration: none;
-    margin-top: 20px;
 }
 .button__label {
     display: inline-block;
-    
 }
 a.button__type:hover{
   background-color:#fff;
@@ -277,18 +306,28 @@ a.button__type:hover{
     display: block;
     position: relative;
     margin-bottom: 1em;
-    content: "";
+    content: ""; 
 }
 .AboutText a{
   color: #333;
 }
-.AboutText p{
-  padding: 10px 0;
-}
 .util-bold{
-  font-weight: 550!important;
-  font-size: 1rem;
+  font-weight: 700!important;
   
+}
+.util-link-Youtube--blank:after{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  top: -2px;
+  margin: 0 .5em;
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+}
+.util-link-Youtube--blank:after {
+    background: url(@/assets/image/Info360/NewsYoutebe.svg) no-repeat 0 0;
+    color: rgb(51, 51, 51);
 }
 .util-link--blank:after{
   position: relative;

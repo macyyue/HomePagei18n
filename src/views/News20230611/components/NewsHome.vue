@@ -65,7 +65,7 @@ export default {
       </div>
       <p class="text--right">2023年6月11日</p>
        
-      <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
+      <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1">
         <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">そろそろ、3DCADを覚えてみようかなという方<br>
           とにかく簡単にArchicadを理解したい方 <br>
@@ -76,7 +76,6 @@ export default {
         </p>
         </div>
 
-        <!--左テキスト ここまで--> <!--右YouTube ここから-->
         <div class="column__item item__image01">
         <div class="image-wrap--center">
         <figure class="image">

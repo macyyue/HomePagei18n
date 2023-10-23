@@ -1,31 +1,50 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import Lightbox from '@/views/LightBox/LightBox.vue'
+
 
 export default {
+  props: ['id'],
+  components: {
+    Lightbox,
+  },
+  methods: {
+    openImage(src) {
+      this.$refs.lightbox.openLightbox(src);
+    },
+  },
   setup() {
     const newsTitle = ref(''); 
     const route = useRoute();
     const newsData = [
       {
-        id: '20180904',
-        title: 'GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました',
+        id: '20230214',
+        title: '「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました',
       },
     ];
-    onMounted(() => {
+
+    const updateNewsTitle = () => {
       const newsId = route.params.id;
       const selectedNews = newsData.find((news) => news.id === newsId);
       if (selectedNews) {
         newsTitle.value = selectedNews.title;
       }
-    });
+    };
 
+    onMounted(updateNewsTitle);
+
+    watch(() => route.params.id, () => {
+      updateNewsTitle();
+    });
+    
     return {
       newsTitle,
     };
   },
 };
 </script>
+
 <template>
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">
@@ -36,7 +55,7 @@ export default {
                </router-link>
             </li>
             <li>
-              <router-link to="/ResultsMedia" class="override-link-style">
+              <router-link to="/News" class="override-link-style">
               <span class="main-breadcrumb__type--nolink">更新一覧</span>
             </router-link>
             </li>
@@ -51,50 +70,44 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました</h1>
+        <h1 class="heading1-v2__title">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</h1>
        </div>
       </div>
-      <p class="text--right">2018年9月4日</p>
-
-      <p class="text">
-        2018年9月4日（東京）、9月7日（大阪）で開催されたGRAPHISOFT JAPAN BIM CONFERENCE 2018には、両会場合わせて約700名のお客様にご来場いただきました。
-        </p>
-<div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
-        <div class="column__item item__text">
+      <p class="text--right">2023年2月14日</p>
+       
+      <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">
-          ARCHICAD 22プレゼンテーションも豊富なデモを実際にご覧いただきさらに進化したARCHICADの新機能をじっくりとご覧いただきました。</p>
-        <p class="text">
-          会場展示エリアでは30社に出展いただき、こちらも多くのお客様で大盛況となりました。
-        </p>
+          BI For Archicadでは、何ができるの？<br>
+          という説明に必要な資料をこちらにまとめました。 <br>
+          詳細説明が必要な方は、関連情報ご覧ください。</p>
         </div>
-
-        <!--左テキスト ここまで--> <!--右YouTube ここから-->
-        <div class="column__item item__image01">
+      <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1" style="text-align: center;">
         <div class="image-wrap--center">
+          <Lightbox ref="lightbox" />
         <figure class="image">
-        <div class="item-movie">
-          <img src="@/assets/image/Media20180904/BIMConference2018.jpg" alt=""  width="534" height="390" >
+        <div class="item-image">
+          <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2023/02/スライド1.png')">
+            <img src="@/assets/image/News20230214/スライド1.png" alt="" >
+            </a>
         </div>
         </figure>
         </div>
         </div>
-        </div>
-
-        <!-- 展示関連情報 -->
+      
+        <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
           <h2 class="heading2__title">関連情報</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>イベントの詳細内容はこちら ▼</p>
-          <a href="https://graphisoft.com/jp/event-report/201809_ac22_launch" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> GRAPHISOFT JAPAN BIM CONFERENCE 2018</span>
+          <a href="https://us-factory.jp/wp-content/uploads/2023/02/BI-For-Archicad-%E5%9B%BD%E4%BA%A4%E7%9C%81BIM%E5%8A%A0%E9%80%9F%E5%8C%96%E4%BA%8B%E6%A5%AD%E8%AA%8D%E5%AE%9A2.pdf" target="_blank" rel="noopener" class="util-link--blank">
+          <span class="util-bold">BI For Archicadパンフレットはこちら</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
-            <router-link to="/ResultsMedia">
+            <router-link to="/News">
             <a href="" class="button-v2__type">
               <span class="button-v2__label">一覧へ戻る</span>
             </a>
@@ -191,7 +204,7 @@ body *, body :after, body :before {
     margin-top: 0!important;
 }
 [data-col-pc="2"]>* {
-    width: calc((100% - 36px)/2 - .1px);
+    width: calc((103% - 36px)/2 - .1px);
 }
 
 .column {
@@ -209,35 +222,6 @@ body *, body :after, body :before {
 }
 .image-wrap--center>* {
     text-align: center;
-}
-
-.image__caption, .image__caption--center, .image__caption--right {
-    line-height: 1.6em;
-    text-align: left;
-    margin: .6em 0 0;
-    font-size: 0.9rem;
-}
-.image__caption a{
-  color: #000;
-}
-.image__frame img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: top;
-    border-style: none;
-}
-.image-media02{
-  margin-top: 10px;
-}
-.image {
-    margin: 0;
-}
-.image__frame, .image a.image__frame, .image a.image__frame--modal {
-    display: inline-block;
-}
-[data-col-pc]:not([data-col-pc=auto])>* {
-    margin-top: 1.25em;
-    margin-left: 36px;
 }
 .heading2 {
     border-bottom: 2px solid;
@@ -263,31 +247,25 @@ a.button__type{
     color: #fff;
     line-height: 1.4em;
     text-decoration: none;
-    margin-top: 20px;
 }
 .button__label {
     display: inline-block;
-    
 }
 a.button__type:hover{
   background-color:#fff;
   color: #333;
 }
 .AboutText{
-    display: block;
+    display: inline-block;
     position: relative;
-    margin-bottom: 1em;
-    content: "";
+    vertical-align: middle;
+    content: ""; 
 }
 .AboutText a{
   color: #333;
 }
-.AboutText p{
-  padding: 10px 0;
-}
 .util-bold{
-  font-weight: 550!important;
-  font-size: 1rem;
+  font-weight: 700!important;
   
 }
 .util-link--blank:after{

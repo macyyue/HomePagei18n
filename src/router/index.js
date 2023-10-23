@@ -31,6 +31,11 @@ import Login from '@/views/Login/index.vue'
 import News20230611 from '@/views/News20230611/index.vue'
 import News20230818 from '@/views/News20230818/index.vue'
 import News20230522 from '@/views/News20230522/index.vue'
+import News20230512 from '@/views/News20230512/index.vue'
+import News20230214 from '@/views/News20230214/index.vue'
+import News20221228 from '@/views/News20221228/index.vue'
+import News20220823 from '@/views/News20220823/index.vue'
+import News20220725 from '@/views/News20220725/index.vue'
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
 // import { compile } from 'vue'
@@ -179,12 +184,36 @@ const router = createRouter({
             component: News20230522,
             props: true,
         },
-        // {
-        //     path: '/news/:id',
-        //     name: 'NewsDetail',
-        //     component: NewsDetail,
-        //     props: true,
-        // },
+        {
+            path: '/News/:id',
+            name: 'News20230512',
+            component: News20230512,
+            props: true,
+        },
+        {
+            path: '/News/:id',
+            name: 'News20230214',
+            component: News20230214,
+            props: true,
+        },
+        {
+            path: '/News/:id',
+            name: 'News20221228',
+            component: News20221228,
+            props: true,
+        },
+        {
+            path: '/News/:id',
+            name: 'News20220823',
+            component: News20220823,
+            props: true
+        },
+        {
+            path: '/News/:id',
+            name: 'News20220725',
+            component: News20220725,
+            props: true
+        },
         {
             path: '/Login',
             name: 'Login',

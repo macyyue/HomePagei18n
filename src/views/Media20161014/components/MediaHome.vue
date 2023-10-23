@@ -37,7 +37,7 @@ export default {
             </li>
             <li>
               <router-link to="/News" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">実績・メディア掲載一覧</span>
+              <span class="main-breadcrumb__type--nolink">更新一覧</span>
             </router-link>
             </li>
             <li class="last-item">

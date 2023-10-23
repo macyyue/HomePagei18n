@@ -1,5 +1,4 @@
 ﻿<script>
-
 export default {
   data() {
     return {
@@ -63,7 +62,7 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-08-04">2023年8月18日</time>
+                  <time class="news__date">2023年8月18日</time>
                   <div class="news__category"><i class="util-badge--events">イベント</i></div>
                 </div>
                
@@ -83,7 +82,7 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-08-02">2023年6月11日</time>
+                  <time class="news__date">2023年6月11日</time>
                   <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
@@ -101,7 +100,7 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-26">2023年5月22日</time>
+                  <time class="news__date">2023年5月22日</time>
                   <div class="news__category"><i class="util-badge--cat1612">イベント</i></div>
                 </div>
                 <div class="news__caption">
@@ -117,11 +116,13 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-20">2023年5月12日</time>
+                  <time class="news__date">2023年5月12日</time>
                   <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
+                  <router-link :to="{ name: 'News20230512', params: { id: '20230512' } }" class="override-link-style">
                   <h3 class="news__title">2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」</h3>
+                </router-link>
                 </div>
               </div>
             </div>
@@ -130,11 +131,14 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-19">2023年2月14日</time>
+                  <time class="news__date">2023年2月14日</time>
                   <div class="news__category"><i class="util-badge--cat1612">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
+                  <router-link :to="{ name: 'News20230214', params: { id: '20230214' } }" class="override-link-style">
                   <h3 class="news__title">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</h3>
+                </router-link>
+
                 </div>
               </div>
             </div>
@@ -143,11 +147,14 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-12">2022年12月28日</time>
+                  <time class="news__date">2022年12月28日</time>
                   <div class="news__category"><i class="util-badge--news">技術</i></div>
                 </div>
                 <div class="news__caption">
+                  <router-link :to="{ name: 'News20221228', params: { id: '20221228' } }" class="override-link-style">
                   <h3 class="news__title">内装業者のための積算・発注業務革命とは</h3>
+                </router-link>
+
                 </div>
               </div>
             </div>
@@ -156,24 +163,15 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-11">2022年9月16日</time>
-                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
-                </div>
-                <div class="news__caption">
-                  <h3 class="news__title">躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました。</h3>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="news__article">
-            <div class="news__type">
-              <div class="news__body">
-                <div class="news__property">
-                  <time class="news__date" datetime="2023-06-20">2022年8月23日</time>
+                  <time class="news__date">2022年8月23日</time>
                   <div class="news__category"><i class="util-badge--events">技術</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】</h3>
+                  <h3 class="news__title">
+                  <router-link :to="{ name: 'News20220823', params: { id: '20220823' } }" class="override-link-style">
+                    【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】
+                  </router-link>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -182,11 +180,15 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-06-16">2022年7月25日</time>
+                  <time class="news__date">2022年7月25日</time>
                   <div class="news__category"><i class="util-badge--news">技術</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">BI Structureが各社に必要とされる理由とは</h3>
+                  <h3 class="news__title">
+                  <router-link :to="{ name: 'News20220725', params: { id: '20220725' } }" class="override-link-style">
+                    BI Structureが各社に必要とされる理由とは
+                  </router-link>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -195,7 +197,7 @@ export default {
             <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-06-13">2022年5月21日</time>
+                  <time class="news__date">2022年5月21日</time>
                   <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
