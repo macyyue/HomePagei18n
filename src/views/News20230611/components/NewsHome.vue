@@ -1,37 +1,6 @@
 ﻿<script>
-import { ref, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
-
 export default {
-  props: ['id'],
-  setup() {
-    const newsTitle = ref(''); 
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230611',
-        title: '必見！！「超初めてのArchicad操作法」を無料公開',
-      },
-    ];
 
-    const updateNewsTitle = () => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    };
-
-    onMounted(updateNewsTitle);
-
-    watch(() => route.params.id, () => {
-      updateNewsTitle();
-    });
-    
-    return {
-      newsTitle,
-    };
-  },
 };
 </script>
 
@@ -50,7 +19,7 @@ export default {
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
             </li>
           </ol>
           <!--/Main__guide-->

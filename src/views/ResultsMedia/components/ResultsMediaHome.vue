@@ -68,8 +68,8 @@ export default {
                
                 <div class="news__caption">
                   <h3 class="news__title" > 
-                    <router-link :to="{ name: 'Media20220901', params: { id: 20220901 } }" class="override-link-style">
-                      躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました
+                    <router-link to="/Media20220901/躍進企業応援マガジンCOMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました" class="override-link-style">
+                      躍進企業応援マガジンCOMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました
                     </router-link>
                   </h3>
                 </div>
@@ -88,7 +88,7 @@ export default {
                 <div class="news__caption">
 
                   <h3 class="news__title">
-                    <router-link :to="{ name: 'Media20180904', params: { id: 20180904 } }" class="override-link-style">
+                    <router-link to="/Media20180904/GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました" class="override-link-style">
                       GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました
                   </router-link>
                   </h3>
@@ -105,7 +105,7 @@ export default {
                 </div>
                 <div class="news__caption">
                   <h3 class="news__title">
-                    <router-link :to="{ name: 'Media20161014', params: { id: 20161014 } }" class="override-link-style">
+                    <router-link to="/Media20161014/事業紹介ビデオを作成しました" class="override-link-style">
                     事業紹介ビデオを作成しました
                   </router-link>
 
@@ -118,12 +118,12 @@ export default {
             <a href="" class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-20">2016年02月05日</time>
+                  <time class="news__date">2016年02月05日</time>
                   <div class="news__category"><i class="util-badge--news">技術</i></div>
                 </div>
                 <div class="news__caption">
                   <h3 class="news__title">
-                    <router-link :to="{ name: 'Media20160205', params: { id: 20160205 } }" class="override-link-style">
+                    <router-link to="/Media20160205/ケンプラッツに「誤差わずか数ミリ！小型全天球カメラで3D計測」の記事が掲載されました" class="override-link-style">
                     ケンプラッツに「誤差わずか数ミリ！小型全天球カメラで3D計測」の記事が掲載されました
                   </router-link>
                   </h3>

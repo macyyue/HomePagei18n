@@ -1,9 +1,19 @@
 ﻿<script>
+import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
+  components: {
+    Lightbox,
+  },
+  methods: {
+    openImage(src) {
+      this.$refs.lightbox.openLightbox(src);
+    },
+  },
 };
 </script>
 <template>
+  
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">
           <ol class="main-breadcrumb" >
@@ -13,7 +23,7 @@ export default {
                </router-link>
             </li>
             <li>
-              <router-link to="/ResultsMedia" class="override-link-style">
+              <router-link to="/News" class="override-link-style">
               <span class="main-breadcrumb__type--nolink">更新一覧</span>
             </router-link>
             </li>
@@ -28,47 +38,43 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">ケンプラッツに「誤差わずか数ミリ！小型全天球カメラで3D計測」の記事が掲載されました</h1>
+        <h1 class="heading1-v2__title">産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました</h1>
        </div>
       </div>
-      <p class="text--right">2016年2月5日</p>
+      <p class="text--right">2022年5月21日</p>
+      <p class="text">
+        2022年5月21日産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました
+      </p>
+      <div class="column generator-column" data-col-pc="1" data-col-sp="1">
+        <div class="column__item">
+          <Lightbox ref="lightbox" />
+            <div class="image-wrap--center">
+            <figure class="image" >
+            <div class="image__frame">
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/2022-0521-1024x768.jpg')">
+              <img src="@/assets/image/News20220521/2022-0521-768x576.jpg" alt="" style="width: 600px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
 
-<div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
-        <div class="column__item item__text">
-        <p class="text" style="padding-top: 30px;">
-          全天球カメラ「THETA S」の表と裏。2つのレンズで周囲360°の全天全周を一度に撮影します</p>
-          <p class="text">
-        360°カメラを持つRICOH THEATA-Sを活用し、連続360°測位座標付き映像が作成可能な「INFO360」がケンプラッツに掲載されました
-        </p>
-        </div>
-
-        <!--左テキスト ここまで--> <!--右YouTube ここから-->
-        <div class="column__item item__image01">
-        <div class="image-wrap--center">
-        <figure class="image">
-        <div class="item-movie">
-          <img src="@/assets/image/Media20160205/THETAS.jpg" alt=""  width="360" height="390" >
-        </div>
-        </figure>
-        </div>
-        </div>
-        </div>
-
+      </div>
         <!-- 展示関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">展示関連情報</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>商品の記事はこちら ▼</p>
-          <a href="https://xtech.nikkei.com/kn/atcl/knpcolumn/14/546679/012900016/" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 誤差わずか数ミリ！小型全天球カメラで3D計測(日経クロステックHP)</span>
+          <p>詳細はこちら▼</p>
+          <a href="https://www.archifuture-web.jp/magazine/721.html" target="_blank" rel="noopener" class="util-link--blank">
+          <span class="util-bold">建築 × コンピュテーションのポータルサイト</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
-            <router-link to="/ResultsMedia">
+            <router-link to="/News">
             <a href="" class="button-v2__type">
               <span class="button-v2__label">一覧へ戻る</span>
             </a>
@@ -149,27 +155,17 @@ body *, body :after, body :before {
     font-size: 1rem;
 }
 .text, .text--center {
-  
     margin: 1em 0 0;
 }
 
 [data-col-pc]:not([data-col-pc="1"]) {
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
-}
-[data-col-pc="2"]>:nth-child(odd) {
-    margin-left: 0!important;
-}
-[data-col-pc="2"]>:nth-child(-n+2) {
-    margin-top: 0!important;
-}
-[data-col-pc="2"]>* {
-    width: calc((100% - 36px)/2 - .1px);
 }
 
 .column {
     margin: 2em 0 0;
+
 }
 .image-wrap--center {
     justify-content: center;
@@ -199,9 +195,7 @@ body *, body :after, body :before {
     height: auto;
     vertical-align: top;
     border-style: none;
-}
-.image-media02{
-  margin-top: 10px;
+
 }
 .image {
     margin: 0;
@@ -237,11 +231,9 @@ a.button__type{
     color: #fff;
     line-height: 1.4em;
     text-decoration: none;
-    margin-top: 20px;
 }
 .button__label {
     display: inline-block;
-    
 }
 a.button__type:hover{
   background-color:#fff;
@@ -251,18 +243,28 @@ a.button__type:hover{
     display: block;
     position: relative;
     margin-bottom: 1em;
-    content: "";
+    content: ""; 
 }
 .AboutText a{
   color: #333;
 }
-.AboutText p{
-  padding: 10px 0;
-}
 .util-bold{
-  font-weight: 550!important;
-  font-size: 1rem;
+  font-weight: 700!important;
   
+}
+.util-link-Youtube--blank:after{
+  position: relative;
+  width: 20px;
+  height: 20px;
+  top: -2px;
+  margin: 0 .5em;
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+}
+.util-link-Youtube--blank:after {
+    background: url(@/assets/image/Info360/NewsYoutebe.svg) no-repeat 0 0;
+    color: rgb(51, 51, 51);
 }
 .util-link--blank:after{
   position: relative;
@@ -306,5 +308,12 @@ a.button__type:hover{
     display: inline-block;
     text-decoration: none;
 }
-
+.AboutText p {
+    padding: 10px 0;
+}
+.text-title{
+  font-size: small;
+  text-align: left;
+  
+}
 </style>

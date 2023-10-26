@@ -1,10 +1,8 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
+
 import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
-  
   components: {
     Lightbox,
   },
@@ -12,28 +10,6 @@ export default {
     openImage(src) {
       this.$refs.lightbox.openLightbox(src);
     },
-  },
-  setup() {
-    const newsTitle = ref(''); 
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230818',
-        title: '【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-
-
-    return {
-      newsTitle,
-    };
   },
 };
 </script>
@@ -52,7 +28,7 @@ export default {
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $route.params.title}}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -174,7 +150,7 @@ export default {
           おかげ様で、U’sFactoryは2013年8月20日に創業し、10周年を迎えました。社員数は2023年8月現在で、11人パートタイマー10人アルバイト2~4名の総勢26人体制となっています。<br><br>
           また、昨年末には事務所を移転し、作業環境の向上を図る上で、社員自らが内装設計・施工を実施し創意工夫と自由な職場づくりを体験しました。
           </p>
-       <div class="column generator-column" data-col-pc="3" data-col-sp="4">
+       <div class="column generator-column" data-col-pc="3" data-col-sp="4" style="margin-left: 48px;">
           <div class="column__item item__image01">
             <div class="image-wrap">
             <figure class="image">

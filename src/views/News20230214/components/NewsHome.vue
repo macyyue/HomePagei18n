@@ -1,6 +1,4 @@
 ﻿<script>
-import { ref, onMounted, watch } from 'vue';
-import { useRoute } from 'vue-router';
 import Lightbox from '@/views/LightBox/LightBox.vue'
 
 
@@ -13,34 +11,6 @@ export default {
     openImage(src) {
       this.$refs.lightbox.openLightbox(src);
     },
-  },
-  setup() {
-    const newsTitle = ref(''); 
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230214',
-        title: '「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました',
-      },
-    ];
-
-    const updateNewsTitle = () => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    };
-
-    onMounted(updateNewsTitle);
-
-    watch(() => route.params.id, () => {
-      updateNewsTitle();
-    });
-    
-    return {
-      newsTitle,
-    };
   },
 };
 </script>
@@ -60,7 +30,7 @@ export default {
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
             </li>
           </ol>
           <!--/Main__guide-->

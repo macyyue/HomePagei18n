@@ -1,6 +1,4 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
 import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
@@ -11,26 +9,6 @@ export default {
     openImage(src) {
       this.$refs.lightbox.openLightbox(src);
     },
-  },
-  setup() {
-    const newsTitle = ref(''); 
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20220725',
-        title: 'BI Structureが各社に必要とされる理由とは',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-    return {
-      newsTitle,
-    };
   },
 };
 </script>
@@ -50,7 +28,7 @@ export default {
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -66,12 +44,12 @@ export default {
       <p class="text--right">2022年7月25日</p>
       <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">開発コンセプトのご紹介</h2>
+          <h2 class="heading2__title">BI Structureのご紹介</h2>
          </div>
         </div>
       <p class="text">
-        2021年7月にリリースされた「BI Structure」がすべてのプロジェクトに必須となっている <br><br>
-        そもそもBI Structureとは何か？というと、<br><br>
+        2021年7月にリリースされた「BI Structure」がすべてのプロジェクトに必須となっている <br>
+        そもそもBI Structureとは何か？というと、<br>
         構造計算データからも連携が可能かつ、ARCHICADに直接変換し、BI For ARCHICADで鉄筋や鉄骨詳細を作成するためには欠かせない、「構造３Dモデル(RC・S・SRC)を作成する専用ツール」である。
         </p>
         <div class="column__item item__image01">
@@ -96,7 +74,7 @@ export default {
          </div>
         </div>
         <p class="text">
-          画面イメージを見ると以下のような構成になっている。
+          画面イメージを見ると以下のような構成になっている。(図1~4)
           </p>
           <div class="column generator-column" data-col-pc="2" data-col-sp="1">
             <!-- 図⑴ -->
@@ -149,8 +127,6 @@ export default {
           </figure>
             </div>
             </div>
-
-            
         </div>
         <div class="heading2">
           <div class="heading2__inner">
@@ -159,11 +135,11 @@ export default {
         </div>
         <p class="text">
           ではもう少し詳しい使い方を見てみると、以下のようになっている。<br>
-          構造計算データがある場合はそちらを利用する。また、計算データがない場合においても簡単に登録ができる仕掛けとなっている。<br>
-          この定義データだけでの入力は、ヒューマンエラーによる入力ミスや、間違えに気が付かないため、リスト図を自動作図し、リスト図を見ながら直接データを修正するところが大きな特徴である。こうすることで、だれでも簡単に部材リストを登録確認することを実現している。
+          構造計算データがある場合はそちらを利用する。また、計算データがない場合においても簡単に登録ができる仕掛けとなっている。(図5~6)<br>
+          この定義データだけでの入力は、ヒューマンエラーによる入力ミスや、間違えに気が付かないため、リスト図を自動作図し、リスト図を見ながら直接データを修正するところが大きな特徴である。こうすることで、だれでも簡単に部材リストを登録確認することを実現している。(図7~8)
           </p>
           <div class="column generator-column" data-col-pc="2" data-col-sp="1">
-            <!-- 図⑴ -->
+            <!-- 図⑸ -->
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
@@ -177,7 +153,7 @@ export default {
           </figure>
             </div>
             </div>
-            <!-- 図⑵ -->
+            <!-- 図⑹-->
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
@@ -189,25 +165,25 @@ export default {
           </figure>
             </div>
             </div>
-            <!-- 図⑶ -->
+            <!-- 図⑺-->
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
             <div class="image__frame">
-              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド3.png')">
-              <img src="@/assets/image/News20220725/スライド3.png" alt="" style="width: 300px; max-width: 100%;">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド7.png')">
+              <img src="@/assets/image/News20220725/スライド7.png" alt="" style="width: 300px; max-width: 100%;">
             </a>
             </div>
           </figure>
             </div>
             </div>
-            <!-- 図⑷ -->
+            <!-- 図⑻-->
             <div class="column__item">
             <div class="image-wrap--center">
             <figure class="image">
             <div class="image__frame">
-              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド4.png')">
-              <img src="@/assets/image/News20220725/スライド4.png" alt="" style="width: 300px; max-width: 100%;">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド8.png')">
+              <img src="@/assets/image/News20220725/スライド8.png" alt="" style="width: 300px; max-width: 100%;">
             </a>
             </div>
           </figure>
@@ -216,6 +192,266 @@ export default {
 
             
         </div>
+        <div class="heading2">
+          <div class="heading2__inner">
+          <h2 class="heading2__title"></h2>
+         </div>
+        </div>
+        <p class="text">
+          さらに、部材配置を直感的に行えるようにしたことで、簡単な入力であることを皆が理解し、より多くの担当者が抵抗なく利用できるように配慮した。(図9~10)<br>
+          「BI Structure」で入力されたデータをArchiCADに連携されると同時に、部材詳細情報がプロパティに登録される。ことプロパティ情報をもとに鉄筋詳細モデルが簡単に作成される。このように、ArchiCADに連携し、鉄筋詳細を作図するために利用されていることがわかる。また、鉄筋詳細を作成した後、加工帳及び積算に活用していくことを可能としている。(図11~12)
+          </p>
+          <div class="column generator-column" data-col-pc="2" data-col-sp="1">
+            <!-- 図⑼ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド9.png')">
+              <img src="@/assets/image/News20220725/スライド9.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+            <!-- <figcaption class="image__caption">Web情報共有システム</figcaption> -->
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑽-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド10.png')">
+              <img src="@/assets/image/News20220725/スライド10.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑾-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド11.png')">
+              <img src="@/assets/image/News20220725/スライド11.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⑿-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド13.png')">
+              <img src="@/assets/image/News20220725/スライド12.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+
+            
+        </div>
+        <div class="heading2">
+          <div class="heading2__inner">
+          <h2 class="heading2__title"></h2>
+         </div>
+        </div>
+        <p class="text">
+          しかし、BIMで作成した鉄筋数量と、積算で利用する鉄筋数量は異なる。
+          <br>それは一体どういうことかというと、積算協会が定める積算基準では、鉄筋のかぶり厚さを考慮しないのである。では、実務運用をするにはどうすればよいのかということを考えた結果、積算時は補正数量を算出し、その両方を算出し、それぞれのシチュエーションに合わせて提供できれば良いという結論に達した。(図13)
+          <br>そして、その仮説が正しいかを立証するために、ゼネコン各社様と検証を重ね、実務運用の目途を立てたところである。(図14)
+          <br>さらに、自動作成した鉄筋詳細は、1本ずつバラバラにもでき、詳細納まりに応じて修正を可能とした。(図15)
+          </p>
+          <div class="column generator-column" data-col-pc="3" data-col-sp="1" style="margin-left: 80px;">
+            <!-- 図⒀ -->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド14.png')">
+              <img src="@/assets/image/News20220725/スライド13.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+            <!-- <figcaption class="image__caption">Web情報共有システム</figcaption> -->
+          </figure>
+            </div>
+            </div>
+            <!-- 図⒁-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド15.png')">
+              <img src="@/assets/image/News20220725/スライド14.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⒂-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド16.png')">
+              <img src="@/assets/image/News20220725/スライド15.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>  
+        </div>
+        <div class="heading2">
+          <div class="heading2__inner">
+          <h2 class="heading2__title"></h2>
+         </div>
+        </div>
+       <p class="text">
+        では、DX活用ということで一歩進んでみると、鉄筋詳細モデルはそのまま土工事の掘削施工図（床付け図）に活用される。また、型枠の自動発生から、型枠数量だけでなく、納まりを確認。さらには、コンクリート施工図利用（自動作図）といった一気通関の流れが見えてくる。(図16~18)
+       </p>
+        <div class="column generator-column" data-col-pc="3" data-col-sp="1" style="margin-left: 80px;">
+            <!-- 図⒃-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド17.png')">
+              <img src="@/assets/image/News20220725/スライド16.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+            <!-- <figcaption class="image__caption">Web情報共有システム</figcaption> -->
+          </figure>
+            </div>
+            </div>
+            <!-- 図⒄-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド18.png')">
+              <img src="@/assets/image/News20220725/スライド17.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図⒅-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド19.png')">
+              <img src="@/assets/image/News20220725/スライド18.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>  
+        </div>
+        <div class="heading2">
+          <div class="heading2__inner">
+          <h2 class="heading2__title"></h2>
+         </div>
+        </div>
+        <p class="text">
+          では、鉄骨造の場合はどうであろうか。<br>
+          鉄骨造の場合も同様で、「BI Structure」に読み込んで、構造計算データを活用し、計算データに入っていない部分を手修正および追加することで最終構造モデルを簡単に作成していく。最終的に、早期の合意形成されたモデルを鉄骨FABへ送り利用していくという流れだ。(図19~25)
+          <br>このように「BI Structure」は各社にとって必要なツールであることが理解できる。
+       </p>
+        <div class="column generator-column" data-col-pc="3" data-col-sp="1" style="margin-left: 80px;">
+            <!-- 図⒆-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <Lightbox ref="lightbox" />
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド21.png')">
+              <img src="@/assets/image/News20220725/スライド19.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+            <!-- <figcaption class="image__caption">Web情報共有システム</figcaption> -->
+          </figure>
+            </div>
+            </div>
+            <!-- 図⒇-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2022/07/スライド22.png')">
+              <img src="@/assets/image/News20220725/スライド20.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>
+            <!-- 図21-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド23.png')">
+              <img src="@/assets/image/News20220725/スライド21.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>  
+           <!-- 図22-->
+             <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド24.png')">
+              <img src="@/assets/image/News20220725/スライド22.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>  
+          <!-- 図23-->
+          <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド25.png')">
+              <img src="@/assets/image/News20220725/スライド23.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>  
+          <!-- 図24-->
+            <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド26.png')">
+              <img src="@/assets/image/News20220725/スライド24.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>  
+           <!-- 図25-->
+           <div class="column__item">
+            <div class="image-wrap--center">
+            <figure class="image">
+            <div class="image__frame">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/07/スライド27.png')">
+              <img src="@/assets/image/News20220725/スライド25.png" alt="" style="width: 300px; max-width: 100%;">
+            </a>
+            </div>
+          </figure>
+            </div>
+            </div>             
+        </div>
 
         <!-- 展示関連情報 -->
         <div class="heading2">
@@ -223,7 +459,7 @@ export default {
           <h2 class="heading2__title">展示関連情報</h2>
          </div>
         </div>
-        <h3 class="AboutText">
+        <!-- <h3 class="AboutText">
           <a href="https://www.youtube.com/watch?v=YQeaFC0zXXs&ab_channel=%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%EF%BC%B5%E2%80%99%EF%BD%93%EF%BC%A6%EF%BC%A1%EF%BC%A3%EF%BC%B4%EF%BC%AF%EF%BC%B2%EF%BC%B9" target="_blank" rel="noopener" class="util-link-Youtube--blank">
           <span class="util-bold"> info360 PointCloud viewer</span>
         </a>
@@ -232,7 +468,7 @@ export default {
           <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" target="_blank" rel="noopener" class="util-link--blank">
           <span class="util-bold"> Info360パンフレットはこちら</span>
         </a>
-      </h3>
+      </h3> -->
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/News">

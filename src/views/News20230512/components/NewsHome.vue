@@ -1,6 +1,4 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
 import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
@@ -11,26 +9,6 @@ export default {
     openImage(src,index) {
       this.$refs.lightbox.openLightbox(src,index,this.yourImageArray);
     },
-  },
-  setup() {
-    const newsTitle = ref(''); 
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230512',
-        title: '2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-    return {
-      newsTitle,
-    };
   },
 };
 </script>
@@ -50,7 +28,7 @@ export default {
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
             </li>
           </ol>
           <!--/Main__guide-->

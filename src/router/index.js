@@ -25,6 +25,7 @@ import Careers from '@/views/Careers/index.vue'
 import Usfactory from '@/views/Usfactory/index.vue'
 import LoginForm from '@/views/LoginForm/index.vue'
 import BasicInfo from '@/views/BasicInfo/index.vue'
+import NumberInfo from '@/views/NumberInfo/index.vue'
 import ConfirmationPage from '@/views/ConfirmationPage/index.vue'
 import News from '@/views/News/index.vue'
 import Login from '@/views/Login/index.vue'
@@ -36,6 +37,7 @@ import News20230214 from '@/views/News20230214/index.vue'
 import News20221228 from '@/views/News20221228/index.vue'
 import News20220823 from '@/views/News20220823/index.vue'
 import News20220725 from '@/views/News20220725/index.vue'
+import News20220521 from '@/views/News20220521/index.vue'
 import LoginNewMember from '@/views/LoginNewMember/index.vue'
 import PwForgot from '@/views/PwForgot/index.vue'
 // import { compile } from 'vue'
@@ -115,22 +117,22 @@ const router = createRouter({
             name: 'ResultsMedia'
         },
         {
-            path: '/results/:id',
+            path: '/Media20220901/:title?',
             component: Media20220901,
             name: 'Media20220901'
         },
         {
-            path: '/results/:id',
+            path: '/Media20180904/:title?',
             component: Media20180904,
             name: 'Media20180904'
         },
         {
-            path: '/results/:id',
+            path: '/Media20161014/:title?',
             component: Media20161014,
             name: 'Media20161014'
         },
         {
-            path: '/results/:id',
+            path: '/Media20160205/:title?',
             component: Media20160205,
             name: 'Media20160205'
         },
@@ -161,57 +163,64 @@ const router = createRouter({
             name: 'ConfirmationPage',
             component: ConfirmationPage
         },
+        // NewsList
         {
             path: '/News',
             name: 'News',
             component: News,
         },
         {
-            path: '/News/:id',
+            path: '/News20230818/:title?',
             name: 'News20230818',
             component: News20230818,
             props: true,
         },
         {
-            path: '/News/:id',
+            path: '/News20230611/:title?',
             name: 'News20230611',
             component: News20230611,
             props: true,
         },
         {
-            path: '/News/:id',
+            path: '/News20230522/:title?',
             name: 'News20230522',
             component: News20230522,
             props: true,
         },
         {
-            path: '/News/:id',
+            path: '/News20230512/:title?',
             name: 'News20230512',
             component: News20230512,
             props: true,
         },
         {
-            path: '/News/:id',
+            path: '/News20230214/:title?',
             name: 'News20230214',
             component: News20230214,
             props: true,
         },
         {
-            path: '/News/:id',
+            path: '/News20221228/:title?',
             name: 'News20221228',
             component: News20221228,
             props: true,
         },
         {
-            path: '/News/:id',
+            path: '/News20220823/:title?',
             name: 'News20220823',
             component: News20220823,
             props: true
         },
         {
-            path: '/News/:id',
+            path: '/News20220725/:title?',
             name: 'News20220725',
             component: News20220725,
+            props: true
+        },
+        {
+            path: '/News20220521/:title?',
+            name: 'News20220521',
+            component: News20220521,
             props: true
         },
         {
@@ -223,6 +232,17 @@ const router = createRouter({
             path: '/LoginNewMember',
             name: 'LoginNewMember',
             component: LoginNewMember
+        },
+        {
+            path: '/BasicInfo',
+            name: 'BasicInfo',
+            component: BasicInfo
+        },
+        {
+            path: '/NumberInfo',
+            name: 'NumberInfo',
+            component: NumberInfo
+
         },
         {
             path: '/PwForgot',

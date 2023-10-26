@@ -1,6 +1,4 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
 import Lightbox from '@/views/LightBox/LightBox.vue'
 
 export default {
@@ -11,26 +9,6 @@ export default {
     openImage(src) {
       this.$refs.lightbox.openLightbox(src);
     },
-  },
-  setup() {
-    const newsTitle = ref(''); 
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20221228',
-        title: '内装業者のための積算・発注業務革命とは',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-    return {
-      newsTitle,
-    };
   },
 };
 </script>
@@ -50,7 +28,7 @@ export default {
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
