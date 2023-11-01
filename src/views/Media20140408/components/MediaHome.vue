@@ -1,7 +1,9 @@
 ﻿<script>
 import Lightbox from '@/views/LightBox/LightBox.vue'
 
+
 export default {
+  props: ['id'],
   components: {
     Lightbox,
   },
@@ -12,8 +14,8 @@ export default {
   },
 };
 </script>
+
 <template>
-  
   <!-- メイン__ガイド 主要__指南-->
         <div class="Main__guide">
           <ol class="main-breadcrumb" >
@@ -23,7 +25,7 @@ export default {
                </router-link>
             </li>
             <li>
-              <router-link to="/News" class="override-link-style">
+              <router-link to="/ResultsMedia" class="override-link-style">
               <span class="main-breadcrumb__type--nolink">更新一覧</span>
             </router-link>
             </li>
@@ -38,50 +40,43 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】</h1>
+        <h1 class="heading1-v2__title">日本経済新聞にRobot Eye Walker 4Dの記事が掲載されました</h1>
        </div>
       </div>
-      <p class="text--right">2022年8月23日</p>
-      <p class="text">
-        2022年8月23日の建設通信新聞に
-        【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】
-        として記事が掲載されました。<br>
-      </p>
-      <div class="column generator-column" data-col-pc="1" data-col-sp="1">
-        <div class="column__item">
+      <p class="text--right">2014年4月8日</p>
+       
+      <div class="column__item item__text">
+        <p class="text" style="padding-top: 30px;">
+          札幌市の岩根研究所と共同開発した、歩きながら街路や建物周辺の形状や景色を3D情報付きの全周動画で記録する「Robot Eye Walker 4D」が日本経済新聞に掲載されました。
+        </p>
+        </div>
+      <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1" style="text-align: center;">
+        <div class="image-wrap--center">
           <Lightbox ref="lightbox" />
-            <div class="image-wrap--center">
-            <figure class="image" >
-            <div class="image__frame">
-              <img src="@/assets/image/goods2.jpg" alt="" style="width: 600px; max-width: 100%;">
-              <p class="text-title">みなとみらい地区の3次元モデル</p>
-            </div>
-          </figure>
-            </div>
-            </div>
-
-      </div>
-        <!-- 展示関連情報 -->
+        <figure class="image">
+        <div class="item-image">
+            <img src="@/assets/image/Media20140408/img2.jpg" alt="" >
+            <p class="text-title">「Robot Eye Walker 4D」による撮影風景。6つのレンズが付いた装置を持ち歩きながら周囲360°をビデオ撮影し全周動画を記録する（資料：U's Factory）</p>
+        </div>
+        </figure>
+        </div>
+        </div>
+      
+        <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">展示関連情報</h2>
+          <h2 class="heading2__title">関連情報</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>詳細はこちら▼</p>
-          <a href="https://www.kensetsunews.com/web-kan/728751" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】U’s Factory</span>
+          <p>記事はこちら▼</p>
+          <a href="https://www.nikkei.com/article/DGXNASFK2700Q_X20C14A3000000/" target="_blank" rel="noopener" class="util-link--blank">
+          <span class="util-bold">歩くだけで建物を3D記録 ベンチャーが建設業に新風</span>
         </a>
       </h3>
-      <h3 class="AboutText">
-          <a href="https://www.kensetsunews.com/web-kan/728751" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">建設通信新聞Digital</span>
-        </a>
-      </h3>
-
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
-            <router-link to="/News">
+            <router-link to="/ResultsMedia">
             <a href="" class="button-v2__type">
               <span class="button-v2__label">一覧へ戻る</span>
             </a>
@@ -162,17 +157,27 @@ body *, body :after, body :before {
     font-size: 1rem;
 }
 .text, .text--center {
+  
     margin: 1em 0 0;
 }
 
 [data-col-pc]:not([data-col-pc="1"]) {
     display: flex;
     flex-flow: row wrap;
+    width: 100%;
+}
+[data-col-pc="2"]>:nth-child(odd) {
+    margin-left: 0!important;
+}
+[data-col-pc="2"]>:nth-child(-n+2) {
+    margin-top: 0!important;
+}
+[data-col-pc="2"]>* {
+    width: calc((103% - 36px)/2 - .1px);
 }
 
 .column {
     margin: 2em 0 0;
-
 }
 .image-wrap--center {
     justify-content: center;
@@ -186,33 +191,6 @@ body *, body :after, body :before {
 }
 .image-wrap--center>* {
     text-align: center;
-}
-
-.image__caption, .image__caption--center, .image__caption--right {
-    line-height: 1.6em;
-    text-align: left;
-    margin: .6em 0 0;
-    font-size: 0.9rem;
-}
-.image__caption a{
-  color: #000;
-}
-.image__frame img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: top;
-    border-style: none;
-
-}
-.image {
-    margin: 0;
-}
-.image__frame, .image a.image__frame, .image a.image__frame--modal {
-    display: inline-block;
-}
-[data-col-pc]:not([data-col-pc=auto])>* {
-    margin-top: 1.25em;
-    margin-left: 36px;
 }
 .heading2 {
     border-bottom: 2px solid;
@@ -247,31 +225,18 @@ a.button__type:hover{
   color: #333;
 }
 .AboutText{
-    display: block;
+    display: inline-block;
     position: relative;
-    margin-bottom: 1em;
+    vertical-align: middle;
     content: ""; 
 }
 .AboutText a{
   color: #333;
 }
 .util-bold{
-  font-weight: 700!important;
+  font-weight: 550!important;
+  font-size: 1rem;
   
-}
-.util-link-Youtube--blank:after{
-  position: relative;
-  width: 20px;
-  height: 20px;
-  top: -2px;
-  margin: 0 .5em;
-  display: inline-block;
-  vertical-align: middle;
-  content: "";
-}
-.util-link-Youtube--blank:after {
-    background: url(@/assets/image/Info360/NewsYoutebe.svg) no-repeat 0 0;
-    color: rgb(51, 51, 51);
 }
 .util-link--blank:after{
   position: relative;
@@ -315,11 +280,13 @@ a.button__type:hover{
     display: inline-block;
     text-decoration: none;
 }
-.AboutText p {
-    padding: 10px 0;
+.item-image img{
+  width: 100%;
+  height: 530px;
 }
 .text-title{
   font-size: small;
   text-align: left;
 }
+
 </style>

@@ -139,7 +139,11 @@ export default {
                   <div class="news__category"><i class="util-badge--cat1612">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">ケンプラッツに「現場をPC上に出前！“3D写真”が変える設計、施工計画」として掲載されました</h3>
+                  <h3 class="news__title">
+                    <router-link to="/Media20150708/ケンプラッツに「現場をPC上に出前！“3D写真”が変える設計、施工計画」として掲載されました" class="override-link-style">
+                    ケンプラッツに「現場をPC上に出前！“3D写真”が変える設計、施工計画」として掲載されました
+                    </router-link>
+                  </h3>
                 </div>
               </div>
             </a>
@@ -152,7 +156,11 @@ export default {
                   <div class="news__category"><i class="util-badge--news">技術</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">日本測量協会における月刊「測量」２０１５年４月号に掲載されました</h3>
+                  <h3 class="news__title">
+                    <router-link to="/Media20150401/日本測量協会における月刊「測量」２０１５年４月号に掲載されました" class="override-link-style">
+                    日本測量協会における月刊「測量」２０１５年４月号に掲載されました
+                    </router-link>
+                  </h3>
                 </div>
               </div>
             </a>
@@ -165,7 +173,11 @@ export default {
                   <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">日本経済新聞にRobot Eye Walker 4Dの記事が掲載されました</h3>
+                  <h3 class="news__title">
+                    <router-link to="/Media20140408/日本経済新聞にRobot Eye Walker 4Dの記事が掲載されました" class="override-link-style">
+                    日本経済新聞にRobot Eye Walker 4Dの記事が掲載されました
+                    </router-link>
+                  </h3>
                 </div>
               </div>
             </a>
@@ -178,7 +190,11 @@ export default {
                   <div class="news__category"><i class="util-badge--events">お知らせ</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">ケンプラッツにRobot Eye Walker 4Dの記事が掲載されました</h3>
+                  <h3 class="news__title">
+                    <router-link to="/Media20140212/ケンプラッツにRobot Eye Walker 4Dの記事が掲載されました" class="override-link-style">
+                    ケンプラッツにRobot Eye Walker 4Dの記事が掲載されました
+                    </router-link>
+                  </h3>
                 </div>
               </div>
             </a>

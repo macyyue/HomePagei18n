@@ -33,16 +33,16 @@ export default {
        </div>
       </div>
       <p class="text--right">2023年6月11日</p>
-       
-      <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1">
-        <div class="column__item item__text">
-        <p class="text" style="padding-top: 30px;">そろそろ、3DCADを覚えてみようかなという方<br>
-          とにかく簡単にArchicadを理解したい方 <br>
-          学生や、新社員の3DCADを講習させてい方</p>
-        <p class="text">
-          そんなあなたに、この動画を作成しました。<br><br>
+
+      <p class="text">
           弊社は、10年間で数百人単位で、Archicadをゼロから教えてきた実績があります。その経験から、短時間で、どの手順で教えたら一番わかりやすいかを常に考えてきました。この動画を見て、少しでも「ARCHICAD」に興味を持ってもらえる人が増えれば幸いです。<br>
         </p>
+      <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
+        <div class="column__item item__text">
+        <p class="text" style="padding-top: 30px;">そんなあなたに、この動画を作成しました。</p>
+          <li class="text">そろそろ、3DCADを覚えてみようかなという方</li>
+          <li class="text">とにかく簡単にArchicadを理解したい方</li>
+          <li class="text">学生や、新社員の3DCADを講習させてい方</li>
         </div>
 
         <div class="column__item item__image01">

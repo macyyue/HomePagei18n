@@ -12,7 +12,7 @@ export default {
                </router-link>
             </li>
             <li>
-              <router-link to="/News" class="override-link-style">
+              <router-link to="/ResultsMedia" class="override-link-style">
               <span class="main-breadcrumb__type--nolink">更新一覧</span>
             </router-link>
             </li>

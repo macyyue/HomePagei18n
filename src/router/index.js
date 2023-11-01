@@ -18,6 +18,10 @@ import Media20220901 from '@/views/Media20220901/index.vue'
 import Media20180904 from '@/views/Media20180904/index.vue'
 import Media20161014 from '@/views/Media20161014/index.vue'
 import Media20160205 from '@/views/Media20160205/index.vue'
+import Media20150708 from '@/views/Media20150708/index.vue'
+import Media20150401 from '@/views/Media20150401/index.vue'
+import Media20140408 from '@/views/Media20140408/index.vue'
+import Media20140212 from '@/views/Media20140212/index.vue'
 import Question from '@/views/Question/index.vue'
 import Recruit from '@/views/Recruit/index.vue'
 import Message from '@/views/Message/index.vue'
@@ -135,6 +139,29 @@ const router = createRouter({
             path: '/Media20160205/:title?',
             component: Media20160205,
             name: 'Media20160205'
+        },
+        {
+            path: '/Media20150708/:title?',
+            component: Media20150708,
+            name: 'Media20150708'
+
+        },
+        {
+            path: '/Media20150401/:title?',
+            component: Media20150401,
+            name: 'Media20150401'
+        },
+        {
+            path: '/Media20140408/:title?',
+            component: Media20140408,
+            name: 'Media20140408'
+
+        },
+        {
+            path: '/Media20140212/:title?',
+            component: Media20140212,
+            name: 'Media20140212'
+
         },
         {
             path: '/Message',

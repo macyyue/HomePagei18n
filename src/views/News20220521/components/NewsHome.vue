@@ -195,13 +195,14 @@ body *, body :after, body :before {
     height: auto;
     vertical-align: top;
     border-style: none;
-
 }
 .image {
     margin: 0;
 }
 .image__frame, .image a.image__frame, .image a.image__frame--modal {
     display: inline-block;
+    cursor:pointer;
+
 }
 [data-col-pc]:not([data-col-pc=auto])>* {
     margin-top: 1.25em;

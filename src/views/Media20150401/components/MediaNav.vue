@@ -36,7 +36,7 @@ export default {
     <div class="logo"> 
             <h1>
                 <img src="@/assets/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
-            <router-link to="/"> U's Factory</router-link>
+            <a href=""> U's Factory</a>
         </h1>
        </div>
 
