@@ -3,32 +3,28 @@
 </script>
 <template>
   <div id="mainWrap">	
-  
-   <h1 class="module-title1">アクセス</h1>
-  
-  
+   <h1 class="module-title1">{{ $t('Access.AccessTitle') }}</h1>
   <table class="module-table1">
   <tbody>
     <tr>
-      <th>お知らせ</th>
-      <td>2017年2月13日より会社住所及び電話番号が変更になりました</td>
+      <th>{{ $t('Access.Notice') }}</th>
+      <td>{{ $t('Access.AddressChangeNotice') }}</td>
     </tr>
     <tr>
-      <th>所 在 地</th>
-      <td>〒240-0005 神奈川県横浜市保土ケ谷区神戸町１３４<br>
-          横浜ビジネスパーク イーストタワー5階
+      <th>{{ $t('Access.Location') }}</th>
+      <td>{{ $t('Access.AddressLine1') }}<br>
+        {{ $t('Access.AddressLine2') }}
       </td>
     </tr>
   <tr>
-    <th>代 表 電 話</th>
-    <td>TEL.045-348-1560 FAX.045-348-1561</td>
+    <th>{{ $t('Access.TelephoneTitle') }}</th>
+    <td>{{ $t('Access.Telephone') }}</td>
   </tr>
   <tr>
-      <th>電車でお越しの場合</th>
-        <td>JR保土ヶ谷駅より無料シャトルバス5分<br>
-          <a class="MapTitle" href="https://www.officenomura.jp/ybp/access/">詳細地図はこちら</a><br>
-            相鉄線 天王町駅より徒歩5分
-            
+      <th>{{ $t('Access.TrainAccess') }}</th>
+        <td>{{ $t('Access.AccessLine1') }}<br>
+          <a class="MapTitle" href="https://www.officenomura.jp/ybp/access/">{{ $t('Access.MapLink') }}</a><br>
+          {{ $t('Access.AccessLine2') }}  
         </td> 
     </tr>
   </tbody>
@@ -42,6 +38,7 @@
   <style>
   
    #mainWrap{
+    min-width: 1390px;
      width :760px;
       margin: 0 auto;
       display: flex;

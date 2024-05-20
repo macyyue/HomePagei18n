@@ -3,13 +3,10 @@ export default {
   data() {
     return {
       newsList: [
-        // 你的新闻列表数据
         {
-          id: 1,
-          title: '新闻标题 1',
-          // 其他新闻信息
+          id: '1',
+          title: '',
         },
-        // 添加更多新闻
       ],
     };
   },
@@ -17,37 +14,38 @@ export default {
 </script>
 
 <template>
-  <div class="Main__inner">
-    <div class="Main__guide">
-      <ol class="main-breadcrumb" >
-        <li >
+    <div class="Main__inner">
+      <div class="Main__guide">
+        <ol class="main-breadcrumb">
+          <li>
             <router-link to="/" style="text-decoration: none;color: #333;">
-          <span class="main-breadcrumb__type--nolink">ホーム</span>
-           </router-link>
-        </li>
-        <li class="last-item">
-          <span class="main-breadcrumb__type--nolink">更新一覧</span>
-        </li>
-      </ol>
-      <!--/Main__guide-->
+              <span class="main-breadcrumb__type--nolink">{{ $t('NewsList.HomeTitle') }}</span>
+            </router-link>
+          </li>
+          <li class="last-item">
+            <span class="main-breadcrumb__type--nolink">{{ $t('NewsList.Update') }}</span>
+          </li>
+        </ol>
+        <!--/Main__guide-->
+      </div>
     </div>
-</div> 
-<router-view></router-view>
-  <div class="Main__head">
+    <router-view></router-view>
+    <div class="Main__body">
+      <div class="Main__head">
       <div class="heading1">
         <div class="heading1__inner">
-          <h1 class="heading1__title">更新一覧</h1>
+          <h1 class="heading1__title">{{ $t('NewsList.Update') }}</h1>
         </div>
       </div>
       <!--/Main__head-->
     </div>
-    <div class="Main__body">
       <div class="Main__content">
         <div class="pulldown-navi">
-          <div class="pulldown-navi__inner">
+          <!-- <div class="pulldown-navi__inner">
             <select class="pulldown-navi__select js-pulldown-navi">
               <optgroup label="">
                 <option value>年度を選択してください</option>
+                <option value="/news/2024/">2024年度</option>
                 <option value="/news/2023/">2023年度</option>
                 <option value="/news/2022/">2022年度</option>
                 <option value="/news/2021/">2021年度</option>
@@ -57,160 +55,213 @@ export default {
                 <option value="/news/2017/">2017年度</option>
               </optgroup>
             </select>
-          </div>
+          </div> -->
         </div>
         <div class="news" data-news-pc="row">
           <article class="news__article">
-            <a href="/news/2023/230804_9604.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-08-04">2023年8月18日</time>
-                  <div class="news__category"><i class="util-badge--events">イベント</i></div>
+                  <time class="news__date">{{ $t('NewsList.News1.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News1.Category') }}</i></div>
                 </div>
-               
                 <div class="news__caption">
-                  <h3 class="news__title" > 
-                    <router-link :to="{ name: 'News20230818', params: { id: 20230818 } }" class="override-link-style">
-                      【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News1.Link')" class="override-link-style">
+                      {{ $t('NewsList.News1.Title') }}
                     </router-link>
                   </h3>
                 </div>
-              
               </div>
-              
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230802_9610.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-08-02">2023年6月11日</time>
-                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                  <time class="news__date">{{ $t('NewsList.News2.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News2.Category') }}</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">必見！！「超初めてのArchicad操作法」を無料公開</h3>
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News2.Link')" class="override-link-style">
+                      {{ $t('NewsList.News2.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230726_9607.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-26">2023年5月22日</time>
-                  <div class="news__category"><i class="util-badge--cat1612">イベント</i></div>
+                  <time class="news__date">{{ $t('NewsList.News3.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--events">{{ $t('NewsList.News3.Category') }}</i>
+                  </div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">Info360（web PointCloud Viewer）がリリースされました（千葉幕張メッセ CSPI-EXPOに展示します）</h3>
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News3.Link')" class="override-link-style">
+                      {{ $t('NewsList.News3.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="https://kurashi-machi.taisei-techsolu.jp/news/2023/0720_1135.html" target="_blank" rel="noopener" class="news__type--blank">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-20">2023年5月12日</time>
-                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                  <time class="news__date">{{ $t('NewsList.News4.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News4.Category') }}</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">2023年5月16日 BI For AC V26をリリース「BIM積算機能が大幅にバージョンアップ」</h3>
+
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News4.Link')" class="override-link-style">
+                      {{ $t('NewsList.News4.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230719_9586.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-19">2023年2月14日</time>
-                  <div class="news__category"><i class="util-badge--cat1612">お知らせ</i></div>
+                  <time class="news__date">{{ $t('NewsList.News5.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--cat1612">{{ $t('NewsList.News5.Category') }}</i>
+                  </div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</h3>
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News5.Link')" class="override-link-style">
+                      {{ $t('NewsList.News5.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230712_9590.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-12">2022年12月28日</time>
-                  <div class="news__category"><i class="util-badge--news">技術</i></div>
+                  <time class="news__date">{{ $t('NewsList.News6.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News6.Category') }}</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">内装業者のための積算・発注業務革命とは</h3>
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News6.Link')" class="override-link-style">
+                      {{ $t('NewsList.News6.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230711_9591.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-07-11">2022年9月16日</time>
-                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                  <time class="news__date">{{ $t('NewsList.News7.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--cat1612">{{ $t('NewsList.News7.Category') }}</i>
+                  </div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました。</h3>
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News7.Link')" class="override-link-style">
+                      {{ $t('NewsList.News7.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230620_9574.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-06-20">2022年8月23日</time>
-                  <div class="news__category"><i class="util-badge--events">技術</i></div>
+                  <time class="news__date">{{ $t('NewsList.News8.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News8.Category') }}</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】</h3>
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News8.Link')" class="override-link-style">
+                      {{ $t('NewsList.News8.Title') }}
+                    </router-link>
+                  </h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/tech_center/open_innovation/" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-06-16">2022年7月25日</time>
-                  <div class="news__category"><i class="util-badge--news">技術</i></div>
+                  <time class="news__date">{{ $t('NewsList.News9.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--events">{{ $t('NewsList.News9.Category') }}</i>
+                  </div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">BI Structureが各社に必要とされる理由とは</h3>
+                  <h3 class="news__title">
+                     <router-link :to="$t('NewsList.News9.Link')" class="override-link-style">
+                      {{ $t('NewsList.News9.Title') }}
+                    </router-link></h3>
                 </div>
               </div>
-            </a>
+            </div>
           </article>
           <article class="news__article">
-            <a href="/news/2023/230613_9572.html" class="news__type">
+            <div class="news__type">
               <div class="news__body">
                 <div class="news__property">
-                  <time class="news__date" datetime="2023-06-13">2022年5月21日</time>
-                  <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                  <time class="news__date">{{ $t('NewsList.News10.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News10.Category') }}</i></div>
                 </div>
                 <div class="news__caption">
-                  <h3 class="news__title">産経新聞に「BIMデータの自動変換による見える化で合意形成を早期に実現へ」の記事が掲載されました</h3>
+                  <h3 class="news__title"> 
+                    <router-link :to="$t('NewsList.News10.Link') " class="override-link-style">
+                    {{ $t('NewsList.News10.Title') }}
+                  </router-link></h3>
                 </div>
               </div>
-            </a>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News11.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News11.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title"> 
+                    <router-link :to="$t('NewsList.News11.Link') " class="override-link-style">
+                    {{ $t('NewsList.News11.Title') }}
+                  </router-link></h3>
+                </div>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </div>
-    
 </template>
-  <style scoped>
+<style scoped>
   body *, body :after, body :before {
     box-sizing: border-box;
 }
-#main {
-    -webkit-font-feature-settings: "palt";
-    min-width: 1280px;
-    padding-top: 87px;
-    font-feature-settings: "palt";
+.Main__body{
+    min-width: 1390px;
+}
+.Main__content {
+    max-width: 1264px;
+    padding: 4em 30px 100px;
+    margin: 0 auto;
 }
 .Main__guide .main-breadcrumb {
     display: flex;
@@ -249,18 +300,12 @@ export default {
     font-weight: 700;
     text-decoration: none;
 }
-
-.heading1, .heading1--center {
-    width: 1264px;
-    margin-left: 0;
-}
 .heading1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100vw;
+    width: auto;
     margin-bottom: 0;
-    margin-left: calc(50% - 50vw);
     padding: 1.5em 0;
     background-color: #454545;
     color: #fff;
@@ -272,11 +317,7 @@ export default {
     padding: 0 32px;
 }
 .Main__content {
-    max-width: 1264px;
     padding: 4em 32px 100px;
-}
-.Main__content {
-    margin: 0 auto;
 }
 .Main__content>:first-child, .Main__content>[class^=list-wrap]>:first-child, .Main__content>section:first-child>:first-child {
     margin-top: 0!important;
@@ -433,7 +474,4 @@ div.Main__body .pulldown-navi__inner .pulldown-navi__select {
     margin: 0;
     font-weight: 400;
 }
-
-
-
-  </style>
+</style>

@@ -1,157 +1,95 @@
-<script>
-export default {    
-    data(){
-        return{
-      
-            languages: ['日本語', 'English', '简体中文'],
-            selectedLanguage: '',
-            isDropdownOpen: false,
-            isNavOpen:false,
-            isNavHidden: false
-           }
-        },
-        mounted() {
-            window.addEventListener('scroll', this.handleScroll);
-        },
-        beforeUnmount() { 
-            window.removeEventListener('scroll', this.handleScroll);
-        },
-        methods:{
-            toggleDropdown() {
-            this.isDropdownOpen = !this.isDropdownOpen;
-
-           },
-            closeDropdown() {
-           this.isDropdownOpen = false;
-          },
-          selectLanguage(language) {
-          this.selectedLanguage = language;
-          this.isDropdownOpen = false;
-          },
-          navDropdown(){
-            this.isNavOpen = !this.isNavOpen;
-          },
-          handleScroll() {
-      const currentScrollPosition = window.scrollY;
-
-      // 检查滚动方向
-      if (currentScrollPosition > this.lastScrollPosition) {
-        // 向下滚动，隐藏导航栏
-        this.isNavHidden = true;
-       } else {
-        // 向上滚动，显示导航栏
-        this.isNavHidden = false;
-       }
-
-      this.lastScrollPosition = currentScrollPosition;
-      },
-  
-      
-     }
-    }
+<script setup>
+//国际化
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
+const changeLang = (lang) => {
+    console.log('lang: ' + lang);
+    locale.value = lang;
+    localStorage.setItem('lang', lang);
+};
 </script>
-
 <template>
-
- <div class="navi" :class="{'navi-hidden': isNavHidden}"> 
-    <div class="logo"> 
+    <div class="navi">
+        <div class="logo">
             <h1>
-                <img src="@/assets/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
-            <a href=""> U's Factory</a>
-        </h1>
-       </div>
-
-<div class="ask-language">
-        <div class="overlay1">
-            <router-link to="/Question">お問い合わせ</router-link>
+                <img src="@/assets/image/HomePage/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
+                <a href=""> U's Factory</a>
+            </h1>
         </div>
-
-        <div class="overlay2">
-         
-            <a href="#" id="language" @click="toggleDropdown">LANGUAGE</a>
-            <a href="#" @click="toggleDropdown">
-            <span id="earth-icon"></span>     
-      </a>
-      <div v-show="isDropdownOpen" @click="closeDropdown" class="dropdown-menu">
-        <ul class="language-list">
-          <li v-for="(language, index) in languages" :key="index" @click="selectLanguage(language)">
-            {{ language }}
-          </li>
-        </ul>
-         </div>
-        </div>
-        <div class="overlay3"> 
-            <router-link to="/Login">ログイン</router-link>
-        </div >
-      
-    <div class="header-wrapper">
-    <nav>
-        <div class="menu-item">
-            <router-link to="/Company">会社概要</router-link></div>
-        <div class="menu-item">
-            <router-link to="/Access">アクセス</router-link></div> 
-        <div class="menu-item dropdown" @mouseenter="isNavOpen = true" @mouseleave="isNavOpen = false">
-        <a href="#">商品紹介</a>
-        <div class="navDropdown-menu" v-show="isNavOpen">
-            <ul class="navDropdown-meg">
-            <li><a href="https://us-factory.jp/robot/">INFO360</a></li>
-            <li><a href="https://us-factory.jp/bi/">BI for ArchiCAD</a></li>
+        <div class="ask-language">
+            <ul class="overlay-list">
+                <li class="overlay">
+                    <router-link to="/Question">{{ $t('HomeNav.Question') }}</router-link>
+                </li>
+                <li class="overlay">
+                    <span id="earth-icon"></span>
+                    <el-dropdown trigger="click" class="language">
+                        {{ $t('HomeNav.Language') }}
+                        <template #dropdown>
+                            <el-dropdown-menu>
+                                <el-dropdown-item @click="changeLang('jp')">
+                                    日本語
+                                </el-dropdown-item>
+                                <el-dropdown-item @click="changeLang('en')">
+                                    ENGLISH
+                                </el-dropdown-item>
+                                <el-dropdown-item @click="changeLang('zh')">
+                                    简体中文
+                                </el-dropdown-item>
+                                <el-dropdown-item @click="changeLang('zhf')">
+                                    繁體中文
+                                </el-dropdown-item>
+                            </el-dropdown-menu>
+                        </template>
+                    </el-dropdown> 
+                </li>
+                <li class="overlay">
+                    <router-link to="/Login">{{ $t('HomeNav.Login') }}</router-link>
+                </li>
             </ul>
+            <div class="header-wrapper">
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Company">{{ $t('HomeNav.Company') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Access">{{ $t('HomeNav.Access') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><a href="#">{{ $t('HomeNav.Services') }}</a>
+                        <ul class="dropList">
+                            <router-link to="/Info360" class="override-link-style">INFO360</router-link>
+                            <router-link to="/BiForArchiCad" class="override-link-style">BI for
+                                ArchiCAD</router-link>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/ResultsMedia">{{ $t('HomeNav.ResultsMedia') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/News">{{ $t('HomeNav.News') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Recruit" target="_blank">{{ $t('HomeNav.Recruit') }}</router-link></li>
+                </ul>
+            </div>
         </div>
-        </div>
-        <div class="menu-item"><a href="https://us-factory.jp/media/">実績掲載</a></div>
-        <div class="menu-item"><router-link to="/Recruit">採用情報</router-link></div>
-
-    </nav>
+    <div class="home-video">
+        <div class="home-video-title">{{ $t('HomeNav.HomeVideoTitle') }}</div>
+        <video id="video" src="@/assets/image/HomePage/みなとみらい_Twinmotion.mp4" playsinline muted loop style="width: 100%;">
+            <!-- autoplay 自动播放 -->
+        </video>
     </div>
-  </div>
-</div>
-<div class="home-video">
-   
-   <div class="home-video-title">建設業界の慣習を覆す</div>
-   <video id="video" src="@/assets/みなとみらい_Twinmotion.mp4" playsinline  muted  loop style="width: 100%;" >
-    <!-- autoplay 自动播放 -->
-   </video>
 </div>
 </template>
-<style>
+<style scoped>
 .navi {
-    z-index: 3;
-    top: 0;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
+    min-width: 1390px;
+    height: 20%;
     background-color: #454545;
-    transition: all 450ms cubic-bezier(.23,1,.32,1) 0s;
-}
-.navi-hidden {
-  transform: translateY(-100%);
-  opacity: 0;
-}
+    transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0s;
 
-@media (max-width: 700px) {
-    .navi {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80px;
-        
-    }
-    .ask-language,
-    .header-wrapper {
-        display: none;
-    }
-    .logo {
-        display: block;
-        margin-top: 0;
-        margin-left: 0;
-    }
-    .logo a {
-        font-size: 20px;
-        line-height: 80px;
-    }
 }
-
 .clearfix::before,
 .clearfix::after {
     content: '';
@@ -162,71 +100,86 @@ export default {
     clear: both;
 }
 
-.overlay1 {
-    display: inline-flex;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    transform: translate(-300%, 77%);
+.header-wrapper {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.overlay1 a {
+.menuItem {
+    position: relative;
+    width: 100px;
+    line-height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    list-style: none;
+}
+.navList a {
+    color: #fff;
     display: block;
-    color: #dcdcdc;
     text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
+}
+.navList a:hover {
+    background: #666;
+    border-radius: 3px;
+}
+.dropList {
+    position: absolute;
+    background: #454545;
+    box-shadow: 0 1px 2px #666;
+    display: none;
+    border-radius: 3px;
+    overflow: hidden;
+    z-index: 1000;
+    white-space: nowrap;
+    text-align: left;
+    width: 10rem;
+    height: 7rem;
+}
+.menuItem:hover .dropList {
+    display: block;
 }
 
-.overlay2 {
-    display: inline-flex;
-    position: absolute;
+.override-link-style {
+    margin: 15px 3px;
+}
+
+.overlay-list {
     float: right;
-    top: 0%;
-    right: 0%;
-    transform: translate(-15%, 70%);
+    margin: -70px 10px;
+    list-style: none; 
+}
+.overlay {
+    float: left;
+    margin-left: 20px; 
 }
 
-.overlay2 a {
-    display: block;
+.overlay a {
     color: #dcdcdc;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
+}
+.language {
+    color: #dcdcdc;
+    text-decoration: none;
+    top: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
 
 }
-#language{
-    transform: translate(-15%, 21%);
-}
-
 #earth-icon {
-    float: right;
+    float: left;
     width: 20px;
     height: 20px;
     margin-bottom: 2px;
-    background-image: url(@/assets/earth.svg);
+    background-image: url(@/assets/image/HomePage/earth.svg);
     vertical-align: middle;
-    top: 0%;
-    right: 0%;
-    transform: translate(-550%, 10%);
-}
-.overlay3 {
-    display: inline-flex;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    transform: translate(-510%, 77%);
 }
 
-.overlay3 a {
-    display: block;
-    color: #dcdcdc;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-}
 .dropdown-menu {
-    position: absolute;
     top: 100%;
     left: -7px;
     min-width: 5rem;
@@ -240,6 +193,7 @@ export default {
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: .25rem;
 }
+
 
 .language-list {
     list-style-type: none;
@@ -319,16 +273,13 @@ nav .menu-item a {
     white-space: nowrap;
 }
 
-.dropdown {
-    position: relative;
-    z-index: 3;
-}
 
-.navDropdown-menu {
+
+/* .navDropdown-menu {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-26%, -249%);
+    transform: translate(-67%, -249%);
     width: 150px;
     min-width: 5rem;
     padding: .5rem 0;
@@ -339,9 +290,9 @@ nav .menu-item a {
     background-color: transparent;
     background-clip: padding-box;
     z-index: 4;
-}
+} */
 
-.navDropdown-meg {
+/* .navDropdown-meg {
     position: relative;
     list-style-type: none;
     padding: 0;
@@ -351,21 +302,11 @@ nav .menu-item a {
     background-color: #fff;
     color: black;
 }
-
 .navDropdown-meg li a {
     padding: 0 20px;
     cursor: pointer;
     color: black;
 }
-
-.navDropdown-meg img {
-    position: absolute;
-    transform: translateY(8px);
-    right: 8px;
-    width: 13px;
-    height: 13px;
-}
-
 .navDropdown-meg li:hover {
     display: inline-block;
     width: 170px;
@@ -374,39 +315,38 @@ nav .menu-item a {
     text-decoration: none;
     white-space: nowrap;
     background-color: rgba(90, 86, 86, 0.1);
-}
+} */
 
 .home-video {
-   z-index: 2;
-   position: relative;
-   height: 600px;
-   background-color: transparent;
-   object-fit: cover;
+    position: relative;
+    height: 600px;
+    background-color: transparent;
+    object-fit: cover;
 }
 
 #video {
-   position: absolute;
-   height: 600px;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   object-fit: cover;
-}
-.home-video-title {
-   position: absolute;
-   display: flex;
-   width: 300px;
-   height: 300px;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   font-size: xx-large;
-   color: #ffffff;
-   text-shadow: 1px 1px 5px #262626;
-   white-space: nowrap;
-   justify-content: center;
-   align-items: center;
-   z-index: 2;
+    position: absolute;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
+.home-video-title {
+    position: absolute;
+    display: flex;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: xx-large;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px #262626;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
 </style>

@@ -1,31 +1,63 @@
 <script setup>
-
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
+const changeLang = (lang) => {
+    locale.value = lang;
+    localStorage.setItem('lang', lang);
+};
 </script>
-
 <template>
     <div id="header" class="clearfix" style="position:relative;">
-        <div class="titleLogo"><router-link to="/Recruit"><img src="@/assets/RecruitQuestionImg.svg"></router-link></div>
-</div>
-<div id="globals">
-<p class="heading_title">パスワードの再設定</p>
-</div>
+        <div class="titleLogo"><router-link to="/Recruit"><img src="@/assets/RecruitQuestionImg.svg"></router-link>
+        </div>
+    </div>
+    <div id="globals">
+        <div class="content_title">
+            <div class="LanguageCon">
+                <span id="earth-icon"></span>
+                <el-dropdown trigger="click" class="language">
+                    {{ $t('HomeNav.Language') }}
+                    <template #dropdown>
+                        <el-dropdown-menu>
+                            <el-dropdown-item @click="changeLang('jp')">
+                                日本語
+                            </el-dropdown-item>
+                            <el-dropdown-item @click="changeLang('en')">
+                                ENGLISH
+                            </el-dropdown-item>
+                            <el-dropdown-item @click="changeLang('zh')">
+                                简体中文
+                            </el-dropdown-item>
+                            <el-dropdown-item @click="changeLang('zhf')">
+                                繁體中文
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </template>
+                </el-dropdown>
+            </div>
+            <p>{{ $t('PwForgot.PwForTit') }}</p>
+        </div>
+    </div>
 </template>
 
-    <style>
-   #header {
+<style scoped>
+#header {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
     margin-bottom: 20px;
     position: relative;
-   }
-   #globals {
+}
+
+#globals {
+    display: block;
     width: 100%;
     height: 50px;
     background: #C8CCD0;
 }
-.heading_title {
+
+.content_title {
     color: #FFF;
     background: #9198A0;
     width: 940px;
@@ -36,4 +68,26 @@
     font-size: 150%;
 }
 
+.LanguageCon {
+    float: right;
+    list-style: none;
+}
+
+.language {
+    color: #FFF;
+    text-decoration: none;
+    top: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#earth-icon {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+    background-image: url(@/assets/earth.svg);
+    vertical-align: middle;
+}
 </style>

@@ -1,7 +1,9 @@
 ﻿<script setup>
 import LoginFormHome from './components/LoginFormHome.vue'
 import LoginFormNav from './components/LoginFormNav.vue'
-import LoginFormFooter from './components/LoginFormFooter.vue'
+// import LoginFormFooter from './components/LoginFormFooter.vue'
+import PwForgotFooter from '@/components/PwForgot/PwForgotFooter.vue';
+
 </script>
 
 <template>
@@ -9,7 +11,7 @@ import LoginFormFooter from './components/LoginFormFooter.vue'
         <LoginFormNav />
         <LoginFormHome />
         <RouterView />
-        <LoginFormFooter />
+        <PwForgotFooter />
         <BackToTop />
     </div>
 </template>

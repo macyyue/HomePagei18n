@@ -2,136 +2,433 @@
 
 </script>
 <template>
-    
- <div class="news_list_con">
-        <h3 > <span>NEWS</span> </h3>
-      
-        <ul>
-            <li><a href="">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</a><span>2023.02.14</span></li>
-            <li><a href=""> 内装業者のための積算・発注業務革命とは</a><span>2022.12.28</span></li>
-            <li><a href=""> 躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました</a><span>2022.09.16</span></li>
-            <li><a href=""> 3次元計測モデリングサービス『Info360®』が好調</a><span>2022.08.23</span></li>
-            <li><a href=""> BI Structureが各社に必要とされる理由とは</a><span >2022.07.25</span></li>
-            
-        </ul>
-       
-        <div class="news-past">
-            <router-link to="/News">
-            <a href=""> 一覧へ&nbsp;&nbsp;</a> 
-             </router-link>
+  <div class="Main__body">
+    <div class="Main__content">
+      <div class="news_list_con">
+        <h2> <span>NEWS</span> </h2>
+        <div class="news" data-news-pc="row">
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News1.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News1.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News1.Link')" class="override-link-style">
+                      {{ $t('NewsList.News1.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News2.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News2.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News2.Link')" class="override-link-style">
+                      {{ $t('NewsList.News2.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News3.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--events">{{ $t('NewsList.News3.Category') }}</i>
+                  </div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News3.Link')" class="override-link-style">
+                      {{ $t('NewsList.News3.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News4.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News4.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News4.Link')" class="override-link-style">
+                      {{ $t('NewsList.News4.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News5.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--cat1612">{{ $t('NewsList.News5.Category') }}</i>
+                  </div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News5.Link')" class="override-link-style">
+                      {{ $t('NewsList.News5.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News6.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News6.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News6.Link')" class="override-link-style">
+                      {{ $t('NewsList.News6.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News7.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--cat1612">{{ $t('NewsList.News7.Category') }}</i>
+                  </div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News7.Link')" class="override-link-style">
+                      {{ $t('NewsList.News7.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News8.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News8.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                    <router-link :to="$t('NewsList.News8.Link')" class="override-link-style">
+                      {{ $t('NewsList.News8.Title') }}
+                    </router-link>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News9.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--events">{{ $t('NewsList.News9.Category') }}</i>
+                  </div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title">
+                     <router-link :to="$t('NewsList.News9.Link')" class="override-link-style">
+                      {{ $t('NewsList.News9.Title') }}
+                    </router-link></h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News10.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News10.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title"> 
+                    <router-link :to="$t('NewsList.News10.Link') " class="override-link-style">
+                    {{ $t('NewsList.News10.Title') }}
+                  </router-link></h3>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="news__article">
+            <div class="news__type">
+              <div class="news__body">
+                <div class="news__property">
+                  <time class="news__date">{{ $t('NewsList.News11.Date') }}</time>
+                  <div class="news__category"><i class="util-badge--news">{{ $t('NewsList.News11.Category') }}</i></div>
+                </div>
+                <div class="news__caption">
+                  <h3 class="news__title"> 
+                    <router-link :to="$t('NewsList.News11.Link') " class="override-link-style">
+                    {{ $t('NewsList.News11.Title') }}
+                  </router-link></h3>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
+        <div class="news-past">
+          <router-link to="/News">
+            <a href=""> {{ $t('NewsList.ToList') }} &nbsp;&nbsp;</a>
+          </router-link>
+        </div>
+      </div>
     </div>
-    
-
-
+  </div>
 
 </template>
-<style>
-* {
-    margin: 0;
-    padding: 0;
+<style scoped>
+body *,
+body :after,
+body :before {
+  box-sizing: border-box;
+
 }
 
-@media screen and (min-width: 641px) and (max-width: 1000px){
+.Main__body {
+  min-width: 1390px;
+}
+
+.Main__content {
+  padding: 4em 30px 100px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* @media screen and (min-width: 641px) and (max-width: 1000px){
 .news_list_con {
     width: 100%;
+    padding: 13.3333% 8.6667%;
 }
-}
+} */
 .news_list_con {
-    display: block;
-    height: 399px;
-    background-color: #fff;
-    margin: 36px 0 26px;
-    padding-left: 20px;
-    font-size: 18px;
-    line-height: 18px;
-    font-weight: 400;
+  max-width: 1264px;
+  padding: 4em 32px 100px;
+  margin: 0 auto;
+
 }
 
-.news_list_con h3 {
-    height: 60px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+.news_list_con h2 {
+  height: 60px;
+  text-align: center;
 }
 
-.news_list_con h3 span {
-    height: 50px;
-    line-height: 1.4;
-    font-family: "Montserrat", YuGothic, "Noto Sans Japanese", "游ゴシック", Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-    font-weight: 600;
-    margin: 0 auto;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+
+.news_list_con h2 span {
+  height: 50px;
+  line-height: 1.4;
+  font-family: "Montserrat", YuGothic, "Noto Sans Japanese", "游ゴシック", Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-weight: 600;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.news_list_con ul {
-    display: inline-block;
-    margin: 0 30%;
-    padding: 15px 0;
-    list-style: none;
+.override-link-style {
+  text-decoration: none;
+  color: #333;
 }
 
-.news_list_con li {
-    position: relative;
-    height: 37px;
-    line-height: 37px;
+.news {
+  margin: 1.2em 0 0;
+  border-top: 1px solid #e0e0e0;
 }
 
-.news_list_con li a:before {
-    content: "·";
+.news__article {
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.news_list_con li a {
-    float: left;
-    font: normal 14px/36px "";
-    color: #524e4e;
-    width: 690px;
+.news .news__type,
+.news .news__type--blank,
+.news .news__type--excel,
+.news .news__type--modal,
+.news .news__type--nolink,
+.news .news__type--pdf,
+.news .news__type--powerpoint,
+.news .news__type--rss,
+.news .news__type--video,
+.news .news__type--word,
+.news .news__type--zip {
+  padding: 0.6em 0;
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+
 }
 
-.news_list_con li a:hover {
-    color: #121117;
-    box-shadow: 0 2px 10px #636363;
-    width: 690px;
+.news__type,
+.news__type--blank {
+  color: #454545;
+  text-decoration: none;
 }
 
-.news_list_con li span {
-    margin-right: -30%;
-    float: right;
-    transform: translateX(-50%);
+.news__caption:hover {
+  text-decoration-line: underline;
+}
+
+.news[data-news-pc=row] .news__body {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+}
+
+.news__body {
+  flex: 1 1;
+  order: 1;
+}
+
+.news__property {
+  display: flex;
+  align-items: baseline;
+}
+
+.news__date {
+  font-size: 1rem;
+  line-height: 22px;
+  min-width: 10.5em;
+  color: #999;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.news[data-news-pc=row] .news__category {
+  flex-direction: column;
+  margin-right: 26px;
+}
+
+.news__category {
+  display: inline-flex;
+  flex-flow: row wrap;
+  margin-bottom: -.83333em;
+}
+
+.util-badge--csr,
+.util-badge--events,
+.util-badge--ir,
+.util-badge--news,
+.util-badge--other,
+.util-badge--release {
+  background-color: #454545;
+}
+
+[class*=util-badge--] {
+  background-color: #454545;
+  color: #fff;
+}
+
+.news[data-news-pc=row] .news__category>* {
+  margin-right: 0;
+}
+
+[class*=util-badge--] {
+  min-width: 104px;
+  height: 25px;
+  padding: 1px 10px 0;
+  font-size: 0.8rem;
+  line-height: 19px;
+}
+
+.util-badge,
+[class*=util-badge--] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.news__caption {
+  flex: 1 1;
+}
+
+.news .news__type .news__title {
+  position: relative;
+  line-height: 1.6em;
+}
+
+.news__title {
+  font-size: 1rem;
+}
+
+.news__title {
+  margin: 0;
+  font-weight: 400;
+}
+
+.Main__content>:first-child,
+.Main__content>[class^=list-wrap]>:first-child,
+.Main__content>section:first-child>:first-child {
+  margin-top: 0 !important;
+}
+
+.Main__content>:last-child {
+  margin-bottom: 0 !important;
 }
 
 .news-past {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .news-past a {
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: .25rem;
-    border: 1px solid rgb(100, 94, 94, .3);
-    box-shadow: 1px 1px 1px 1px rgba(46, 45, 45, 0.1);
-    line-height: 1.8;
-    font-family: "Montserrat", YuGothic, "Noto Sans Japanese", "游ゴシック", Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
-    font-size: 1rem;
-    color: black;
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: .25rem;
+  border: 1px solid rgb(100, 94, 94, .3);
+  box-shadow: 1px 1px 1px 1px rgba(46, 45, 45, 0.1);
+  line-height: 1.8;
+  font-family: "Montserrat", YuGothic, "Noto Sans Japanese", "游ゴシック", Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  font-size: 1rem;
+  color: black;
 }
 
 .news-past a img {
-    display: inline-block;
-    top: 0;
-    transform: translateY(10%);
-    width: 13px;
-    height: 13px;
+  display: inline-block;
+  top: 0;
+  transform: translateY(10%);
+  width: 13px;
+  height: 13px;
 }
 
 .news-past a:hover {
-    background-color: rgba(90, 86, 86, 0.1);
+  background-color: rgba(90, 86, 86, 0.1);
 }
 </style>
-
-
-

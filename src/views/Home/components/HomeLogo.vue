@@ -27,7 +27,7 @@ export default {
 <template>
 
     <div id="logo_box"  >
-        <img id="logo" src="@/assets/UsLogo.svg" style="height: 37px;" />  
+        <img id="logo" src="@/assets/image/HomePage/UsLogo.svg" style="height: 37px;" />  
         <div class="wavy" >
         <span style="--i:1  ;--j:10 ;">U</span>
         <span style="--i:2  ;--j:9 ;">'</span>
