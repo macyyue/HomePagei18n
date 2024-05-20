@@ -1,18 +1,16 @@
 ﻿<script>
-import Lightbox from '@/views/LightBox/LightBox.vue'
-
-
-export default {
-  props: ['id'],
-  components: {
-    Lightbox,
-  },
-  methods: {
-    openImage(src) {
-      this.$refs.lightbox.openLightbox(src);
-    },
-  },
-};
+// import Lightbox from '@/views/LightBox/LightBox.vue'
+// export default {
+//   props: ['id'],
+//   components: {
+//     Lightbox,
+//   },
+//   methods: {
+//     openImage(src) {
+//       this.$refs.lightbox.openLightbox(src);
+//     },
+//   },
+// };
 </script>
 
 <template>
@@ -21,16 +19,16 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20150708.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/ResultsMedia" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20150708.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20150708.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -40,21 +38,21 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">ケンプラッツに「現場をPC上に出前！“3D写真”が変える設計、施工計画」として掲載されました</h1>
+        <h1 class="heading1-v2__title">{{ $t('Media20150708.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2015年7月8日</p>
+      <p class="text--right">{{ $t('Media20150708.Date') }}</p>
        
       <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">
-          「Robot Eye Walker 4D」の現場にける有効活用とWeb上で情報を共有可能な新サービス「Dokodemo_DOA」システムが紹介されています。
+          {{ $t('Media20150708.NewsConL1') }}
           <br><br>
-            特に、狭小空間での情報共有技術は必見です。
+          {{ $t('Media20150708.NewsConL2') }}
         </p>
         </div>
       <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1" style="text-align: center;">
         <div class="image-wrap--center">
-          <Lightbox ref="lightbox" />
+          <!-- <Lightbox ref="lightbox" /> -->
         <figure class="image">
         <div class="item-image">
             <img src="@/assets/image/Media20150708/img1.jpg" alt="" >
@@ -66,28 +64,26 @@ export default {
         <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">{{ $t('Media20150708.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>システムの記事はこちら▼</p>
+          <p>{{ $t('Media20150708.NewsTextAbout') }}</p>
           <a href="https://xtech.nikkei.com/kn/article/it/column/20150703/705229/" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">現場をPC上に出前！“3D写真”が変える設計、施工計画(日経クロステックHP)</span>
+          <span class="util-bold">{{ $t('Media20150708.NewsText1') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/ResultsMedia">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('Media20150708.ListBack') }}</span>
             </a>
           </router-link>
           </div>
         </div>
       </div>
     </div> 
-
-
 </template>
 <style scoped>
 body *, body :after, body :before {

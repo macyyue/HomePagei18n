@@ -1,9 +1,11 @@
 <script>
-import goods1 from "@/assets/image/goods1.jpg";
-import goods2 from "@/assets/image/goods2.jpg";
-import goods3 from "@/assets/image/goods3.jpg";
-import goods4 from "@/assets/image/goods4.jpg";
-import goods5 from "@/assets/image/goods5.jpg";
+/* @vite-ignore */ 
+import goods1 from "@/assets/image/HomePage/goods1.jpg";
+
+import goods2 from "@/assets/image/HomePage/goods2.jpg";
+import goods3 from "@/assets/image/HomePage/goods3.jpg";
+import goods4 from "@/assets/image/HomePage/goods4.jpg";
+import goods5 from "@/assets/image/HomePage/goods5.jpg";
 export default {
   data() {
     return {
@@ -39,8 +41,7 @@ export default {
     async ImgSource(value) {
       if (value >= 0 && value < this.goodsData.length) {
         try {
-         /* @vite-ignore */
-          const imagePath = await import(`@/assets/image/${this.goodsData[value].source}.jpg`);
+          const imagePath = await import(/* @vite-ignore */ `@/assets/image/${this.goodsData[value].source}.jpg`);
           return imagePath.default;
         } catch (error) {
           console.error("未找到图片：", error);
@@ -93,13 +94,9 @@ export default {
   },
 };
 </script>
-
-
 <template>
   <div class="goods">
     <div class="goods-wrapper" @mouseover="stopCarousel" @mouseout="startCarousel">
-      <span>Pick Up</span>
-
       <div class="images-container" ref="imagesContainer">
         <div
           v-for="(item, index) in goodsData"

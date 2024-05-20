@@ -12,21 +12,21 @@
                                 <span id="login_info" class="login__info"></span>
                                 <div id="main__contents" class="main__contents">
                                     <span class="Email">
-                                        使用可能なメールアドレスを入力して、「メール送信」ボタンを押してください。<br>
-                                        入力したメールアドレス宛に新規会員用登録フォームへのURLリンクを記載したメールが届きます。
+                                        {{ $t('PwForgot.PwForConL1') }}<br>
+                                        {{ $t('PwForgot.PwForConL2') }}
                                     </span>
                                     <table class='noborder'>
                                         <tr>
-                                            <th class='w100'>ログインID</th>
-                                            <td><input type='text' id='uid' name='uid' size=40 placeholder='メールアドレス' />
+                                            <th class='w100'>{{ $t('PwForgot.LoginId') }}</th>
+                                            <td><input type='text' id='uid' name='uid' size=40
+                                                    :placeholder="$t('PwForgot.EmailAddress')" />
                                             </td>
                                         </tr>
                                     </table>
-
                                     <div class="form_button">
                                         <router-link to="/Login">
-                                            <input id="submit" class="btn__l btn__submit" name="submit" value="メール送信"
-                                                type="submit">
+                                            <input id="submit" class="btn__l btn__submit" name="submit"
+                                                :value="$t('PwForgot.SendEmail')" type="submit">
                                         </router-link>
                                     </div>
                                     <!-- form_button end -->

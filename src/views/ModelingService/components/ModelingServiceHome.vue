@@ -1,30 +1,5 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
 
-export default {
-  setup() {
-    const newsTitle = ref('');
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230611',
-        title: '必見！！「超初めてのArchicad操作法」を無料公開',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-
-    return {
-      newsTitle,
-    };
-  },
-};
 </script>
 <template>
   <!-- メイン__ガイド 主要__指南-->
@@ -33,12 +8,12 @@ export default {
     <ol class="main-breadcrumb">
       <li>
         <router-link to="/" style="text-decoration: none;color: #333;">
-          <span class="main-breadcrumb__type--nolink">ホーム</span>
+          <span class="main-breadcrumb__type--nolink">{{ $t('ModelingService.HomeTitle') }}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/ModelingService" class="override-link-style">
-          <span class="main-breadcrumb__type--nolink">高精度3D計測サービス</span>
+          <span class="main-breadcrumb__type--nolink">{{ $t('ModelingService.ModelingSerTitle') }}</span>
         </router-link>
       </li>
     </ol>
@@ -49,14 +24,13 @@ export default {
     <div class="Main__content">
       <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">高精度3D計測サービス</h2>
+          <h2 class="heading2__title">{{ $t('ModelingService.ModelingSerTitle') }}</h2>
          </div>
         </div>
         <p class="text">
-          話題の技術や取組みをピックアップして紹介します。<br><br>
-            本商品は（株）岩根研究所と（株）U’sFactoryの共同開発商品であり、リアルとバーチャルをつなぐ革新的なプラットフォームを提供しています。<br><br>
-            また、岩根研究所独自のCV（カメラベクター）技術を使い、全周囲動画映像からカメラ位置を高精度に求め、
-            座標値を持ち合わせる三次元化映像を作成と3DACADを作成します。
+          {{ $t('ModelingService.ModeingSerContent1') }}<br>
+          {{ $t('ModelingService.ModeingSerContent2') }}<br>
+          {{ $t('ModelingService.ModeingSerContent3') }}
         </p>
         <div class="column__item item__image01">
         <div class="image-wrap--center">
@@ -76,36 +50,36 @@ export default {
       <!-- 関連情報 -->
       <div class="heading2">
         <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title"> {{ $t('ModelingService.RelatedInfo') }}</h2>
         </div>
       </div>
-      <p class="MessageTitle">高精度3D計測サービスに関する情報はこちらからご覧いただけます。</p>
+      <p class="MessageTitle">{{ $t('ModelingService.RelatedInfoTitle') }}</p>
 
       <div class="AboutText">
           <a href="https://us-factory.jp/wp-content/uploads/2015/06/3D_A4-2018%E6%9C%80%E7%B5%82.pdf" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">高精度３Ｄ計測サービス２０１８パンフはこちら</span>
+          <span class="util-bold">{{ $t('ModelingService.RelatedInfoPdf') }}</span>
         </a>
       </div>
       <div class="AboutText">
         <a href="https://www.youtube.com/watch?v=_YZeWCFbLnk" target="_blank" rel="noopener" class="util-link-youtube--blank">
-          <span class="util-bold"> 急傾斜地敷地計測サービス</span>
+          <span class="util-bold"> {{ $t('ModelingService.RelatedInfoText1') }}</span>
         </a>
       </div>
       <div class="AboutText">
         <a href="https://www.youtube.com/watch?v=BSIhGZ31zEE" target="_blank" rel="noopener" class="util-link-youtube--blank">
-          <span class="util-bold"> 世界初C1 ルート左右廻り3Dモデル</span>
+          <span class="util-bold"> {{ $t('ModelingService.RelatedInfoText2') }}</span>
         </a>
       </div>
       <div class="AboutText">
         <a href="https://www.youtube.com/watch?v=suZ_nUo7PQQ" target="_blank" rel="noopener" class="util-link-youtube--blank">
-          <span class="util-bold"> 高精度3D計測サービス（ハイブリッド）</span>
+          <span class="util-bold"> {{ $t('ModelingService.RelatedInfoText3') }}</span>
         </a>
       </div>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
         <div class="button-v2">
           <router-link to="/Info360">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('ModelingService.ListBack') }}</span>
             </a>
           </router-link>
         </div>

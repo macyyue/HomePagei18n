@@ -1,30 +1,5 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
 
-export default {
-  setup() {
-    const newsTitle = ref('');
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230611',
-        title: '必見！！「超初めてのArchicad操作法」を無料公開',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-
-    return {
-      newsTitle,
-    };
-  },
-};
 </script>
 <template>
   <!-- メイン__ガイド 主要__指南-->
@@ -33,17 +8,14 @@ export default {
       <ol class="main-breadcrumb">
         <li>
           <router-link to="/" style="text-decoration: none;color: #333;">
-            <span class="main-breadcrumb__type--nolink">ホーム</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('Info360.HomeTitle') }}</span>
           </router-link>
         </li>
         <li>
           <router-link to="/Info360" class="override-link-style">
-            <span class="main-breadcrumb__type--nolink">INFO360</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('Info360.Info360Title') }}</span>
           </router-link>
         </li>
-        <!-- <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ newsTitle }}</span>
-            </li> -->
       </ol>
       <!--/Main__guide-->
     </div>
@@ -51,19 +23,17 @@ export default {
       <div class="Main__content">
         <div class="Info360__inner">
           <div class="Info360__intro">
-            <span>建築・土木・鉄道・高速道路といったさまざまな分野において、
-              <br>現地調査や点検・計測など第三者を含む複数人に対して、
-              <br>現実空間の情報を共有する仕組みが求められています。
+            <span>{{ $t('Info360.Info360Content1') }}
+              <br>{{ $t('Info360.Info360Content2') }}
+              <br>{{ $t('Info360.Info360Content3') }}
             </span>
           </div>
-
         </div>
         <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">スポットライト</h2>
+            <h2 class="heading2__title">{{ $t('Info360.ServiceTitle') }}</h2>
           </div>
         </div>
-
         <!-- 商品の四つ動画 -->
         <ul class="sol_environment__list type01">
           <li>
@@ -74,12 +44,11 @@ export default {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen="">
                 </iframe>
-
               </div>
               <div class="body">
-                <div class="title">高精度3D計測サービス</div>
+                <div class="title">{{ $t('Info360.Service1.Title') }}</div>
                 <div class="txt">
-                  本商品は（株）岩根研究所と（株）U’sFactoryの共同開発商品であり、リアルとバーチャルをつなぐ革新的なプラットフォームを提供しています。
+                  {{ $t('Info360.Service1.Content') }}
                 </div>
               </div>
             </router-link>
@@ -93,14 +62,12 @@ export default {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen="">
                   </iframe>
-
                 </div>
                 <div class="body">
-                  <div class="title">Ｉｎｆｏ３６０サービス</div>
+                  <div class="title">{{ $t('Info360.Service2.Title') }}</div>
                   <div class="txt">
-                    現地での作業が早く簡単に、一人で操作可能なシステム
-
-                    ※Info360（現地調査版）は2018年4月中旬よりサービスを開始しました。
+                    {{ $t('Info360.Service2.Content1') }} <br>
+                    {{ $t('Info360.Service2.Content2') }}
                   </div>
                 </div>
               </a>
@@ -117,9 +84,9 @@ export default {
                   </iframe>
                 </div>
                 <div class="body">
-                  <div class="title">Robot Eye Walker4Dの活用</div>
+                  <div class="title">{{ $t('Info360.Service3.Title') }}</div>
                   <div class="txt">
-                    主催 : 大塚商会・竹中工務店・東大グリーンICTプロジェクト(GUTP)・Tスポット・SDM 協賛:株式会社U’Sfactory
+                    {{ $t('Info360.Service3.Content') }}
                   </div>
                 </div>
               </a>
@@ -136,11 +103,10 @@ export default {
                   </iframe>
                 </div>
                 <div class="body">
-                  <div class="title">Robot Eye Walker4D</div>
+                  <div class="title">{{ $t('Info360.Service4.Title') }}</div>
                   <div class="txt">
-                    改修工事前の状況を確認する技術の紹介です。
-                    改修後の間仕切り位置や、工事に係る準備作業の確認に有効であり、現地に行かなくても確認ができるという評価を
-                    いただいた事例です。
+                    {{ $t('Info360.Service4.Content1') }}
+                    {{ $t('Info360.Service4.Content2') }}
                   </div>
                 </div>
               </a>
@@ -148,23 +114,20 @@ export default {
           </li>
         </ul>
         <!-- 関連情報 -->
-        <div class="heading2">
+        <!-- <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">関連情報</h2>
+            <h2 class="heading2__title">{{ $t('Info360.RelatedInfo') }}</h2>
           </div>
         </div>
-
-
-
         <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
-            <router-link to="/News">
+            <router-link to="/">
               <a href="" class="button-v2__type">
-                <span class="button-v2__label">一覧へ戻る</span>
+                <span class="button-v2__label">{{ $t('Info360.ListBack') }}</span>
               </a>
             </router-link>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

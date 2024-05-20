@@ -8,43 +8,41 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20161014.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/ResultsMedia" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20161014.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20161014.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
         </div>
-
   <div class="Main__body">
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">事業紹介ビデオを作成しました</h1>
+        <h1 class="heading1-v2__title">{{ $t('Media20161014.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2016年10月14日</p>
+      <p class="text--right">{{ $t('Media20161014.Date') }}</p>
       <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
         <div class="column__item item__text">
-        <p class="text" style="padding-top: 30px;">U’sFactoryの事業紹介です<br><br>事業内容</p>
+        <p class="text" style="padding-top: 30px;">{{ $t('Media20161014.NewsSmaTitle1') }}<br><br>{{ $t('Media20161014.NewsSmaTitle2') }}</p>
         <li class="text">
-          高精度3D計測サービス(High precision3D Measurement Service)
+          {{ $t('Media20161014.NewsConL1') }}
         </li>
         <li class="text">
-          ソフトウエア開発・販売(Software Development and sales)
+          {{ $t('Media20161014.NewsConL2') }}
         </li>
         <li class="text">
-          BIMコンサルティング(BIMconsulting)
+          {{ $t('Media20161014.NewsConL3') }}
         </li>
         </div>
-
         <!--左テキスト ここまで--> <!--右YouTube ここから-->
         <div class="column__item item__image01">
         <div class="image-wrap--center">
@@ -66,27 +64,25 @@ export default {
         <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">{{ $t('Media20161014.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
           <a href="https://www.youtube.com/watch?v=suZ_nUo7PQQ" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 高精度3D計測サービス(ハイブリッド)</span>
+          <span class="util-bold">{{ $t('Media20161014.NewsText1') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/ResultsMedia">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('Media20161014.ListBack') }}</span>
             </a>
           </router-link>
           </div>
         </div>
       </div>
     </div> 
-
-
 </template>
 <style scoped>
 body *, body :after, body :before {

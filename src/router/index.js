@@ -57,6 +57,9 @@ const router = createRouter({
             path: '/',
             name: 'Home',
             component: Home,
+            // meta:{
+            //     showLoadingAnimation:true
+            // }
         },
         {
             path: '/Company',
@@ -74,7 +77,8 @@ const router = createRouter({
 
         {
             path: '/Recruit',
-            component: Recruit
+            component: Recruit,
+            meta: { noAnimation: true }
         },
         {
             path: '/Info360',
@@ -99,7 +103,10 @@ const router = createRouter({
         {
             path: '/BiForArchiCad',
             component: BiForArchiCad,
-            name: 'BiForArchiCad'
+            name: 'BiForArchiCad',
+            meta: {
+                keepAlive: true
+            }
         },
         {
             path: '/BiForArchiCadContent',
@@ -114,7 +121,7 @@ const router = createRouter({
         {
             path: '/ArchiCAD',
             component: ArchiCAD,
-            name: 'ArchiCAD'
+            name: 'ArchiCAD',
         },
         {
             path: '/ResultsMedia',
@@ -198,67 +205,67 @@ const router = createRouter({
             component: News,
         },
         {
-            path: '/News20240205/:title?',
+            path: '/News20240205',
             name: 'News20240205',
             component: News20240205,
             props: true,
         },
         {
-            path: '/News20231124/:title?',
+            path: '/News20231124',
             name: 'News20231124',
             component: News20231124,
             props: true,
         },
         {
-            path: '/News20230818/:title?',
+            path: '/News20230818',
             name: 'News20230818',
             component: News20230818,
             props: true,
         },
         {
-            path: '/News20230611/:title?',
+            path: '/News20230611',
             name: 'News20230611',
             component: News20230611,
             props: true,
         },
         {
-            path: '/News20230522/:title?',
+            path: '/News20230522',
             name: 'News20230522',
             component: News20230522,
             props: true,
         },
         {
-            path: '/News20230512/:title?',
+            path: '/News20230512',
             name: 'News20230512',
             component: News20230512,
             props: true,
         },
         {
-            path: '/News20230214/:title?',
+            path: '/News20230214',
             name: 'News20230214',
             component: News20230214,
             props: true,
         },
         {
-            path: '/News20221228/:title?',
+            path: '/News20221228',
             name: 'News20221228',
             component: News20221228,
             props: true,
         },
         {
-            path: '/News20220823/:title?',
+            path: '/News20220823',
             name: 'News20220823',
             component: News20220823,
             props: true
         },
         {
-            path: '/News20220725/:title?',
+            path: '/News20220725',
             name: 'News20220725',
             component: News20220725,
             props: true
         },
         {
-            path: '/News20220521/:title?',
+            path: '/News20220521',
             name: 'News20220521',
             component: News20220521,
             props: true
@@ -295,7 +302,15 @@ const router = createRouter({
             top: 0
         }
     },
-})
 
+});
 
+router.beforeEach((to, from, next) => {
+    const lang = to.query.lang;
+    if (lang) {
+      to.meta.lang = lang;
+    }
+    next();
+  });
+  
 export default router

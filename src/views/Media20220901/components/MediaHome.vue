@@ -1,6 +1,24 @@
 ﻿<script>
-export default {
+import Lightbox from '@/views/LightBox/LightBox.vue'
 
+export default {
+  components: {
+    Lightbox,
+  },
+  data() {
+    return {
+      imageList: [
+      'https://us-factory.jp/wp-content/uploads/2022/09/ct01-1.jpg',
+      'https://us-factory.jp/wp-content/uploads/2022/09/ct02-1.jpg',
+      ]
+    }
+  },
+  methods: {
+    openImage(src, index) {
+      this.$refs.lightbox.openLightbox(src, index);
+    },
+
+  },
 };
 </script>
 <template>
@@ -9,43 +27,44 @@ export default {
     <ol class="main-breadcrumb">
       <li>
         <router-link to="/" style="text-decoration: none;color: #333;">
-          <span class="main-breadcrumb__type--nolink">ホーム</span>
+          <span class="main-breadcrumb__type--nolink">{{ $t('Media20220901.HomeTitle') }}</span>
         </router-link>
       </li>
       <li>
         <router-link to="/ResultsMedia" class="override-link-style">
-          <span class="main-breadcrumb__type--nolink">更新一覧</span>
+          <span class="main-breadcrumb__type--nolink">{{ $t('Media20220901.UpdateList') }}</span>
         </router-link>
       </li>
       <li class="last-item">
-        <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+        <span class="main-breadcrumb__type--nolink">{{ $t('Media20220901.NewsTitle') }}</span>
       </li>
     </ol>
     <!--/Main__guide-->
   </div>
-
   <div class="Main__body">
     <div class="Main__content">
       <div class="heading1-v2">
         <div class="heading1-v2__inner">
-          <h1 class="heading1-v2__title">躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました</h1>
+          <h1 class="heading1-v2__title">{{ $t('Media20220901.NewsTitle') }}</h1>
         </div>
       </div>
-      <p class="text--right">2022年9月1日</p>
-
+      <p class="text--right">{{ $t('Media20220901.Date') }}</p>
       <p class="text">
-        躍進企業応援マガジン COMPANYTANK(カンパニータンク) 2022年9月号に、弊社社長上嶋と、タレントの石黒彩様の対談・インタビュー記事が掲載されました。
+        {{ $t('Media20220901.NewsConL1') }}
       </p>
       <p class="text">
-        一歩を踏み出したい人へ。挑戦する経営者の声を届けるメディア「注目企業.com」
+        {{ $t('Media20220901.NewsConL2') }}
       </p>
       <div class="column generator-column" data-col-pc="2" data-col-sp="1" style="text-align: center;">
         <div class="column__item">
+          <Lightbox ref="lightbox" :imageList="imageList" />
           <div class="image-wrap--center">
             <figure class="image">
               <div class="image__frame">
-                <img src="@/assets/image/Media20220901/ct01-1.jpg" alt="Web情報共有システム"
-                  style="width: 300px; max-width: 100%;">
+                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/09/ct01-1.jpg', 0)">
+                  <img src="@/assets/image/Media20220901/ct01-1.jpg" alt="Web情報共有システム"
+                    style="width: 300px; max-width: 100%;">
+                </a>
               </div>
             </figure>
           </div>
@@ -54,46 +73,45 @@ export default {
           <div class="image-wrap--center">
             <figure class="image">
               <div class="image__frame">
-                <img src="@/assets/image/Media20220901/ct02-1.jpg" alt="" style="width: 750px; max-width: 100%;"
-                  class="image-media02">
+                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2022/09/ct02-1.jpg', 1)">
+                  <img src="@/assets/image/Media20220901/ct02-1.jpg" alt="" style="width: 750px; max-width: 100%;"
+                    class="image-media02">
+                </a>
               </div>
             </figure>
           </div>
         </div>
         <div class="image-wrap--center"></div>
       </div>
-
       <!-- 展示関連情報 -->
       <div class="heading2">
         <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">{{ $t('Media20220901.NewsIn') }}</h2>
         </div>
       </div>
       <h3 class="AboutText">
-        <p>インタビューの内容はこちら ▼</p>
+        <p>{{ $t('Media20220901.NewsAboutText') }}</p>
         <a href="http://www.companytank.jp/book_backnumber/20220901/" target="_blank" rel="noopener"
           class="util-link--blank">
-          <span class="util-bold"> 一歩を踏み出したい人へ。挑戦する経営者の声を届けるメディア「注目企業.com」</span>
+          <span class="util-bold">{{ $t('Media20220901.NewsText1') }}</span>
         </a>
       </h3>
       <h3 class="AboutText">
         <a href="https://www.amazon.co.jp/dp/B0BB1HJ4KH/" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">オンラインで購入するはこちら</span>
+          <span class="util-bold">{{ $t('Media20220901.NewsText2') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
         <div class="button-v2">
           <router-link to="/ResultsMedia">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('Media20220901.ListBack') }}</span>
             </a>
           </router-link>
         </div>
       </div>
     </div>
   </div>
-
-
 </template>
 <style scoped>
 body *,
@@ -265,7 +283,6 @@ body :before {
 
 [data-col-pc]:not([data-col-pc=auto])>* {
   margin-top: 1.25em;
-  margin-left: 36px;
 }
 
 .heading2 {

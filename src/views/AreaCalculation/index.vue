@@ -1,7 +1,8 @@
 ﻿<script setup>
 import AreaCalculationHome from './components/AreaCalculationHome.vue'
 import AreaCalculationNav from './components/AreaCalculationNav.vue'
-import AreaCalculationFooter from './components/AreaCalculationFooter.vue'
+import BiForArchiFooter from '@/components/BiForArchiFooter/index.vue'
+
 </script>
 
 <template>
@@ -9,7 +10,7 @@ import AreaCalculationFooter from './components/AreaCalculationFooter.vue'
         <AreaCalculationNav />
         <AreaCalculationHome />
         <RouterView />
-        <AreaCalculationFooter />
+        <BiForArchiFooter />
         <BackToTop />
     </div>
 </template>

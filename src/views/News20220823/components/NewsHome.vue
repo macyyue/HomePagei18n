@@ -19,16 +19,16 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20220823.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/News" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20220823.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20220823.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -38,14 +38,12 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】</h1>
+        <h1 class="heading1-v2__title">{{ $t('News20220823.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2022年8月23日</p>
+      <p class="text--right">{{ $t('News20220823.Date') }}</p>
       <p class="text">
-        2022年8月23日の建設通信新聞に
-        【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】
-        として記事が掲載されました。<br>
+        {{ $t('News20220823.NewsCon') }}<br>
       </p>
       <div class="column generator-column" data-col-pc="1" data-col-sp="1">
         <div class="column__item">
@@ -53,29 +51,28 @@ export default {
             <div class="image-wrap--center">
             <figure class="image" >
             <div class="image__frame">
-              <img src="@/assets/image/goods2.jpg" alt="" style="width: 600px; max-width: 100%;">
-              <p class="text-title">みなとみらい地区の3次元モデル</p>
+              <img src="@/assets/image/HomePage/goods2.jpg" alt="" style="width: 600px; max-width: 100%;">
+              <p class="text-title">{{ $t('News20220823.NewsConTit') }}</p>
             </div>
           </figure>
             </div>
             </div>
-
       </div>
         <!-- 展示関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">展示関連情報</h2>
+          <h2 class="heading2__title">{{ $t('News20220823.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>詳細はこちら▼</p>
+          <p>{{ $t('News20220823.NewsAboutText') }}</p>
           <a href="https://www.kensetsunews.com/web-kan/728751" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">【3次元計測モデリングサービス『Ｉｎｆｏ３６０®』が好調】U’s Factory</span>
+          <span class="util-bold">{{ $t('News20220823.NewsText1') }}</span>
         </a>
       </h3>
       <h3 class="AboutText">
-          <a href="https://www.kensetsunews.com/web-kan/728751" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">建設通信新聞Digital</span>
+          <a href="https://www.kensetsunews.com/" target="_blank" rel="noopener" class="util-link--blank">
+          <span class="util-bold">{{ $t('News20220823.NewsText2') }}</span>
         </a>
       </h3>
 
@@ -83,7 +80,7 @@ export default {
           <div class="button-v2">
             <router-link to="/News">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('News20220823.ListBack') }}</span>
             </a>
           </router-link>
           </div>
@@ -296,6 +293,7 @@ a.button__type:hover{
 .button-wrap, .button-wrap--center {
     display: flex;
     flex-flow: row wrap;
+    margin-left: -36px;
 }
 .button-v2 .button-v2__type{
   padding: .8em 25px .8em 20px;

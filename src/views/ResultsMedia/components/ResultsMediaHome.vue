@@ -18,11 +18,11 @@ export default {
       <ol class="main-breadcrumb">
         <li>
           <router-link to="/" style="text-decoration: none;color: #333;">
-            <span class="main-breadcrumb__type--nolink">ホーム</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('MediaList.HomeTitle') }}</span>
           </router-link>
         </li>
         <li class="last-item">
-          <span class="main-breadcrumb__type--nolink">実績・メディア掲載一覧</span>
+          <span class="main-breadcrumb__type--nolink">{{ $t('MediaList.Update') }}</span>
         </li>
       </ol>
       <!--/Main__guide-->
@@ -33,7 +33,7 @@ export default {
     <div class="Main__head">
       <div class="heading1">
         <div class="heading1__inner">
-          <h1 class="heading1__title">実績・メディア掲載一覧</h1>
+          <h1 class="heading1__title">{{ $t('MediaList.Update') }}</h1>
         </div>
       </div>
       <!--/Main__head-->
@@ -57,150 +57,145 @@ export default {
       </div>
       <div class="news" data-news-pc="row">
         <article class="news__article">
-          <a href="" class="news__type">
+          <div  class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-08-04">2022年09月01日</time>
-                <div class="news__category"><i class="util-badge--events">お知らせ</i></div>
+                <time class="news__date">{{ $t('MediaList.Media1.Date') }}</time>
+                <div class="news__category"><i class="util-badge--events">{{ $t('MediaList.Media1.Category') }}</i></div>
               </div>
-
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20220901/躍進企業応援マガジンCOMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました"
+                  <router-link :to=" $t('MediaList.Media1.Link') "
                     class="override-link-style">
-                    躍進企業応援マガジンCOMPANYTANK(カンパニータンク) 2022年9月号にインタビューが掲載されました
+                    {{ $t('MediaList.Media1.Title') }}
                   </router-link>
                 </h3>
               </div>
-
             </div>
-
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-08-02">2018年09月04日</time>
-                <div class="news__category"><i class="util-badge--news">技術</i></div>
+                <time class="news__date" datetime="2023-08-02">{{ $t('MediaList.Media2.Date') }}</time>
+                <div class="news__category"><i class="util-badge--news">{{ $t('MediaList.Media2.Category') }}</i></div>
               </div>
               <div class="news__caption">
-
                 <h3 class="news__title">
                   <router-link
-                    to="/Media20180904/GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました"
+                    :to="$t('MediaList.Media2.Link')"
                     class="override-link-style">
-                    GRAPHISOFT JAPAN BIM CONFERENCE 2018で「Point Cloud（点群）情報のBIM活用」の報告をしました
+                    {{ $t('MediaList.Media2.Title') }}
                   </router-link>
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-07-26">2016年10月14日</time>
-                <div class="news__category"><i class="util-badge--cat1612">お知らせ</i></div>
+                <time class="news__date" datetime="2023-07-26">{{ $t('MediaList.Media3.Date') }}</time>
+                <div class="news__category"><i class="util-badge--cat1612">{{ $t('MediaList.Media3.Category') }}</i></div>
               </div>
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20161014/事業紹介ビデオを作成しました" class="override-link-style">
-                    事業紹介ビデオを作成しました
+                  <router-link :to="$t('MediaList.Media3.Link')" class="override-link-style">
+                    {{ $t('MediaList.Media3.Title') }}
                   </router-link>
-
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date">2016年02月05日</time>
-                <div class="news__category"><i class="util-badge--news">技術</i></div>
+                <time class="news__date">{{ $t('MediaList.Media4.Date') }}</time>
+                <div class="news__category"><i class="util-badge--news">{{ $t('MediaList.Media4.Category') }}</i></div>
               </div>
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20160205/ケンプラッツに「誤差わずか数ミリ！小型全天球カメラで3D計測」の記事が掲載されました"
+                  <router-link :to="$t('MediaList.Media4.Link')"
                     class="override-link-style">
-                    ケンプラッツに「誤差わずか数ミリ！小型全天球カメラで3D計測」の記事が掲載されました
+                    {{ $t('MediaList.Media4.Title') }}
                   </router-link>
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-07-19">2015年07月08日</time>
-                <div class="news__category"><i class="util-badge--cat1612">お知らせ</i></div>
+                <time class="news__date" datetime="2023-07-19">{{ $t('MediaList.Media5.Date') }}</time>
+                <div class="news__category"><i class="util-badge--cat1612">{{ $t('MediaList.Media5.Category') }}</i></div>
               </div>
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20150708/ケンプラッツに「現場をPC上に出前！“3D写真”が変える設計、施工計画」として掲載されました"
+                  <router-link :to="$t('MediaList.Media5.Link')"
                     class="override-link-style">
-                    ケンプラッツに「現場をPC上に出前！“3D写真”が変える設計、施工計画」として掲載されました
+                    {{ $t('MediaList.Media5.Title') }}
                   </router-link>
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-07-12">2015年04月01日</time>
-                <div class="news__category"><i class="util-badge--news">技術</i></div>
+                <time class="news__date" datetime="2023-07-12">{{ $t('MediaList.Media6.Date') }}</time>
+                <div class="news__category"><i class="util-badge--news">{{ $t('MediaList.Media6.Category') }}</i></div>
               </div>
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20150401/日本測量協会における月刊「測量」２０１５年４月号に掲載されました" class="override-link-style">
-                    日本測量協会における月刊「測量」２０１５年４月号に掲載されました
+                  <router-link :to="$t('MediaList.Media6.Link')" class="override-link-style">
+                    {{ $t('MediaList.Media6.Title') }}
                   </router-link>
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-07-11">2014年04月08日</time>
-                <div class="news__category"><i class="util-badge--news">お知らせ</i></div>
+                <time class="news__date" datetime="2023-07-11">{{ $t('MediaList.Media7.Date') }}</time>
+                <div class="news__category"><i class="util-badge--news">{{ $t('MediaList.Media7.Category') }}</i></div>
               </div>
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20140408/日本経済新聞にRobot Eye Walker 4Dの記事が掲載されました" class="override-link-style">
-                    日本経済新聞にRobot Eye Walker 4Dの記事が掲載されました
+                  <router-link :to="$t('MediaList.Media7.Link')" class="override-link-style">
+                    {{ $t('MediaList.Media7.Title') }}
                   </router-link>
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
         <article class="news__article">
-          <a href="" class="news__type">
+          <div class="news__type">
             <div class="news__body">
               <div class="news__property">
-                <time class="news__date" datetime="2023-06-20">2014年02月12日</time>
-                <div class="news__category"><i class="util-badge--events">お知らせ</i></div>
+                <time class="news__date" datetime="2023-06-20">{{ $t('MediaList.Media8.Date') }}</time>
+                <div class="news__category"><i class="util-badge--events">{{ $t('MediaList.Media8.Category') }}</i></div>
               </div>
               <div class="news__caption">
                 <h3 class="news__title">
-                  <router-link to="/Media20140212/ケンプラッツにRobot Eye Walker 4Dの記事が掲載されました" class="override-link-style">
-                    ケンプラッツにRobot Eye Walker 4Dの記事が掲載されました
+                  <router-link :to="$t('MediaList.Media8.Link')" class="override-link-style">
+                    {{ $t('MediaList.Media8.Title') }}
                   </router-link>
                 </h3>
               </div>
             </div>
-          </a>
+          </div>
         </article>
       </div>
     </div>

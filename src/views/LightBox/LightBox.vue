@@ -1,11 +1,16 @@
 ﻿<script>
 export default {
+  props: {
+    imageList: {
+      type: Array,
+      required: true
+    },
+  },
   data() {
     return {
       show: false,
       imageSrc: '',
       currentIndex: 0,
-      imageList: [],
     };
   },
   methods: {
@@ -18,27 +23,47 @@ export default {
       this.show = false;
     },
     prevImage() {
-      this.currentIndex = (this.currentIndex - 1 + this.imageList.length) % this.imageList.length;
-      this.imageSrc = this.imageList[this.currentIndex];
+      if (this.imageList && this.imageList.length > 0) {
+        this.currentIndex = (this.currentIndex - 1 + this.imageList.length) % this.imageList.length;
+        this.imageSrc = this.imageList[this.currentIndex];
+      }
     },
     nextImage() {
-      this.currentIndex = (this.currentIndex + 1) % this.imageList.length;
-      this.imageSrc = this.imageList[this.currentIndex];
-    },
+      if (this.imageList && this.imageList.length > 0) {
+        this.currentIndex = (this.currentIndex + 1) % this.imageList.length;
+        this.imageSrc = this.imageList[this.currentIndex];
+      }
+    }
   },
 };
 </script>
 <template>
   <div v-if="show" class="lightbox">
-    <div class="lightbox-content">
+    <div class="lightbox-content fade-in" >
       <button @click="closeLightbox" class="close-button">CLOSE✖</button>
-      <button @click="prevImage" class="prev-button">Prev</button>
-      <img :src="imageSrc" alt="图片">
-      <button @click="nextImage" class="next-button">Next</button>
+      <button @click="prevImage" class="prev-button">&lt;</button>
+      <img :src="imageSrc" alt="图片" class="responsive-image">
+      <button @click="nextImage" class="next-button">&gt;</button>
     </div>
   </div>
 </template>
+
 <style scoped>
+@keyframes fadeInFromTop {
+  0%{
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+}
+.fade-in{
+  animation: fadeInFromTop 0.7s ease-out;
+}
+
 .lightbox {
   position: fixed;
   top: 0;
@@ -53,37 +78,45 @@ export default {
 }
 
 .lightbox-content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #fff;
-  padding: 20px;
+  padding: 70px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.responsive-image {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 .close-button {
-  position: fixed;
+  position: absolute;
+  top: 5px;
+  left: 5px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 23px;
-  color: blue;
-  margin: -27px -17px;
+  color: #000;
 }
 
 .prev-button,
 .next-button {
-  position: absolute;
+  width: 20px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  color: blue;
+  font-size: 20px;
+  color: #000;
+  background: #dbdbdb;
+  border-radius: 3px;
 }
 
-.prev-button {
-  left: 20px;
-}
-
-.next-button {
-  right: 20px;
-}
 </style>

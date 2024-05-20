@@ -5,11 +5,30 @@ export default {
   components: {
     Lightbox,
   },
+  data() {
+    return {
+      imageList: [
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド1.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド2.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド3.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド4.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド5.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド6.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド7.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド8.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド9.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド10.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド11.png',
+        'https://us-factory.jp/wp-content/uploads/2024/02/スライド12.png',
+
+      ]
+    }
+  },
   methods: {
-    openImage(src) {
-      this.$refs.lightbox.openLightbox(src);
+    openImage(src, index) {
+      this.$refs.lightbox.openLightbox(src, index);
     },
-    
+
   },
 };
 </script>
@@ -20,16 +39,16 @@ export default {
       <ol class="main-breadcrumb">
         <li>
           <router-link to="/" style="text-decoration: none;color: #333;">
-            <span class="main-breadcrumb__type--nolink">ホーム</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('News20240205.HomeTitle') }}</span>
           </router-link>
         </li>
         <li>
           <router-link to="/News" class="override-link-style">
-            <span class="main-breadcrumb__type--nolink">更新一覧</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('News20240205.UpdateList') }}</span>
           </router-link>
         </li>
         <li class="last-item">
-          <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+          <span class="main-breadcrumb__type--nolink">{{ $t('News20240205.NewsTitle') }}</span>
         </li>
       </ol>
       <!--/Main__guide-->
@@ -38,20 +57,20 @@ export default {
       <div class="Main__content">
         <div class="heading1-v2">
           <div class="heading1-v2__inner">
-            <h1 class="heading1-v2__title">わずか5分で完了！！仮設足場計画～発注数量算出を自動化</h1>
+            <h1 class="heading1-v2__title">{{ $t('News20240205.NewsTitle') }}</h1>
           </div>
         </div>
-        <p class="text--right">2024年2月5日</p>
+        <p class="text--right">{{ $t('News20240205.Date') }}</p>
         <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">開発背景・解決策のご紹介</h2>
+            <h2 class="heading2__title">{{ $t('News20240205.NewsConTit1') }}</h2>
           </div>
         </div>
         <p class="text">
-          新築及び改修工事における中低層の建築物において、足場計画はとても重要な作業である。<br>また、足場計画とともに、各工程ごとに足場数量を算出し、運搬車両の設定とともに発注しなければならない。
-          この地味な作業に、多くの時間を費やし、いまだに手作業で計算し、発注を行っている。<br>
-          特に、最近次世代足場（アルバトロス）の足場計画が多く、足場拾いの手計算がとても面倒になっている声が多く聞かれる。<br><br>
-          これらの問題を解決するために、だれでも簡単に足場計画から、発注帳票作成までの自動化を可能にした。
+          {{ $t('News20240205.NewsCon1L1') }}<br>
+          {{ $t('News20240205.NewsCon1L2') }}<br>
+          {{ $t('News20240205.NewsCon1L3') }}<br>
+          {{ $t('News20240205.NewsCon1L4') }}
         </p>
         <div class="column__item item__image01">
           <div class="image-wrap--center">
@@ -68,19 +87,20 @@ export default {
         </div>
         <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">BI For Archicadのご紹介</h2>
+            <h2 class="heading2__title">{{ $t('News20240205.NewsConTit2') }}</h2>
           </div>
         </div>
         <p class="text">
-          ではもう少し詳しい使い方を見てみると、以下のようになっている。
+          {{ $t('News20240205.NewsCon2L1') }}
         </p>
         <div class="column generator-column" data-col-pc="2" data-col-sp="1">
           <!-- 図⑴ -->
           <div class="column__item">
+            <Lightbox ref="lightbox" :imageList="imageList" />
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2024/02/スライド1.png')">
+                  <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2024/02/スライド1.png', 0)">
                     <img src="@/assets/image/News20240205/スライド1.png" alt="Web情報共有システム"
                       style="width: 300px; max-width: 100%;">
                   </a>
@@ -93,7 +113,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2024/02/スライド2.png')">
+                  <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2024/02/スライド2.png', 1)">
                     <img src="@/assets/image/News20240205/スライド2.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -105,7 +125,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド3.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド3.png', 2)">
                     <img src="@/assets/image/News20240205/スライド3.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -117,7 +137,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド4.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド4.png', 3)">
                     <img src="@/assets/image/News20240205/スライド4.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -131,8 +151,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <Lightbox ref="lightbox" />
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド5.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド5.png', 4)">
                     <img src="@/assets/image/News20240205/スライド5.png" alt="Web情報共有システム"
                       style="width: 300px; max-width: 100%;">
                   </a>
@@ -146,7 +165,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド6.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド6.png', 5)">
                     <img src="@/assets/image/News20240205/スライド6.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -158,7 +177,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド7.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド7.png', 6)">
                     <img src="@/assets/image/News20240205/スライド7.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -170,7 +189,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド8.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド8.png', 7)">
                     <img src="@/assets/image/News20240205/スライド8.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -182,7 +201,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド9.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド9.png', 8)">
                     <img src="@/assets/image/News20240205/スライド9.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -194,7 +213,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド10.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド10.png', 9)">
                     <img src="@/assets/image/News20240205/スライド10.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -206,7 +225,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド11.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド11.png', 10)">
                     <img src="@/assets/image/News20240205/スライド11.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -218,7 +237,7 @@ export default {
             <div class="image-wrap--center">
               <figure class="image">
                 <div class="image__frame">
-                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド12.png')">
+                  <a @click="openImage('https://us-factory.jp/wp-content/uploads/2024/02/スライド12.png', 11)">
                     <img src="@/assets/image/News20240205/スライド12.png" alt="" style="width: 300px; max-width: 100%;">
                   </a>
                 </div>
@@ -228,14 +247,14 @@ export default {
         </div>
         <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">展示関連情報</h2>
+            <h2 class="heading2__title">{{ $t('News20240205.NewsIn') }}</h2>
           </div>
         </div>
         <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/News">
               <a href="" class="button-v2__type">
-                <span class="button-v2__label">一覧へ戻る</span>
+                <span class="button-v2__label">{{ $t('News20240205.ListBack') }}</span>
               </a>
             </router-link>
           </div>
@@ -510,6 +529,7 @@ a.button__type:hover {
 .button-wrap--center {
   display: flex;
   flex-flow: row wrap;
+  margin-left: -36px;
 }
 
 .button-v2 .button-v2__type {
@@ -531,5 +551,4 @@ a.button__type:hover {
   display: inline-block;
   text-decoration: none;
 }
-
 </style>

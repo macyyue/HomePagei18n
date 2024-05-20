@@ -2,6 +2,7 @@
     "name": "vue-rabbit",
     "version": "0.0.0",
     "private": true,
+    "type": "commonjs",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
@@ -14,10 +15,16 @@
         "element-plus": "^2.4.4",
         "express": "^4.18.2",
         "jquery": "^3.7.1",
+        "log4js": "^6.9.1",
         "pinia": "^2.1.4",
         "v-viewer": "^3.0.13",
         "vue": "^3.3.4",
+        "vue-i18n": "^9.13.1",
+        "vue-js-cookie": "^2.1.0",
+        "vue-logger-plugin": "^2.2.3",
         "vue-router": "^4.2.4",
+        "vuejs-logger": "1.5.5",
+        "vuejs3-logger": "1.0.0",
         "vuex": "^4.1.0"
     },
     "devDependencies": {

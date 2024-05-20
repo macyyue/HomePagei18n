@@ -2,83 +2,70 @@
     <div id="menu__contents__wrap">
         <div id="contents__wrap">
             <div id="menu__area">
-                <div id="menu__wrap">
-                </div>
-                <div id="contents__area">
-                    <div id="contents__area__wrap">
-                        <div id="contents__top__img__wrap">
-                            <div id="contents__top__img"></div>
-                            <div id="contents__title__wrap">
-                                <span id="login_info" class="login__info"></span>
-                                <div id="main__contents" class="main__contents">
-                                    <div class="agree__textbox">
-
-                                        この度は当社にご関心をお寄せいただき、誠にありがとうございます。<br>
-                                        ※以下の内容をよくお読みになり、その内容をご理解・<b>ご承諾いただき『同意する』ボタンをクリックして次にお進み下さい</b>。
-                                    </div>
-                                    <div class="agree__rule">
-                                        以下の内容をよくお読みになり、その内容をご理解・ご承諾いただき『同意する』ボタンをクリックして次にお進み下さい。この度は当社にご関心をお寄せいただき、誠にありがとうございます。<br>
-                                        <br>
-                                        1. 個人情報の収集および利用の目的<br>
-                                        当社は、採用活動及びU’s
-                                        Factory株式会社の今後のイベントなどに利用する目的で、氏名・住所・電話番号・電子メールアドレス等、個人を特定し得る情報（以下「個人情報」と表記）を、指定のエントリーフォームにて取得させていただきます。<br>
-                                        <br>
-                                        ご登録いただいた個人情報は、採用活動及びU’s
-                                        Factory株式会社の今後のイベントなどに関するご案内やご連絡等に必要となる基礎資料として利用いたします。<br>
-                                        <br>
-                                        なお、個人情報から個人の特定が不能なデータを抽出し、当該データから統計資料を作成するなど、統計、分析その他の目的で利用させていただくことがあります。<br>
-                                        <br>
-                                        2.個人情報の第三者への提供<br>
-                                        当社は、以下のいずれかに該当する場合を除き、個人情報を第三者に開示または提供しません。<br>
-                                        <br>
-                                        (1)本人の同意が得られた場合（但し、3.で定める外部委託に際しては、本人の同意を得る必要はないものとします。）<br>
-                                        <br>
-                                        (2)法令に基づく場合<br>
-                                        <br>
-                                        (3)人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難である場合<br>
-                                        <br>
-                                        (4)行政機関の通達・指導などに対して協力する必要がある場合であって、本人の同意を得ることにより行政機関の事務の遂行に支障を及ぼすおそれがある場合<br>
-                                        <br>
-                                        3. 個人情報を取り扱う業務の外部委託<br>
-                                        当社は1.で定めた利用目的のため、個人情報の取扱業務の全部または一部を外部に委託することがあります。<br>
-                                        この場合、個人情報保護水準が高いことを条件として委託先を選定し、その委託先について、機密保持契約の締結や十分な管理・監督を行い、委託先からの漏洩等の防止に努めます。<br>
-                                        <br>
-                                        4．個人情報の管理<br>
-                                        当社は、個人情報を取り扱うにあたり管理責任者を置き、個人情報の適切な管理を行います。<br>
-                                        また、個人情報の漏洩や、本人以外による個人情報の書き換え等を防止するため、厳重なセキュリティ対策を実施し、個人情報をアクセスコントロールやパスワードコントロールの施されている安全な環境下に保管します。<br>
-                                        <br>
-                                        5．個人情報の開示・訂正・削除<br>
-                                        ご登録いただいた個人情報について、開示・訂正・削除等を請求される場合、7.に定めるお問い合わせ窓口までご連絡下さい。<br>
-                                        その場合、本人以外への個人情報の漏洩や、本人以外による個人情報の書き換え等を防止するため、請求者が本人であることを確認の上、個人情報の開示・訂正・削除等を行うものとします。ただし、法令の要請に基づく場合は、この限りではありません。<br>
-                                        <br>
-                                        7．お問い合わせ窓口<br>
-                                        TEL：045-348-1560<br>
-                                        <br>
-                                    </div>
-                                    <form method="post" action="agreement" name="form1" autocomplete="off">
-                                        <input name="fb_csrf"
-                                            value="@B_@ET_aFWjfqyxf3jcCVA7nYN_Li)c47ufG)ibhi)z(hEP+4Hc4#eSQC"
-                                            type="hidden">
-
-                                        <div class="form_button">
-                                            <router-link to="/Login">
-                                                <input id="submit" class="btn__l btn__submit" name="submit" value="同意する"
-                                                    type="submit">
-                                            </router-link>
-                                            <input id="submit" class="btn__l btn__submit" name="submit" value="同意しない"
-                                                type="submit">
-                                        </div><!-- form_button end -->
-                                    </form>
-
-                                </div>
+                <div id="contents__area__wrap">
+                    <div id="contents__title__wrap">
+                        <div id="main__contents" class="main__contents">
+                            <div class="agree__textbox">
+                                {{ $t('LoginForm.LoginFoConL1') }}<br>
+                                {{ $t('LoginForm.LoginFoConL2') }}<b>{{ $t('LoginForm.LoginFoConL3') }}</b>。
                             </div>
+                            <div class="agree__rule">
+                                {{ $t('LoginForm.LoginFoTextL1') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL2') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL3') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL4') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL5') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL6') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL7') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL8') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL9') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL10') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL11') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL12') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL13') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL14') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL15') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL16') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL17') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL18') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL19') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL20') }}<br>
+                                <br>
+                                {{ $t('LoginForm.LoginFoTextL21') }}<br>
+                                {{ $t('LoginForm.LoginFoTextL22') }}<br>
+                                <br>
+                            </div>
+                            <form method="post" action="agreement" name="form1" autocomplete="off">
+                                <input name="fb_csrf" value="@B_@ET_aFWjfqyxf3jcCVA7nYN_Li)c47ufG)ibhi)z(hEP+4Hc4#eSQC"
+                                    type="hidden">
+                                <div class="form_button">
+                                    <router-link to="/Login">
+                                        <input id="submit" class="btn__l btn__submit" name="submit"
+                                            :value="$t('LoginForm.Agree')" type="submit">
+                                    </router-link>
+                                    <router-link to="/Careers">
+                                        <input id="submit" class="btn__l btn__submit" name="submit"
+                                            :value="$t('LoginForm.disagree')" type="submit">
+                                    </router-link>
+                                </div><!-- form_button end -->
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </template>
 <style scoped>
 #page__all div #menu__contents__wrap {
@@ -144,14 +131,6 @@ div#page__all #contents__area__wrap {
     color: #989582;
 }
 
-.login__info {
-    color: #989582;
-}
-
-.login__info {
-    display: none;
-}
-
 #main__contents {
     position: relative;
 }
@@ -166,7 +145,6 @@ div#page__all #contents__area__wrap {
 .agree__textbox {
     width: 100%;
     margin: 20px 0;
-
 }
 
 .agree__rule {

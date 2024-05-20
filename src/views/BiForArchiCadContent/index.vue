@@ -1,7 +1,7 @@
 ﻿<script setup>
 import BiForArchiCadContentHome from './components/BiForArchiCadContentHome.vue'
 import BiForArchiCadContentNav from './components/BiForArchiCadContentNav.vue'
-import BiForArchiCadContentFooter from './components/BiForArchiCadContentFooter.vue'
+import BiForArchiFooter from '@/components/BiForArchiFooter/index.vue'
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import BiForArchiCadContentFooter from './components/BiForArchiCadContentFooter.
         <BiForArchiCadContentNav />
         <BiForArchiCadContentHome />
         <RouterView />
-        <BiForArchiCadContentFooter />
+        <BiForArchiFooter />
         <BackToTop />
     </div>
 </template>

@@ -6,9 +6,23 @@ export default {
   components: {
     Lightbox,
   },
+  data(){
+    return{
+      imageList:[
+      'https://us-factory.jp/wp-content/uploads/2023/08/Info360-Concept-768x758.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/%E9%AB%98%E3%81%95%E3%83%BC360%E5%BA%A6.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-1.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-2.png',
+      'https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-3.png'
+      ]
+    }
+  },
   methods: {
-    openImage(src) {
-      this.$refs.lightbox.openLightbox(src);
+    openImage(src,index) {
+      this.$refs.lightbox.openLightbox(src,index);
     },
   },
 };
@@ -19,16 +33,16 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20230818.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/News" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20230818.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title}}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20230818.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -38,31 +52,31 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">【U’sFactory祝10周年】革新的Web情報共有システム「Info360Ⓡ」に新機能追加【 8/30～9/1 大阪DX展に出展】</h1>
+        <h1 class="heading1-v2__title">{{ $t('News20230818.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2023年8月18日</p>
-
+      <p class="text--right">{{ $t('News20230818.Date') }}</p>
       <p class="text">
-            革新的Web情報共有システム「Info360Ⓡ」に新機能追加 <br><br>
-            「Info360Ⓡ」のベータ版を昨年10月から、ゼネコン様、設計事務所様、専門工事会社様などの多くの方々にTESTをいただき意見交換を重ねることで、修正および機能追加をしてきました。
-            様々なご要望等の意見を集約することで、コンセプトが明確となり、実践的に活用できるものになってきました。
+        {{ $t('News20230818.NewsConL1') }} <br><br>
+        {{ $t('News20230818.NewsConL2') }} 
+
         </p>
       <p class="text">
-        点群をクラウドにアップロードするだけで即座にモデリングするとともに、３６０度画像、３次元設計データ、ＰＤＦ、写真データなどを一元的に管理する。共有したいデータを登録し、ＵＲＬを関係者に送信することで、専用アプリをインストールすることなく手軽に現場で閲覧できることが特徴です。
+        {{ $t('News20230818.NewsConL3') }} 
+        
       </p>
       <div class="column generator-column" data-col-pc="2" data-col-sp="1" style="text-align: center;">
           <div class="column__item">
+            <Lightbox ref="lightbox" :imageList="imageList"/>
             <div class="image-wrap--center">
               <figure class="image">
                 <!-- 図⑴ -->
             <div class="image__frame">
-              <Lightbox ref="lightbox" />
-              <a @click="openImage(' https://us-factory.jp/wp-content/uploads/2023/08/Info360-Concept-768x758.png')">
+              <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-Concept-768x758.png',0)">
               <img src="@/assets/image/NewsHome20230818/Info360.png" alt="Web情報共有システム" style="width: 300px; max-width: 100%;">
             </a>
             </div>
-            <figcaption class="image__caption">Web情報共有システム</figcaption>
+            <figcaption class="image__caption">{{ $t('News20230818.NewsConTit') }}</figcaption>
           </figure>
             </div>
             </div>
@@ -71,13 +85,13 @@ export default {
             <div class="image-wrap--center">
             <figure class="image">
             <div class="image__frame">
-              <a @click="openImage (' https://us-factory.jp/wp-content/uploads/2023/08/高さー360度-1024x508.png')">
+              <a @click="openImage ('https://us-factory.jp/wp-content/uploads/2023/08/%E9%AB%98%E3%81%95%E3%83%BC360%E5%BA%A6.png',1)">
               <img src="@/assets/image/NewsHome20230818/360映像.png" alt="オフィス内の様子" style="width: 750px; max-width: 100%;">
             </a>
             </div>
             <figcaption class="image__caption" >
               <a href="https://tools.us-factory.jp/pcv/guest/cont/64c3186983762" rel="noopener" target="_blank" class="button__type" >
-               <span class="button__label">Info360 Sample Page はこちら</span> 
+               <span class="button__label">{{ $t('News20230818.NewsConPdf') }}</span> 
               </a>
             </figcaption>
           </figure>
@@ -88,13 +102,13 @@ export default {
        <!-- 機能追加のご紹介 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">機能追加のご紹介</h2>
+          <h2 class="heading2__title">{{ $t('News20230818.NewsConTit1') }}</h2>
          </div>
         </div>
         <p class="text">
-                中でも、今回新たに機能追加した部分は、改修工事や増築工事が多い中で、古い図面（手書き図）をPDFにしたものを「Info360Ⓡ」の3D空間上に出現させ、現況と比較できることを実現しました。<br><br>
-                今回、新たに「Building Plan PDF Converter」というWebアプリを開発したことにより、古い図面を3D空間上に切り出す手順として、①PDFを読み込み ②各フロアの範囲を切り出し ③原点及びスケール調整とフロア高さ設定することで、登録されたPDFを「Info36oⓇ」上で表現し、3Dモデル化することなく、短時間でイメージを共有することを可能とした。<br><br>
-                登録されたPDFを「Info36oⓇ」上で表現し、3Dモデル化することなく、短時間でイメージを共有することを可能とした。
+          {{ $t('News20230818.NewsCon1L1') }}<br>
+          {{ $t('News20230818.NewsCon1L2') }} <br>
+          <!-- {{ $t('News20230818.NewsCon1L3') }} -->
           </p>
        <div class="column generator-column" data-col-pc="3" data-col-sp="4">
           <div class="column__item item__image01">
@@ -102,10 +116,9 @@ export default {
             <figure class="image">
               <!-- 図⑶ -->
               <div class="image__frame">
-                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png')">
+                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF01.png',2)">
                 <img src="@/assets/image/NewsHome20230818/Info360-PDF01.png" alt="" style="width: 320px; max-width: 100%;">
               </a>
-              <figcaption class="image__caption">Building Plan PDF Converter</figcaption>
               </div>
               </figure>
             </div>
@@ -115,12 +128,12 @@ export default {
           <figure class="image">
             <!-- 図⑷ -->
           <div class="image__frame">
-            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png')" >
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF02.png',3)" >
             <img src="@/assets/image/NewsHome20230818/Info360-PDF02.png" alt="" style="width: 320px; max-width: 100%;">
           </a>
           <figcaption class="image__caption" >
             <a href="https://us-factory.jp/wp-content/uploads/2023/05/Info360%E3%83%8F%E3%82%9A%E3%83%B3%E3%83%95202308-22.pdf" rel="noopener" target="_blank" class="button__type" >
-            <span class="button__label">Info360パンフはこちら</span> 
+            <span class="button__label">{{ $t('News20230818.NewsCon1Pdf') }}</span> 
             </a>
             </figcaption>
           </div>
@@ -132,7 +145,7 @@ export default {
           <figure class="image">
             <!-- 図⑸ -->
           <div class="image__frame">
-            <a  @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png')" >
+            <a  @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/Info360-PDF03.png',4)" >
             <img src="@/assets/image/NewsHome20230818/Info360-PDF03.png" alt="" style="width: 450px; max-width: 100%;">
           </a>
           </div>
@@ -143,20 +156,20 @@ export default {
         <!-- U’sFactory祝10周年 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">U’sFactory祝10周年</h2>
+          <h2 class="heading2__title">{{ $t('News20230818.NewsConTit2') }}</h2>
          </div>
         </div>
         <p class="text">
-          おかげ様で、U’sFactoryは2013年8月20日に創業し、10周年を迎えました。社員数は2023年8月現在で、11人パートタイマー10人アルバイト2~4名の総勢26人体制となっています。<br><br>
-          また、昨年末には事務所を移転し、作業環境の向上を図る上で、社員自らが内装設計・施工を実施し創意工夫と自由な職場づくりを体験しました。
+          {{ $t('News20230818.NewsCon2L1') }}<br>
+          {{ $t('News20230818.NewsCon2L2') }}
           </p>
-       <div class="column generator-column" data-col-pc="3" data-col-sp="4" style="margin-left: 48px;">
+       <div class="column generator-column" data-col-pc="3" data-col-sp="4">
           <div class="column__item item__image01">
             <div class="image-wrap">
             <figure class="image">
               <!-- 図⑹ -->
               <div class="image__frame">
-                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-1.png')">
+                <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-1.png',5)">
                 <img src="@/assets/image/NewsHome20230818/jimusyo-1.png" alt="" style="width: 320px; max-width: 100%;">
               </a>
               </div>
@@ -168,7 +181,7 @@ export default {
           <figure class="image">
             <!-- 図⑺ -->
           <div class="image__frame">
-            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-2.png')">
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-2.png',6)">
             <img src="@/assets/image/NewsHome20230818/jimusyo-2.png" alt="" style="width: 320px; max-width: 100%;">
             </a>
           </div>
@@ -180,7 +193,7 @@ export default {
           <figure class="image">
             <!-- 図⑻ -->
           <div class="image__frame">
-            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-3.png')">
+            <a @click="openImage('https://us-factory.jp/wp-content/uploads/2023/08/jimusyo-3.png',7)">
             <img src="@/assets/image/NewsHome20230818/jimusyo-3.png" alt="" style="width: 320px; max-width: 100%;">
           </a>
           </div>
@@ -191,27 +204,25 @@ export default {
         <!-- 展示関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">展示関連情報</h2>
+          <h2 class="heading2__title">{{ $t('News20230818.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
           <a href="https://www.japan-build.jp/osaka/ja-jp/about/previous.html" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 第7回 JAPAN BUILD OSAKA－建築の先端技術展（建築DX展HP）</span>
+          <span class="util-bold">{{ $t('News20230818.NewsText') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/News">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('News20230818.ListBack') }}</span>
             </a>
           </router-link>
           </div>
         </div>
       </div>
     </div> 
-
-
 </template>
 <style scoped>
 body *, body :after, body :before {
@@ -303,6 +314,7 @@ body *, body :after, body :before {
 
 .column {
     margin: 2em 0 0;
+    margin-left: 36px;
 }
 .image-wrap--center {
     justify-content: center;
@@ -343,6 +355,7 @@ body *, body :after, body :before {
 [data-col-pc]:not([data-col-pc=auto])>* {
     margin-top: 1.25em;
     margin-left: 36px;
+
 }
 .heading2 {
     border-bottom: 2px solid;
@@ -412,6 +425,7 @@ a.button__type:hover{
 .button-wrap, .button-wrap--center {
     display: flex;
     flex-flow: row wrap;
+    margin-left: -36px;
 }
 .button-v2 .button-v2__type{
   padding: .8em 25px .8em 20px;

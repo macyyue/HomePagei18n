@@ -1,62 +1,35 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-
-export default {
-  setup() {
-    const newsTitle = ref('');
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230611',
-        title: '必見！！「超初めてのArchicad操作法」を無料公開',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-
-    return {
-      newsTitle,
-    };
-  },
-};
 </script>
 <template>
   <div id="mainWrap">
-  <!-- メイン__ガイド 主要__指南-->
-  <div class="Main__guide">
-    <ol class="main-breadcrumb">
-      <li>
-        <router-link to="/" style="text-decoration: none;color: #333;">
-          <span class="main-breadcrumb__type--nolink">ホーム</span>
-        </router-link>
-      </li>
-      <li>
-        <router-link to="/News" class="override-link-style">
-          <span class="main-breadcrumb__type--nolink">Ｉｎｆｏ３６０サービス</span>
-        </router-link>
-      </li>
-    </ol>
-    <!--/Main__guide-->
-  </div>
-
-  <div class="Main__body">
-    <div class="Main__content">
-      <div class="heading2">
-        <div class="heading2__inner">
-          <h1 class="heading2__title">「Ｉｎｆｏ３６０」サービス</h1>
+    <!-- メイン__ガイド 主要__指南-->
+    <div class="Main__guide">
+      <ol class="main-breadcrumb">
+        <li>
+          <router-link to="/" style="text-decoration: none;color: #333;">
+            <span class="main-breadcrumb__type--nolink">{{ $t('Info360Service.HomeTitle') }}</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/News" class="override-link-style">
+            <span class="main-breadcrumb__type--nolink">{{ $t('Info360Service.Info360SerTitle') }}</span>
+          </router-link>
+        </li>
+      </ol>
+      <!--/Main__guide-->
+    </div>
+    <div class="Main__body">
+      <div class="Main__content">
+        <div class="heading2">
+          <div class="heading2__inner">
+            <h1 class="heading2__title">{{ $t('Info360Service.Info360SerTitle') }}</h1>
+          </div>
         </div>
-      </div>
-          <p class="text">
-            現地調査や点検・計測など、現実空間の情報を共有するために、「現地での作業が早く簡単に、一人で操作可能なシステム」が必要である。<br><br>
-            本商品は（株）岩根研究所と（株）U’sFactoryの共同開発商品であり、リアルとバーチャルをつなぐ革新的なプラットフォームを提供する。
-          </p>
-          <div class="column__item item__image01">
+        <p class="text">
+          {{ $t('Info360Service.Info360Content1') }}<br><br>
+          {{ $t('Info360Service.Info360Content2') }}
+        </p>
+        <div class="column__item item__image01">
           <div class="image-wrap--center">
             <figure class="image">
               <div class="item-movie">
@@ -70,51 +43,51 @@ export default {
           </div>
 
 
-      <!-- 関連情報 -->
-      <div class="heading2">
-        <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
-        </div>
-      </div>
-      <p class="MessageTitle">Ｉｎｆｏ３６０サービスに関する情報はこちらからご覧いただけます。</p>
+          <!-- 関連情報 -->
+          <div class="heading2">
+            <div class="heading2__inner">
+              <h2 class="heading2__title">{{ $t('Info360Service.Info360') }}</h2>
+            </div>
+          </div>
+          <p class="MessageTitle">{{ $t('Info360Service.Info360Title') }}</p>
 
-      <div class="AboutText">
-        <a href="https://www.youtube.com/watch?v=qNoxAXAeagQ" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> KASUMIと学ぶInfo360</span>
-        </a>
-      </div>
-      <div class="AboutText">
-        <a href="https://www.youtube.com/watch?v=Fdd3DwWRyII" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> RICOH THETA-ｓを活用した画像計測技術 </span>
-        </a>
-      </div>
-      <div class="button-wrap" data-col-pc="1" data-col-sp="1">
-        <div class="button-v2">
-          <router-link to="/Info360">
-            <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+          <div class="AboutText">
+            <a href="https://www.youtube.com/watch?v=qNoxAXAeagQ" target="_blank" rel="noopener"
+              class="util-link--blank">
+              <span class="util-bold">{{ $t('Info360Service.Info360Text1') }}</span>
             </a>
-          </router-link>
+          </div>
+          <div class="AboutText">
+            <a href="https://www.youtube.com/watch?v=Fdd3DwWRyII" target="_blank" rel="noopener"
+              class="util-link--blank">
+              <span class="util-bold"> {{ $t('Info360Service.Info360Text2') }} </span>
+            </a>
+          </div>
+          <div class="button-wrap" data-col-pc="1" data-col-sp="1">
+            <div class="button-v2">
+              <router-link to="/Info360">
+                <a href="" class="button-v2__type">
+                  <span class="button-v2__label">{{ $t('Info360Service.ListBack') }}</span>
+                </a>
+              </router-link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-        </div>
-        
   </div>
-</div>
-
-
 </template>
 <style scoped>
 body *,
 body :after,
 body :before {
   box-sizing: border-box;
-
 }
-#mainWrap{
+
+#mainWrap {
   min-width: 1390px;
 }
+
 .Main__guide {
   min-width: 1264px;
 }

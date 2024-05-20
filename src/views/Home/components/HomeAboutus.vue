@@ -26,7 +26,7 @@ export default{
     <div class="Main__content">
       <div class="heading2" id='BiForArchicadContentlist'>
       <div class="heading2__inner">
-        <h2 class="heading2__title">スポットライト</h2>
+        <h2 class="heading2__title">{{ $t('Service.Title') }}</h2>
         </div>
       </div>
     
@@ -34,13 +34,13 @@ export default{
                 <li class="solution-category-list__elm">
                   <div class="solution-category-list__image">
                     <a href="">
-                      <img src="@/assets/image/Home/mainImg01.jpg" alt="">
+                      <img src="@/assets/image/HomePage/mainImg01.jpg" alt="">
                     </a>
                   </div>
                   <div class="solution-category-list__detail">
                     <p class="solution-category-list__title">
                       <router-link to="/info360">
-                      INFO360
+                      {{ $t('Service.Info360') }}
                     </router-link>
                     </p>
                   </div>
@@ -48,13 +48,13 @@ export default{
                 <li class="solution-category-list__elm">
                   <div class="solution-category-list__image">
                     <a href="">
-                      <img src="@/assets/image/Home/mainImg02.jpg" alt="" height="">
+                      <img src="@/assets/image/HomePage/mainImg02.jpg" alt="" height="">
                     </a>
                   </div>
                   <div class="solution-category-list__detail">
                     <p class="solution-category-list__title">
                       <router-link to="/BiForArchiCad">
-                        BI For ArchiCad
+                      {{ $t('Service.BiForArchi') }}
                     </router-link>
                     </p>
                   </div>

@@ -17,6 +17,9 @@ export default {
             this.$emit('logo-animation-end',!this._showLogo)
           })
         }
+        
+    
+      
     }
 
 </script>
@@ -24,7 +27,7 @@ export default {
 <template>
 
     <div id="logo_box"  >
-        <img id="logo" src="@/assets/UsLogo.svg" style="height: 37px;" />  
+        <img id="logo" src="@/assets/image/HomePage/UsLogo.svg" style="height: 37px;" />  
         <div class="wavy" >
         <span style="--i:1  ;--j:10 ;">U</span>
         <span style="--i:2  ;--j:9 ;">'</span>
@@ -102,6 +105,20 @@ export default {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
+
+
+/* #logo_string {
+    height: 50PX;
+    box-sizing: border-box;
+    vertical-align: middle;
+} */
+
+
+/* .wavy {
+    width: auto;
+    display: flex;
+    position: absolute;
+} */
 
 .wavy span {
     position: absolute;

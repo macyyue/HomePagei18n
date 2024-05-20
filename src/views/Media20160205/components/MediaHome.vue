@@ -9,16 +9,16 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20160205.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/ResultsMedia" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20160205.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20160205.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -28,17 +28,17 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">ケンプラッツに「誤差わずか数ミリ！小型全天球カメラで3D計測」の記事が掲載されました</h1>
+        <h1 class="heading1-v2__title">{{ $t('Media20160205.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2016年2月5日</p>
+      <p class="text--right">{{ $t('Media20160205.Date') }}</p>
 
 <div class="column generator-column-v3" data-col-pc="2" data-col-sp="1">
         <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">
-          全天球カメラ「THETA S」の表と裏。2つのレンズで周囲360°の全天全周を一度に撮影します</p>
+          {{ $t('Media20160205.NewsConL1') }}</p>
           <p class="text">
-        360°カメラを持つRICOH THEATA-Sを活用し、連続360°測位座標付き映像が作成可能な「INFO360」がケンプラッツに掲載されました
+          {{ $t('Media20160205.NewsConL2') }}
         </p>
         </div>
 
@@ -57,28 +57,26 @@ export default {
         <!-- 展示関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">{{ $t('Media20160205.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>商品の記事はこちら ▼</p>
+          <p>{{ $t('Media20160205.NewsTextAbout') }}</p>
           <a href="https://xtech.nikkei.com/kn/atcl/knpcolumn/14/546679/012900016/" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold"> 誤差わずか数ミリ！小型全天球カメラで3D計測(日経クロステックHP)</span>
+          <span class="util-bold"> {{ $t('Media20160205.NewsText1') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/ResultsMedia">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('Media20160205.ListBack') }}</span>
             </a>
           </router-link>
           </div>
         </div>
       </div>
     </div> 
-
-
 </template>
 <style scoped>
 body *, body :after, body :before {
@@ -287,6 +285,7 @@ a.button__type:hover{
 .button-wrap, .button-wrap--center {
     display: flex;
     flex-flow: row wrap;
+    margin-left: -36px;
 }
 .button-v2 .button-v2__type{
   padding: .8em 25px .8em 20px;

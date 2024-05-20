@@ -21,16 +21,16 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20150401.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/ResultsMedia" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20150401.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('Media20150401.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -40,14 +40,14 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">日本測量協会における月刊「測量」２０１５年４月号に掲載されました</h1>
+        <h1 class="heading1-v2__title">{{ $t('Media20150401.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2015年4月1日</p>
+      <p class="text--right">{{ $t('Media20150401.Date') }}</p>
        
       <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">
-          記事では、「連続全周囲360°動画を用いた高精度3D CADの作成と展開について」が紹介されました。
+          {{ $t('Media20150401.NewsConL1') }}
         </p>
         </div>
       <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1" style="text-align: center;">
@@ -56,7 +56,7 @@ export default {
         <figure class="image">
         <div class="item-image">
             <img src="@/assets/image/Media20150401/img1.jpg" alt="" >
-            <p class="text-title">周囲を360度撮影できるビデオカメラを手にするU’s Factoryの上嶋泰史代表取締役社長（写真：家入龍太）</p>
+            <p class="text-title">{{ $t('Media20150401.NewsConTit') }}</p>
         </div>
         </figure>
         </div>
@@ -65,20 +65,20 @@ export default {
         <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">{{ $t('Media20150401.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
-          <p>詳細はこちら▼</p>
+          <p>{{ $t('Media20150401.NewsTextAbout') }}</p>
           <a href="https://www.jsurvey.jp/1-4-2015.htm" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">月刊「測量」２０１５年４月号</span>
+          <span class="util-bold">{{ $t('Media20150401.NewsText1') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/ResultsMedia">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('Media20150401.ListBack') }}</span>
             </a>
           </router-link>
           </div>

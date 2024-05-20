@@ -1,30 +1,4 @@
 ﻿<script>
-import { ref, onMounted } from 'vue';
-import { useRoute } from 'vue-router';
-
-export default {
-  setup() {
-    const newsTitle = ref('');
-    const route = useRoute();
-    const newsData = [
-      {
-        id: '20230611',
-        title: '必見！！「超初めてのArchicad操作法」を無料公開',
-      },
-    ];
-    onMounted(() => {
-      const newsId = route.params.id;
-      const selectedNews = newsData.find((news) => news.id === newsId);
-      if (selectedNews) {
-        newsTitle.value = selectedNews.title;
-      }
-    });
-
-    return {
-      newsTitle,
-    };
-  },
-};
 </script>
 <template>
   <!-- メイン__ガイド 主要__指南-->
@@ -33,27 +7,24 @@ export default {
       <ol class="main-breadcrumb">
         <li>
           <router-link to="/" style="text-decoration: none;color: #333;">
-            <span class="main-breadcrumb__type--nolink">ホーム</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('REW4D.HomeTitle') }}</span>
           </router-link>
         </li>
         <li>
           <router-link to="/RobotEyeWalker4D" class="override-link-style">
-            <span class="main-breadcrumb__type--nolink">Robot Eye Walker4D</span>
+            <span class="main-breadcrumb__type--nolink">{{ $t('REW4D.REW4DTitle') }}</span>
           </router-link>
         </li>
       </ol>
       <!--/Main__guide-->
     </div>
-
     <div class="Main__body">
       <div class="Main__content">
-
         <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">Robot Eye Walker4D</h2>
+            <h2 class="heading2__title">{{ $t('REW4D.REW4DTitle') }}</h2>
           </div>
         </div>
-
         <!-- 四つ動画 -->
         <ul class="sol_environment__list type01">
           <li>
@@ -65,17 +36,13 @@ export default {
               </iframe>
             </div>
             <div class="body">
-              <div class="title">マンション360°内覧イメージ</div>
+              <div class="title">{{ $t('REW4D.REW4DConTit1') }}</div>
               <div class="txt">
-                測位座標を併せ持つ360°映像は、3DCADへの出力だけでなく、実寸CGとのコラボレーションが可能。
-                賃貸物件を探す際、実際に内覧することが望ましいが、遠方からの引っ越しのなど時間をかけれない場合、
-                建物内外の360°ビューがあればイメージが湧くのではないでしょうか。
-
+                {{ $t('REW4D.REW4DContent1') }} 
               </div>
             </div>
           </li>
           <li>
-
             <div class="ph">
               <iframe width="584" height="390" src="https://www.youtube.com/embed/PYFpJoS3KSc"
                 title="YouTube video player" frameborder="0"
@@ -84,9 +51,9 @@ export default {
               </iframe>
             </div>
             <div class="body">
-              <div class="title">高精度屋内測定及び3DCAD変換技術</div>
+              <div class="title">{{ $t('REW4D.REW4DConTit2') }}</div>
               <div class="txt">
-                既存建物等を３DCAD化するための360°カメラとレーザー計測機を活用した高精度屋内測定及び３DCAD変換技術の紹介です。既存スプリンクラー配管のスリーブ位置を測定し、既存建物モデルと３DCADを重ね合わせ、施工図との誤差確認及び、改修工事に有効可能か検討いたしました。
+                {{ $t('REW4D.REW4DContent2') }}
               </div>
             </div>
           </li>
@@ -99,15 +66,13 @@ export default {
               </iframe>
             </div>
             <div class="body">
-              <div class="title">改修工事前の状況を確認する技術</div>
+              <div class="title">{{ $t('REW4D.REW4DConTit3') }}</div>
               <div class="txt">
-                改修後の間仕切り位置や、工事に係る準備作業の確認に有効であり、現地に行かなくても確認ができるという評価をいただいた事例です。
+                {{ $t('REW4D.REW4DContent3') }}
               </div>
             </div>
-
           </li>
           <li>
-
             <div class="ph">
               <iframe width="584" height="390" src="https://www.youtube.com/embed/Ml4qbKVx7LM"
                 title="YouTube video player" frameborder="0"
@@ -116,32 +81,31 @@ export default {
               </iframe>
             </div>
             <div class="body">
-              <div class="title">既存建物状況を確認する技術</div>
+              <div class="title">{{ $t('REW4D.REW4DConTit4') }}</div>
               <div class="txt">
-                工事に係る準備作業の確認に有効であり、現地に行かなくても確認ができるという評価をいただいた事例です。
+                {{ $t('REW4D.REW4DContent4') }}
               </div>
             </div>
-
           </li>
         </ul>
         <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-            <h2 class="heading2__title">関連情報</h2>
+            <h2 class="heading2__title">{{ $t('REW4D.REW4DIn') }}</h2>
           </div>
         </div>
-        <p class="MessageTitle">発表会における商品説明に関する情報はこちらからご覧いただけます。</p>
+        <p class="MessageTitle">{{ $t('REW4D.REW4DInTitle') }}</p>
 
         <div class="AboutText">
           <a href="https://www.youtube.com/watch?v=NpFwQ5-a-7g" target="_blank" rel="noopener" class="util-link--blank">
-            <span class="util-bold"> Robot Eye Walker 4D デビューイベント</span>
+            <span class="util-bold">{{ $t('REW4D.REW4DText1') }}</span>
           </a>
         </div>
         <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/Info360">
               <a href="" class="button-v2__type">
-                <span class="button-v2__label">一覧へ戻る</span>
+                <span class="button-v2__label">{{ $t('REW4D.ListBack') }}</span>
               </a>
             </router-link>
           </div>
@@ -149,8 +113,6 @@ export default {
       </div>
     </div>
   </div>
-
-
 </template>
 <style scoped>
 body *,

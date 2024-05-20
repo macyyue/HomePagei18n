@@ -21,16 +21,16 @@ export default {
           <ol class="main-breadcrumb" >
             <li >
                 <router-link to="/" style="text-decoration: none;color: #333;">
-              <span class="main-breadcrumb__type--nolink">ホーム</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20230214.HomeTitle') }}</span>
                </router-link>
             </li>
             <li>
               <router-link to="/News" class="override-link-style">
-              <span class="main-breadcrumb__type--nolink">更新一覧</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20230214.UpdateList') }}</span>
             </router-link>
             </li>
             <li class="last-item">
-              <span class="main-breadcrumb__type--nolink">{{ $route.params.title }}</span>
+              <span class="main-breadcrumb__type--nolink">{{ $t('News20230214.NewsTitle') }}</span>
             </li>
           </ol>
           <!--/Main__guide-->
@@ -40,16 +40,16 @@ export default {
     <div class="Main__content">
       <div class="heading1-v2">
        <div class="heading1-v2__inner">
-        <h1 class="heading1-v2__title">「BI For Archicad」が国交省の建築BIM加速化事業で補助対象となるソフトウェアに認定されました</h1>
+        <h1 class="heading1-v2__title">{{ $t('News20230214.NewsTitle') }}</h1>
        </div>
       </div>
-      <p class="text--right">2023年2月14日</p>
+      <p class="text--right">{{ $t('News20230214.Date') }}</p>
        
       <div class="column__item item__text">
         <p class="text" style="padding-top: 30px;">
-          BI For Archicadでは、何ができるの？<br>
-          という説明に必要な資料をこちらにまとめました。 <br>
-          詳細説明が必要な方は、関連情報ご覧ください。</p>
+          {{ $t('News20230214.NewsConL1') }}<br>
+          {{ $t('News20230214.NewsConL2') }} <br>
+          {{ $t('News20230214.NewsConL3') }}</p>
         </div>
       <div class="column generator-column-v3" data-col-pc="1" data-col-sp="1" style="text-align: center;">
         <div class="image-wrap--center">
@@ -67,27 +67,25 @@ export default {
         <!-- 関連情報 -->
         <div class="heading2">
           <div class="heading2__inner">
-          <h2 class="heading2__title">関連情報</h2>
+          <h2 class="heading2__title">{{ $t('News20230214.NewsIn') }}</h2>
          </div>
         </div>
         <h3 class="AboutText">
           <a href="https://us-factory.jp/wp-content/uploads/2023/02/BI-For-Archicad-%E5%9B%BD%E4%BA%A4%E7%9C%81BIM%E5%8A%A0%E9%80%9F%E5%8C%96%E4%BA%8B%E6%A5%AD%E8%AA%8D%E5%AE%9A2.pdf" target="_blank" rel="noopener" class="util-link--blank">
-          <span class="util-bold">BI For Archicadパンフレットはこちら</span>
+          <span class="util-bold">{{ $t('News20230214.NewsTextPdf') }}</span>
         </a>
       </h3>
       <div class="button-wrap" data-col-pc="1" data-col-sp="1">
           <div class="button-v2">
             <router-link to="/News">
             <a href="" class="button-v2__type">
-              <span class="button-v2__label">一覧へ戻る</span>
+              <span class="button-v2__label">{{ $t('News20230214.ListBack') }}</span>
             </a>
           </router-link>
           </div>
         </div>
       </div>
     </div> 
-
-
 </template>
 <style scoped>
 body *, body :after, body :before {

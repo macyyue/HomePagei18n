@@ -20,10 +20,6 @@ export default defineConfig({
             resolvers: [ElementPlusResolver({ importStyle: "sass" })],
         }),
     ],
-    // server: {
-    //     host: '0.0.0.0',
-    //     port: 1224,
-    // },
     resolve: {
         // 实际的路径转化 @ -> src
         alias: {
@@ -39,5 +35,11 @@ export default defineConfig({
                 rewrite: (path) => path.replace(/^\/api/, '')
             }
         }
-    }
+    },
+    devServer: {
+        headers: {
+            "Content-Type": "text/html; charset=utf-8"
+        }
+    },
+
 })

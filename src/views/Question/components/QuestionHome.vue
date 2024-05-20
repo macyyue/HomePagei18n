@@ -1,41 +1,41 @@
 ﻿<template>
 
   <article class="mainContents inquiryWrap">
-  <h1 class="module-title1">お問い合わせ</h1>
+  <h1 class="module-title1">{{ $t('Question.QuesTit') }}</h1>
   <div class="module-leadtext">
-    <p>お問い合わせフォームからのご質問には、回答を差し上げるまでお時間をいただく場合や回答しかねる場合がありますことを予めご了承ください。</p>
+    <p>{{ $t('Question.QuesCon') }}</p>
   </div>
   <div class="formArea">
   <form method="post" name="sfm-form" id="sfm-form" action="">
   <dl class="formList">
-  <dt>◯会社名</dt><dd><input type="text" name="cname" id="cname" /></dd>
-  <dt>◯部署名</dt><dd><input type="text" name="ckana" id="ckana" /></dd>
-  <dt>◯担当者名</dt><dd class="namebox"><input type="text" name="name_s" id="name" /></dd>
-  <dt>◯電話番号</dt>
+  <dt>{{ $t('Question.QuesSubTit1') }}</dt><dd><input type="text" name="cname" id="cname" /></dd>
+  <dt>{{ $t('Question.QuesSubTit2') }}</dt><dd><input type="text" name="ckana" id="ckana" /></dd>
+  <dt>{{ $t('Question.QuesSubTit3') }}</dt><dd class="namebox"><input type="text" name="name_s" id="name" /></dd>
+  <dt>{{ $t('Question.QuesSubTit4') }}</dt>
   <dd class="telbox">
     <input type="text" name="tel01_s" id="tel01" />-
     <input type="text" name="tel02_s" id="tel02" />-
     <input type="text" name="tel03_s" id="tel03" />
 </dd>
-  <dt>◯メールアドレス</dt><dd><input type="text" name="email_s" id="email" /></dd>
-  <dt>◯お問い合わせ件名</dt>
+  <dt>{{ $t('Question.QuesSubTit5') }}</dt><dd><input type="text" name="email_s" id="email" /></dd>
+  <dt>{{ $t('Question.QuesSubTit6') }}</dt>
   <dd>
   <select name="subject_s" class="text-box" id="subject">
-  <option value="※お選びください">※お選びください</option>
-  <option value="INFO360">INFO360</option>
-  <option value="BI for Archi CAD">BI for Archi CAD</option>
-  <option value="求人について">求人について</option>
-  <option value="その他">その他</option>
+  <option value="※お選びください">{{ $t('Question.optionTit') }}</option>
+  <option value="INFO360">{{ $t('Question.option1') }}</option>
+  <option value="BI for Archi CAD">{{ $t('Question.option2') }}</option>
+  <option value="求人について">{{ $t('Question.option3') }}</option>
+  <option value="その他">{{ $t('Question.option4') }}</option>
   </select>
   </dd>
-  <dt>◯お問い合わせ内容</dt>
+  <dt>{{ $t('Question.QuesSubTit7') }}</dt>
   <dd><textarea name="message_s" cols="30" rows="5" id="message"></textarea></dd>
   <p id="confirm-button" class="submit-container"></p>
   <span>
   <input type="hidden" name="mailToNum" id="mailToNum" value="3" />
   <input name="autoReply" type="hidden" value="1" />
   <input type="hidden" name="mode" id="mode" value="CONFIRM" />
-  <input type="submit" style=" " value="お問い合わせ内容を確認" />
+  <input type="submit" style=" " :value=" $t('Question.QuesCheckBut') " />
   </span>
   </dl>
   </form>

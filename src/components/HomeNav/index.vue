@@ -1,97 +1,80 @@
-<script>
-export default {
-    data() {
-        return {
-            languages: ['日本語', 'English', '简体中文'],
-            selectedLanguage: '',
-            isDropdownOpen: false,
-        }
-    },
-    mounted() {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    beforeUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    },
-    methods: {
-        toggleDropdown() {
-            this.isDropdownOpen = !this.isDropdownOpen;
-
-        },
-        closeDropdown() {
-            this.isDropdownOpen = false;
-        },
-        selectLanguage(language) {
-            this.selectedLanguage = language;
-            this.isDropdownOpen = false;
-        },
-    }
-}
+<script setup>
+//国際化
+import { useI18n } from 'vue-i18n';
+const { locale } = useI18n();
+const changeLang = (lang) => {
+    locale.value = lang;
+    localStorage.setItem('lang', lang);
+};
 </script>
-
 <template>
-            <div class="navi">
-                <div class="logo">
-                    <h1>
-                        <img src="@/assets/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
-                        <router-link to="/"> U's Factory</router-link>
-                    </h1>
-                </div>
-
-                <div class="ask-language">
-                    <ul class="overlay-list">
-                    <li class="overlay">
-                        <router-link to="/Question">お問い合わせ</router-link>
-                    </li>
-
-                    <li class="overlay">
-                        <a href="#" id="language" @click="toggleDropdown">LANGUAGE</a>
-                        <a href="#" @click="toggleDropdown">
-                            <span id="earth-icon"></span>
-                        </a>
-                        <div v-show="isDropdownOpen" @click="closeDropdown" class="dropdown-menu">
-                            <ul class="language-list">
-                                <li v-for="(language, index) in languages" :key="index"
-                                    @click="selectLanguage(language)">
-                                    {{ language }}
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="overlay">
-                        <router-link to="/Login">ログイン</router-link>
+    <div class="navi">
+        <div class="logo">
+            <h1>
+                <img src="@/assets/image/HomePage/UsLogo.svg" style="height: 35px; width: 35px;" alt="">
+                <router-link to="/"> U's Factory</router-link>
+            </h1>
+        </div>
+        <div class="ask-language">
+            <ul class="overlay-list">
+                <li class="overlay">
+                    <router-link to="/Question">{{ $t('HomeNav.Question') }}</router-link>
+                </li>
+                <li class="overlay">
+                    <span id="earth-icon"></span>
+                    <el-dropdown trigger="click" class="language">
+                        {{ $t('HomeNav.Language') }}
+                        <template #dropdown>
+                            <el-dropdown-menu>
+                                <el-dropdown-item @click="changeLang('jp')">
+                                    日本語
+                                </el-dropdown-item>
+                                <el-dropdown-item @click="changeLang('en')">
+                                    ENGLISH
+                                </el-dropdown-item>
+                                <el-dropdown-item @click="changeLang('zh')">
+                                    简体中文
+                                </el-dropdown-item>
+                                <el-dropdown-item @click="changeLang('zhf')">
+                                    繁體中文
+                                </el-dropdown-item>
+                            </el-dropdown-menu>
+                        </template>
+                    </el-dropdown>
+                </li>
+                <li class="overlay">
+                    <router-link to="/Login">{{ $t('HomeNav.Login') }}</router-link>
+                </li>
+            </ul>
+            <div class="header-wrapper">
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Company">{{ $t('HomeNav.Company') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/Access">{{ $t('HomeNav.Access') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><a href="#">{{ $t('HomeNav.Services') }}</a>
+                        <ul class="dropList">
+                            <router-link to="/Info360" class="override-link-style">INFO360</router-link>
+                            <router-link to="/BiForArchiCad" class="override-link-style">BI for
+                                ArchiCAD</router-link>
+                        </ul>
                     </li>
                 </ul>
-
-                    <div class="header-wrapper">
-
-                        <ul class="navList">
-                            <li class="menuItem"><router-link to="/Company">会社概要</router-link></li>
-                        </ul>
-                        <ul class="navList">
-                            <li class="menuItem"><router-link to="/Access">アクセス</router-link></li>
-                        </ul>
-                        <ul class="navList">
-                            <li class="menuItem"><a href="#">商品紹介</a>
-                                <ul class="dropList">
-                                    <router-link to="/Info360" class="override-link-style">INFO360</router-link>
-                                    <router-link to="/BiForArchiCad" class="override-link-style">BI for
-                                        ArchiCAD</router-link>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="navList">
-                            <li class="menuItem"><router-link to="/ResultsMedia">実績掲載</router-link></li>
-                        </ul>
-                        <ul class="navList">
-                            <li class="menuItem"><router-link to="/News">ニュース</router-link></li>
-                        </ul>
-                        <ul class="navList">
-                            <li class="menuItem"><router-link to="/Recruit">採用情報</router-link></li>
-                        </ul>
-                    </div>
-                </div>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/ResultsMedia">{{ $t('HomeNav.ResultsMedia') }}</router-link>
+                    </li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link to="/News">{{ $t('HomeNav.News') }}</router-link></li>
+                </ul>
+                <ul class="navList">
+                    <li class="menuItem"><router-link :to="{ path: '/Recruit', query: { lang: locale } }" target="_blank">{{ $t('HomeNav.Recruit') }}</router-link></li>
+                </ul>
             </div>
+        </div>
+    </div>
 </template>
 <style scoped>
 .navi {
@@ -101,34 +84,7 @@ export default {
     height: 20%;
     background-color: #454545;
     transition: all 450ms cubic-bezier(.23, 1, .32, 1) 0s;
-
 }
-
-/* @media (max-width: 700px) {
-    .navi {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 80px;
-
-    }
-
-    .ask-language,
-    .header-wrapper {
-        display: none;
-    }
-
-    .logo {
-        display: block;
-        margin-top: 0;
-        margin-left: 0;
-    }
-
-    .logo a {
-        font-size: 20px;
-        line-height: 80px;
-    }
-} */
 
 .clearfix::before,
 .clearfix::after {
@@ -190,15 +146,15 @@ export default {
     margin: 15px 3px;
 }
 
-
 .overlay-list {
     float: right;
     margin: -70px 10px;
-    list-style: none; 
+    list-style: none;
 }
+
 .overlay {
     float: left;
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 .overlay a {
@@ -206,54 +162,28 @@ export default {
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
+
 }
 
+.language {
+    color: #dcdcdc;
+    text-decoration: none;
+    font-size: 15px;
+    top: 4px;
+    font-weight: bold;
+    cursor: pointer;
 
+}
 
 #earth-icon {
-    float: right;
+    float: left;
     width: 20px;
     height: 20px;
     margin-bottom: 2px;
-    background-image: url(@/assets/earth.svg);
+    background-image: url(@/assets/image/HomePage/earth.svg);
     vertical-align: middle;
 }
-
-.dropdown-menu {
-    top: 100%;
-    left: -7px;
-    min-width: 5rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-}
-
-.language-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    font-size: small;
-}
-
-.language-list li {
-    padding: 3px;
-    cursor: pointer;
-}
-
-.language-list li img {
-    position: absolute;
-    transform: translateY(5px);
-    right: 4px;
-    width: 10px;
-    height: 10px;
-}
-
 h1 {
     float: left;
     font-size: 20px;
